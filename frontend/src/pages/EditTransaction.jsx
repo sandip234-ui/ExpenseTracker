@@ -37,8 +37,8 @@ export default function EditTransaction() {
   return (
     <div className="max-w-2xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-xl font-bold" style={{ color: '#f1f5f9' }}>Edit Transaction</h1>
-        <p className="text-sm mt-1" style={{ color: '#64748b' }}>Update the transaction details</p>
+        <h1 className="text-xl font-bold" style={{ color: 'var(--text-primary, #0F172A)' }}>Edit Transaction</h1>
+        <p className="text-sm mt-1" style={{ color: 'var(--text-secondary, #64748B)' }}>Update the transaction details</p>
       </div>
       <Card>
         <TransactionForm

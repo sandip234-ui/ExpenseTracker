@@ -1,10 +1,23 @@
 import React from 'react'
 
-export default function Card({ children, className = '', padding = true, style = {} }) {
+/**
+ * Card
+ *
+ * Primary content card component in FinTrack.
+ * Restored to clean, stable card without gradient border wrappers.
+ */
+export default function Card({
+  children,
+  className = '',
+  padding = true,
+  style = {},
+  onClick,
+}) {
   return (
     <div
-      className={`rounded-xl border ${padding ? 'p-5' : ''} ${className}`}
-      style={{ background: '#1e2130', borderColor: '#2a2d3e', ...style }}
+      className={`rounded-xl border bg-white dark:bg-slate-800 shadow-sm ${padding ? 'p-5' : ''} ${className}`}
+      style={{ borderColor: 'var(--border-color, #E5E7EB)', ...style }}
+      onClick={onClick}
     >
       {children}
     </div>

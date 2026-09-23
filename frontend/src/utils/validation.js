@@ -1,8 +1,11 @@
+import { formatCurrency } from './formatters.js'
+import { EXPENSE_CATEGORIES, INCOME_CATEGORIES } from '../data/categories.js'
+
 /**
  * Transaction form validation.
  * Returns { valid: boolean, errors: { field: string } }
  */
-export function validateTransaction(data) {
+export function validateTransaction(data, { account, availableBalance, currencySymbol = '₹' } = {}) {
   const errors = {}
 
   if (!data.type || !['income', 'expense'].includes(data.type)) {
@@ -12,6 +15,11 @@ export function validateTransaction(data) {
   const amount = Number(data.amount)
   if (!data.amount || isNaN(amount) || amount <= 0) {
     errors.amount = 'Amount must be greater than zero.'
+  } else if (data.type === 'expense' && availableBalance !== undefined) {
+    if (amount > availableBalance) {
+      const accName = account?.name || 'the selected account'
+      errors.amount = `Insufficient balance. Available in ${accName}: ${formatCurrency(Math.max(0, availableBalance), currencySymbol)}`
+    }
   }
 
   if (!data.description || String(data.description).trim().length === 0) {
@@ -22,6 +30,12 @@ export function validateTransaction(data) {
 
   if (!data.category || String(data.category).trim().length === 0) {
     errors.category = 'Please select a category.'
+  } else if (data.type) {
+    const validList = data.type === 'income' ? INCOME_CATEGORIES : EXPENSE_CATEGORIES
+    const isValid = validList.some((c) => c.id === data.category)
+    if (!isValid && !String(data.category).startsWith('cat-')) {
+      errors.category = `Please select a valid ${data.type} category.`
+    }
   }
 
   if (!data.date) {

@@ -23,13 +23,33 @@ export const INCOME_CATEGORIES = [
 export const PAYMENT_METHODS = [
   'UPI',
   'Cash',
-  'Credit Card',
   'Debit Card',
   'Net Banking',
   'Wallet',
   'Cheque',
   'Other',
 ]
+
+/**
+ * Maps account types to allowed payment methods according to business rules:
+ * - Cash account: Cash, Other
+ * - Bank account: UPI, Debit Card, Net Banking, Cheque, Other
+ * - UPI / Wallet: UPI, Wallet, Other
+ */
+export function getPaymentMethodsForAccount(account) {
+  if (!account) return ['Other']
+  const type = String(account.type || '').toLowerCase()
+  if (type === 'cash') {
+    return ['Cash', 'Other']
+  }
+  if (type === 'bank') {
+    return ['UPI', 'Debit Card', 'Net Banking', 'Cheque', 'Other']
+  }
+  if (type === 'upi' || type === 'wallet') {
+    return ['UPI', 'Wallet', 'Other']
+  }
+  return ['Cash', 'UPI', 'Debit Card', 'Net Banking', 'Wallet', 'Cheque', 'Other']
+}
 
 export const CURRENCIES = [
   { code: 'INR', symbol: '₹', label: 'Indian Rupee' },

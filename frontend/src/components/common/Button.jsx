@@ -1,11 +1,19 @@
 import React from 'react'
 
 const VARIANTS = {
-  primary: { background: '#6366f1', color: '#fff', hover: '#4f46e5' },
-  secondary: { background: '#1e2130', color: '#94a3b8', border: '1px solid #2a2d3e' },
-  danger: { background: 'rgba(239,68,68,0.12)', color: '#f87171', border: '1px solid rgba(239,68,68,0.25)' },
-  success: { background: 'rgba(16,185,129,0.12)', color: '#34d399', border: '1px solid rgba(16,185,129,0.25)' },
-  ghost: { background: 'transparent', color: '#94a3b8' },
+  primary:   { background: '#6366F1', color: '#FFFFFF' },
+  secondary: { background: 'var(--card-bg, #FFFFFF)', color: 'var(--text-primary, #374151)', border: '1px solid var(--border-color, #D1D5DB)' },
+  danger:    { background: '#FEF2F2', color: '#DC2626', border: '1px solid #FECACA' },
+  success:   { background: '#ECFDF5', color: '#059669', border: '1px solid #A7F3D0' },
+  ghost:     { background: 'transparent', color: 'var(--text-secondary, #6B7280)' },
+}
+
+const HOVER = {
+  primary:   { background: '#4F46E5' },
+  secondary: { background: '#F9FAFB' },
+  danger:    { background: '#FEE2E2' },
+  success:   { background: '#D1FAE5' },
+  ghost:     { background: '#F3F4F6' },
 }
 
 export default function Button({
@@ -21,9 +29,9 @@ export default function Button({
 }) {
   const v = VARIANTS[variant] || VARIANTS.primary
   const sizes = {
-    sm: 'px-3 py-1.5 text-xs',
-    md: 'px-4 py-2 text-sm',
-    lg: 'px-5 py-2.5 text-base',
+    sm:  'px-3 py-1.5 text-xs',
+    md:  'px-4 py-2 text-sm',
+    lg:  'px-5 py-2.5 text-base',
   }
 
   return (
@@ -34,6 +42,17 @@ export default function Button({
       className={`inline-flex items-center justify-center gap-2 rounded-lg font-medium cursor-pointer
         disabled:opacity-50 disabled:cursor-not-allowed ${sizes[size] || sizes.md} ${className}`}
       style={{ ...v }}
+      onMouseEnter={(e) => {
+        if (!disabled && !loading) {
+          const h = HOVER[variant]
+          if (h?.background) e.currentTarget.style.background = h.background
+        }
+      }}
+      onMouseLeave={(e) => {
+        if (!disabled && !loading) {
+          e.currentTarget.style.background = v.background
+        }
+      }}
       {...rest}
     >
       {loading && (

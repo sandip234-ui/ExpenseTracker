@@ -7,6 +7,11 @@ import Dashboard from './pages/Dashboard'
 import Transactions from './pages/Transactions'
 import AddTransaction from './pages/AddTransaction'
 import EditTransaction from './pages/EditTransaction'
+import Budgets from './pages/Budgets'
+import Calendar from './pages/Calendar'
+import Recurring from './pages/Recurring'
+import Goals from './pages/Goals'
+import Accounts from './pages/Accounts'
 import Analytics from './pages/Analytics'
 import Settings from './pages/Settings'
 
@@ -24,6 +29,11 @@ export default function App() {
             <Route path="/transactions" element={<Transactions />} />
             <Route path="/transactions/new" element={<AddTransaction />} />
             <Route path="/transactions/:id/edit" element={<EditTransaction />} />
+            <Route path="/budgets" element={<Budgets />} />
+            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/recurring" element={<Recurring />} />
+            <Route path="/goals" element={<Goals />} />
+            <Route path="/accounts" element={<Accounts />} />
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/settings" element={<Settings />} />
           </Route>

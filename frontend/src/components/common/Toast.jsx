@@ -2,10 +2,10 @@ import React, { useEffect } from 'react'
 import { CheckCircle, AlertCircle, Info, XCircle, X } from 'lucide-react'
 
 const CONFIG = {
-  success: { icon: CheckCircle, bg: 'rgba(16,185,129,0.12)', border: 'rgba(16,185,129,0.3)', color: '#34d399', iconColor: '#10b981' },
-  error:   { icon: XCircle,     bg: 'rgba(239,68,68,0.12)',  border: 'rgba(239,68,68,0.3)',  color: '#f87171', iconColor: '#ef4444' },
-  info:    { icon: Info,         bg: 'rgba(99,102,241,0.12)', border: 'rgba(99,102,241,0.3)', color: '#a5b4fc', iconColor: '#6366f1' },
-  warning: { icon: AlertCircle,  bg: 'rgba(245,158,11,0.12)', border: 'rgba(245,158,11,0.3)', color: '#fbbf24', iconColor: '#f59e0b' },
+  success: { icon: CheckCircle, bg: '#ECFDF5', border: '#A7F3D0', color: '#065F46', iconColor: '#10B981' },
+  error:   { icon: XCircle,     bg: '#FEF2F2', border: '#FECACA', color: '#991B1B', iconColor: '#EF4444' },
+  info:    { icon: Info,        bg: '#EEF2FF', border: '#C7D2FE', color: '#3730A3', iconColor: '#6366F1' },
+  warning: { icon: AlertCircle, bg: '#FFFBEB', border: '#FDE68A', color: '#78350F', iconColor: '#F59E0B' },
 }
 
 export default function Toast({ message, variant = 'success', onClose, duration = 3500 }) {
@@ -19,13 +19,13 @@ export default function Toast({ message, variant = 'success', onClose, duration 
 
   return (
     <div
-      className="fixed bottom-20 lg:bottom-6 right-4 z-50 flex items-center gap-3 px-4 py-3 rounded-xl border shadow-xl max-w-sm"
-      style={{ background: c.bg, borderColor: c.border, color: c.color, backdropFilter: 'blur(8px)' }}
+      className="fixed bottom-20 lg:bottom-5 right-4 z-50 flex items-center gap-3 px-4 py-3 rounded-xl border shadow-lg max-w-sm"
+      style={{ background: c.bg, borderColor: c.border, color: c.color }}
     >
-      <Icon size={18} color={c.iconColor} />
+      <Icon size={17} color={c.iconColor} />
       <span className="text-sm font-medium flex-1">{message}</span>
-      <button onClick={onClose} className="ml-2 opacity-60 hover:opacity-100 transition-opacity">
-        <X size={16} />
+      <button onClick={onClose} className="ml-1 opacity-50 hover:opacity-100">
+        <X size={15} />
       </button>
     </div>
   )

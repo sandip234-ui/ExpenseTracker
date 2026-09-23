@@ -12,29 +12,35 @@ export default function Modal({ isOpen, title, description, onConfirm, onCancel,
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(4px)' }}>
-      <div className="w-full max-w-md rounded-2xl border shadow-2xl"
-        style={{ background: '#1e2130', borderColor: '#2a2d3e' }}>
-        <div className="flex items-start justify-between p-6 pb-0">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      style={{ background: 'rgba(15,23,42,0.4)', backdropFilter: 'blur(4px)' }}
+    >
+      <div
+        className="w-full max-w-md rounded-2xl border shadow-xl bg-white dark:bg-slate-800"
+        style={{ borderColor: 'var(--border-color, #E5E7EB)', backgroundColor: 'var(--card-bg, #FFFFFF)' }}
+      >
+        <div className="flex items-start justify-between p-5 pb-0">
           <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center w-10 h-10 rounded-full"
-              style={{ background: 'rgba(239,68,68,0.12)' }}>
-              <AlertTriangle size={20} color="#f87171" />
+            <div
+              className="flex items-center justify-center w-9 h-9 rounded-full"
+              style={{ background: 'rgba(239, 68, 68, 0.15)' }}
+            >
+              <AlertTriangle size={18} color="#EF4444" />
             </div>
-            <h2 className="text-base font-semibold" style={{ color: '#f1f5f9' }}>{title}</h2>
+            <h2 className="text-base font-semibold" style={{ color: 'var(--text-primary, #0F172A)' }}>{title}</h2>
           </div>
-          <button onClick={onCancel} className="p-1 rounded-lg" style={{ color: '#64748b' }}>
+          <button onClick={onCancel} className="p-1 rounded-lg hover:opacity-80" style={{ color: 'var(--text-muted, #94A3B8)' }}>
             <X size={18} />
           </button>
         </div>
 
-        <div className="px-6 py-4">
-          {description && <p className="text-sm" style={{ color: '#94a3b8' }}>{description}</p>}
+        <div className="px-5 py-4">
+          {description && <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary, #475569)' }}>{description}</p>}
           {children}
         </div>
 
-        <div className="flex gap-3 px-6 pb-6">
+        <div className="flex gap-3 px-5 pb-5">
           <Button variant="secondary" className="flex-1" onClick={onCancel}>Cancel</Button>
           <Button variant={confirmVariant} className="flex-1" onClick={onConfirm}>{confirmLabel}</Button>
         </div>
