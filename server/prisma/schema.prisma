@@ -1,0 +1,235 @@
+// FinTrack Prisma Schema
+// PostgreSQL Relational Database Foundation
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── User Model ───────────────────────────────────────────────────────────────
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  accounts              Account[]
+  transactions          Transaction[]
+  savingsGoals          SavingsGoal[]
+  budgets               Budget[]
+  recurringTransactions RecurringTransaction[]
+  categories            Category[]
+  settings              Setting[]
+  notificationStates    NotificationState[]
+
+  @@map("users")
+}
+
+// ─── Account Model ─────────────────────────────────────────────────────────────
+// Financial Source of Truth: Account does NOT have a mutable balance column.
+// Account balance is strictly derived from:
+// Opening Balance + (Income & Goal Withdrawals) - (Expenses & Goal Deposits)
+model Account {
+  id             String                 @id
+  userId         String                 @default("user_default_primary")
+  name           String
+  normalizedName String                 @default("") @map("normalized_name")
+  type           String                 // 'cash' | 'bank' | 'upi' | 'wallet' | 'credit_card' | 'other'
+  openingBalance Float                  @default(0)
+  currency       String                 @default("INR")
+  icon           String?
+  color          String?
+  createdAt      DateTime               @default(now())
+  updatedAt      DateTime               @updatedAt
+
+  user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  transactions          Transaction[]
+  recurringTransactions RecurringTransaction[]
+
+  @@unique([userId, normalizedName], name: "unique_user_account_normalized_name")
+  @@index([userId])
+  @@map("accounts")
+}
+
+// ─── Category Model ───────────────────────────────────────────────────────────
+// Categorization taxonomy for Income, Expense, Transfer, and Custom categories.
+// System categories have userId = null. Custom categories belong to a specific user.
+model Category {
+  id        String   @id
+  userId    String?
+  name      String
+  type      String   // 'expense' | 'income' | 'transfer' | 'both'
+  icon      String?
+  color     String?
+  isCustom  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user                  User?                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  transactions          Transaction[]
+  budgets               Budget[]
+  recurringTransactions RecurringTransaction[]
+
+  @@index([userId])
+  @@map("categories")
+}
+
+// ─── Savings Goal Model ───────────────────────────────────────────────────────
+// Atomic savings goal model. Transfers between accounts and goals are recorded as
+// physical transfer transactions in the ledger.
+model SavingsGoal {
+  id            String        @id
+  userId        String        @default("user_default_primary")
+  name          String
+  targetAmount  Float
+  currentAmount Float         @default(0)
+  targetDate    DateTime?
+  category      String?
+  color         String?
+  icon          String?
+  notes         String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  user          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  transactions  Transaction[]
+
+  @@index([userId])
+  @@map("savings_goals")
+}
+
+// ─── Transaction Model (Ledger Source of Truth) ──────────────────────────────
+// The immutable ledger. Represents external Income, external Expenses, and
+// internal Transfers (goal deposits & goal withdrawals).
+model Transaction {
+  id            String                @id
+  userId        String                @default("user_default_primary")
+  type          String                // 'income' | 'expense' | 'transfer'
+  amount        Float
+  description   String
+  date          DateTime
+  paymentMethod String                @default("Other")
+  notes         String?               @default("")
+  transferType  String?               // 'goal_deposit' | 'goal_withdrawal'
+  goalName      String?
+
+  accountId     String
+  account       Account               @relation(fields: [accountId], references: [id], onDelete: Cascade)
+
+  categoryId    String?
+  category      Category?             @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+
+  goalId        String?
+  goal          SavingsGoal?          @relation(fields: [goalId], references: [id], onDelete: SetNull)
+
+  recurringId   String?
+  recurringRule RecurringTransaction? @relation(fields: [recurringId], references: [id], onDelete: SetNull)
+
+  user          User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt     DateTime              @default(now())
+  updatedAt     DateTime              @updatedAt
+
+  @@index([userId])
+  @@index([accountId])
+  @@index([categoryId])
+  @@index([goalId])
+  @@index([date])
+  @@map("transactions")
+}
+
+// ─── Budget Model ─────────────────────────────────────────────────────────────
+// Monthly category spending caps. Enforces unique budget per category per month per user.
+model Budget {
+  id         String   @id
+  userId     String   @default("user_default_primary")
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  month      String   // 'YYYY-MM'
+  amount     Float
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, categoryId, month])
+  @@index([userId, month])
+  @@map("budgets")
+}
+
+// ─── Recurring Transaction Model ──────────────────────────────────────────────
+// Rules for automated recurring income/expenses.
+model RecurringTransaction {
+  id                String        @id
+  userId            String        @default("user_default_primary")
+  description       String
+  amount            Float
+  type              String        // 'income' | 'expense'
+  frequency         String        // 'daily' | 'weekly' | 'monthly' | 'yearly'
+  startDate         DateTime
+  endDate           DateTime?
+  nextOccurrence    DateTime
+  lastGeneratedDate DateTime?
+  paymentMethod     String?       @default("Recurring")
+  notes             String?
+  active            Boolean       @default(true)
+
+  accountId         String
+  account           Account       @relation(fields: [accountId], references: [id], onDelete: Cascade)
+
+  categoryId        String?
+  category          Category?     @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+
+  user              User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  generatedTransactions Transaction[]
+
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  @@index([userId])
+  @@index([accountId])
+  @@index([active])
+  @@map("recurring_transactions")
+}
+
+// ─── Setting Model ────────────────────────────────────────────────────────────
+// Flexible key-value persistence for system and user settings.
+model Setting {
+  key       String
+  value     String
+  userId    String   @default("user_default_primary")
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@id([userId, key])
+  @@map("settings")
+}
+
+// ─── NotificationState Model ─────────────────────────────────────────────────
+// Tracks read, dismissed, and lifecycle status for smart alerts per user.
+model NotificationState {
+  id          String    @id @default(uuid())
+  userId      String    @default("user_default_primary")
+  alertId     String
+  isRead      Boolean   @default(false)
+  isDismissed Boolean   @default(false)
+  readAt      DateTime?
+  dismissedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, alertId])
+  @@index([userId])
+  @@map("notification_states")
+}
+

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *, [data-theme="dark"], [data-theme="dark"] *));
+
 @theme {
   --font-family-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
 
@@ -46,7 +48,11 @@
   --text-subtle: #94A3B8;
   --card-bg: #FFFFFF;
   --bg-card: #FFFFFF;
+  --bg-page: #F8FAFC;
+  --bg-hover: #F1F5F9;
   --border-color: #E5E7EB;
+  --border-subtle: #F1F5F9;
+  --badge-bg: #F1F5F9;
   --header-bg: rgba(255, 255, 255, 0.92);
   --color-accent: #6366F1;
   --color-accent-bg: #EEF2FF;
@@ -67,8 +73,8 @@ html {
 
 body {
   margin: 0;
-  background-color: #F8FAFC;
-  color: #0F172A;
+  background-color: var(--bg-page, #F8FAFC);
+  color: var(--text-primary, #0F172A);
   min-height: 100vh;
 }
 
@@ -88,7 +94,11 @@ html.dark, html[data-theme="dark"] {
   --text-subtle: #94A3B8;
   --card-bg: #1E293B;
   --bg-card: #1E293B;
+  --bg-page: #0F172A;
+  --bg-hover: #334155;
   --border-color: #334155;
+  --border-subtle: #1E293B;
+  --badge-bg: rgba(255, 255, 255, 0.08);
   --header-bg: rgba(30, 41, 59, 0.92);
   --color-accent: #818CF8;
   --color-accent-bg: rgba(99, 102, 241, 0.18);
@@ -342,25 +352,44 @@ html[data-theme="dark"] button[style*="background: #FFFFFF"] {
 }
 
 /* Badges & Tints */
-html.dark .bg-indigo-50, html[data-theme="dark"] .bg-indigo-50 {
+html.dark .bg-indigo-50, html[data-theme="dark"] .bg-indigo-50,
+html.dark [style*="background: #EEF2FF"], html[data-theme="dark"] [style*="background: #EEF2FF"],
+html.dark [style*="background:#EEF2FF"], html[data-theme="dark"] [style*="background:#EEF2FF"] {
   background-color: rgba(99, 102, 241, 0.18) !important;
   color: #818CF8 !important;
+  border-color: rgba(99, 102, 241, 0.3) !important;
 }
 
-html.dark .bg-emerald-50, html[data-theme="dark"] .bg-emerald-50 {
+html.dark .bg-emerald-50, html[data-theme="dark"] .bg-emerald-50,
+html.dark [style*="background: #ECFDF5"], html[data-theme="dark"] [style*="background: #ECFDF5"],
+html.dark [style*="background:#ECFDF5"], html[data-theme="dark"] [style*="background:#ECFDF5"] {
   background-color: rgba(16, 185, 129, 0.18) !important;
   color: #34D399 !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
 }
 
-html.dark .bg-rose-50, html[data-theme="dark"] .bg-rose-50 {
+html.dark .bg-rose-50, html[data-theme="dark"] .bg-rose-50,
+html.dark [style*="background: #FEF2F2"], html[data-theme="dark"] [style*="background: #FEF2F2"],
+html.dark [style*="background:#FEF2F2"], html[data-theme="dark"] [style*="background:#FEF2F2"] {
   background-color: rgba(239, 68, 68, 0.18) !important;
   color: #F87171 !important;
+  border-color: rgba(239, 68, 68, 0.3) !important;
 }
 
-html.dark .bg-amber-50, html[data-theme="dark"] .bg-amber-50 {
+html.dark .bg-amber-50, html[data-theme="dark"] .bg-amber-50,
+html.dark [style*="background: #FFFBEB"], html[data-theme="dark"] [style*="background: #FFFBEB"],
+html.dark [style*="background:#FFFBEB"], html[data-theme="dark"] [style*="background:#FFFBEB"] {
   background-color: rgba(245, 158, 11, 0.18) !important;
   color: #FBBF24 !important;
+  border-color: rgba(245, 158, 11, 0.3) !important;
 }
+
+/* Auth / Login gradient in dark mode */
+html.dark [style*="linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 100%)"],
+html[data-theme="dark"] [style*="linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 100%)"] {
+  background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%) !important;
+}
+
 
 /* ==========================================================================
    Scrollbar & Transitions

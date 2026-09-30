@@ -1,7 +1,8 @@
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { Plus, TrendingUp } from 'lucide-react'
+import { Plus, TrendingUp, LogOut } from 'lucide-react'
 import NotificationBell from '../notifications/NotificationBell'
+import { useAuth } from '../../context/AuthContext'
 
 const PAGE_TITLES = {
   '/dashboard': 'Dashboard',
@@ -19,6 +20,7 @@ const PAGE_TITLES = {
 export default function Header() {
   const location = useLocation()
   const navigate = useNavigate()
+  const { logout } = useAuth()
 
   const isEditPage = location.pathname.includes('/edit')
   const title = isEditPage
@@ -64,6 +66,17 @@ export default function Header() {
             <span className="hidden sm:inline">Add Transaction</span>
           </button>
         )}
+
+        <button
+          onClick={async () => {
+            await logout()
+            navigate('/login')
+          }}
+          title="Sign out"
+          className="lg:hidden p-1.5 rounded-lg text-slate-400 hover:text-red-500 hover:bg-red-50 transition-colors"
+        >
+          <LogOut size={16} />
+        </button>
       </div>
     </header>
   )

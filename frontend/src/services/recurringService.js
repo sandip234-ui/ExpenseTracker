@@ -1,6 +1,6 @@
-import { STORAGE_KEYS, safeRead, safeWrite } from './storageService'
+import { STORAGE_KEYS, safeRead, safeWrite } from './storageService.js'
 import { v4 as uuidv4 } from 'uuid'
-import { todayISO } from '../utils/formatters'
+import { todayISO } from '../utils/formatters.js'
 
 export function getRecurringTransactions() {
   const recurring = safeRead(STORAGE_KEYS.RECURRING, [])

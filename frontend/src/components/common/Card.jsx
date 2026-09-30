@@ -16,7 +16,7 @@ export default function Card({
   return (
     <div
       className={`rounded-xl border bg-white dark:bg-slate-800 shadow-sm ${padding ? 'p-5' : ''} ${className}`}
-      style={{ borderColor: 'var(--border-color, #E5E7EB)', ...style }}
+      style={{ backgroundColor: 'var(--bg-card, #FFFFFF)', borderColor: 'var(--border-color, #E5E7EB)', ...style }}
       onClick={onClick}
     >
       {children}

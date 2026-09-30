@@ -9,7 +9,7 @@ import EmptyState from '../components/common/EmptyState'
 import AnimatedGradientBorder from '../components/common/AnimatedGradientBorder'
 import {
   Wallet, Plus, Edit3, Trash2, Landmark, Smartphone, CreditCard,
-  Layers, ArrowUpRight, ArrowDownLeft
+  Layers, ArrowUpRight, ArrowDownLeft, AlertCircle
 } from 'lucide-react'
 
 const ACCOUNT_TYPES = [
@@ -51,6 +51,8 @@ export default function Accounts() {
   const [showModal, setShowModal] = useState(false)
   const [editingAccount, setEditingAccount] = useState(null)
   const [deleteTarget, setDeleteTarget] = useState(null)
+  const [errorMessage, setErrorMessage] = useState(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const [formData, setFormData] = useState({
     name: '',
@@ -64,6 +66,7 @@ export default function Accounts() {
 
   const openAddModal = () => {
     setEditingAccount(null)
+    setErrorMessage(null)
     setFormData({
       name: '',
       type: 'bank',
@@ -76,6 +79,7 @@ export default function Accounts() {
 
   const openEditModal = (acc) => {
     setEditingAccount(acc)
+    setErrorMessage(null)
     setFormData({
       name: acc.name,
       type: acc.type || 'bank',
@@ -86,28 +90,39 @@ export default function Accounts() {
     setShowModal(true)
   }
 
-  const handleSave = (e) => {
+  const handleSave = async (e) => {
     e.preventDefault()
-    if (!formData.name.trim()) return
-
-    if (editingAccount) {
-      updateAccount(editingAccount.id, {
-        name: formData.name,
-        type: formData.type,
-        openingBalance: Number(formData.openingBalance) || 0,
-        icon: formData.icon,
-        color: formData.color,
-      })
-    } else {
-      addAccount({
-        name: formData.name,
-        type: formData.type,
-        openingBalance: Number(formData.openingBalance) || 0,
-        icon: formData.icon,
-        color: formData.color,
-      })
+    setErrorMessage(null)
+    if (!formData.name.trim()) {
+      setErrorMessage('Account name is required.')
+      return
     }
-    setShowModal(false)
+
+    setIsSubmitting(true)
+    try {
+      if (editingAccount) {
+        await updateAccount(editingAccount.id, {
+          name: formData.name,
+          type: formData.type,
+          openingBalance: Number(formData.openingBalance) || 0,
+          icon: formData.icon,
+          color: formData.color,
+        })
+      } else {
+        await addAccount({
+          name: formData.name,
+          type: formData.type,
+          openingBalance: Number(formData.openingBalance) || 0,
+          icon: formData.icon,
+          color: formData.color,
+        })
+      }
+      setShowModal(false)
+    } catch (err) {
+      setErrorMessage(err.message || 'An account with this name already exists.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const confirmDelete = () => {
@@ -252,10 +267,24 @@ export default function Accounts() {
       {/* Add / Edit Account Modal */}
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm animate-fadeIn">
-          <div className="bg-white rounded-2xl w-full max-w-md p-6 shadow-xl border" style={{ borderColor: 'var(--border-color, #E5E7EB)' }}>
+          <div
+            className="rounded-2xl w-full max-w-md p-6 shadow-xl border"
+            style={{
+              backgroundColor: 'var(--card-bg, #FFFFFF)',
+              borderColor: 'var(--border-color, #E5E7EB)',
+            }}
+          >
             <h2 className="text-base font-semibold mb-4" style={{ color: 'var(--text-primary, #0F172A)' }}>
               {editingAccount ? 'Edit Account' : 'Create New Account'}
             </h2>
+
+            {errorMessage && (
+              <div className="p-3 mb-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-medium dark:bg-rose-950/40 dark:border-rose-900/60 dark:text-rose-300 flex items-center gap-2">
+                <AlertCircle size={16} className="flex-shrink-0 text-rose-600 dark:text-rose-400" />
+                <span id="account-error-message">{errorMessage}</span>
+              </div>
+            )}
+
             <form onSubmit={handleSave} className="space-y-4">
               <div>
                 <label style={labelStyle}>Account Name *</label>
@@ -344,11 +373,11 @@ export default function Accounts() {
               </div>
 
               <div className="flex gap-3 pt-3">
-                <Button type="button" variant="secondary" className="flex-1" onClick={() => setShowModal(false)}>
+                <Button type="button" variant="secondary" className="flex-1" onClick={() => setShowModal(false)} disabled={isSubmitting}>
                   Cancel
                 </Button>
-                <Button type="submit" className="flex-1">
-                  {editingAccount ? 'Save Changes' : 'Create Account'}
+                <Button type="submit" className="flex-1" disabled={isSubmitting}>
+                  {isSubmitting ? 'Saving...' : editingAccount ? 'Save Changes' : 'Create Account'}
                 </Button>
               </div>
             </form>

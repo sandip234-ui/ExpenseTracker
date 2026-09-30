@@ -1,4 +1,4 @@
-import { STORAGE_KEYS, safeRead, safeWrite } from './storageService'
+import { STORAGE_KEYS, safeRead, safeWrite } from './storageService.js'
 
 export function getBudgets() {
   const budgets = safeRead(STORAGE_KEYS.BUDGETS, [])

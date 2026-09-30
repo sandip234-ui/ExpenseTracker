@@ -4,14 +4,14 @@ import {
   safeWrite,
   DEFAULT_SETTINGS,
   migrateStorage,
-} from './storageService'
+} from './storageService.js'
 
 export { migrateStorage }
-import { getAccounts, saveAccounts } from './accountService'
-import { getCustomCategories, saveCustomCategories, findCategory } from './categoryService'
-import { getBudgets, saveBudgets } from './budgetService'
-import { getGoals, saveGoals } from './goalService'
-import { getRecurringTransactions, saveRecurringTransactions } from './recurringService'
+import { getAccounts, saveAccounts } from './accountService.js'
+import { getCustomCategories, saveCustomCategories, findCategory } from './categoryService.js'
+import { getBudgets, saveBudgets } from './budgetService.js'
+import { getGoals, saveGoals } from './goalService.js'
+import { getRecurringTransactions, saveRecurringTransactions } from './recurringService.js'
 
 // ─── Transactions ─────────────────────────────────────────────────────────────
 

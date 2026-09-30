@@ -1,0 +1,7 @@
+{
+  "name": "fintrack-migration",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "FinTrack localStorage to PostgreSQL Migration Utility",
+  "private": true
+}

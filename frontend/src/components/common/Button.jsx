@@ -10,10 +10,10 @@ const VARIANTS = {
 
 const HOVER = {
   primary:   { background: '#4F46E5' },
-  secondary: { background: '#F9FAFB' },
+  secondary: { background: 'var(--bg-hover, #F9FAFB)' },
   danger:    { background: '#FEE2E2' },
   success:   { background: '#D1FAE5' },
-  ghost:     { background: '#F3F4F6' },
+  ghost:     { background: 'var(--bg-hover, #F3F4F6)' },
 }
 
 export default function Button({

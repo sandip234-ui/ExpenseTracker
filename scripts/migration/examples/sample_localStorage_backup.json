@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "source": "fintrack-localStorage",
+  "exportedAt": "2026-09-30T14:40:00.000Z",
+  "data": {
+    "accounts": [
+      {
+        "id": "demo-acc-hdfc",
+        "name": "HDFC Salary Account",
+        "type": "bank",
+        "openingBalance": 25000,
+        "currency": "INR",
+        "icon": "🏦",
+        "color": "#3B82F6",
+        "createdAt": "2026-01-01T00:00:00.000Z"
+      },
+      {
+        "id": "demo-acc-cash",
+        "name": "Physical Wallet",
+        "type": "cash",
+        "openingBalance": 3500,
+        "currency": "INR",
+        "icon": "💵",
+        "color": "#10B981",
+        "createdAt": "2026-01-01T00:00:00.000Z"
+      },
+      {
+        "id": "demo-acc-gpay",
+        "name": "Google Pay UPI",
+        "type": "upi",
+        "openingBalance": 1200,
+        "currency": "INR",
+        "icon": "📱",
+        "color": "#8B5CF6",
+        "createdAt": "2026-01-01T00:00:00.000Z"
+      }
+    ],
+    "categories": [
+      {
+        "id": "demo-cat-freelance",
+        "name": "Freelance Dev",
+        "type": "income",
+        "icon": "💻",
+        "color": "#6366F1",
+        "isCustom": true
+      },
+      {
+        "id": "demo-cat-fitness",
+        "name": "Gym & Fitness",
+        "type": "expense",
+        "icon": "🏋️",
+        "color": "#EC4899",
+        "isCustom": true
+      }
+    ],
+    "goals": [
+      {
+        "id": "demo-goal-macbook",
+        "name": "M3 MacBook Pro",
+        "targetAmount": 150000,
+        "currentAmount": 45000,
+        "targetDate": "2026-12-31",
+        "category": "electronics",
+        "icon": "💻",
+        "color": "#0EA5E9",
+        "notes": "Savings for high-performance dev machine"
+      }
+    ],
+    "budgets": [
+      {
+        "id": "demo-budget-food",
+        "categoryId": "food",
+        "month": "2026-11",
+        "amount": 8000
+      },
+      {
+        "id": "demo-budget-fitness",
+        "categoryId": "demo-cat-fitness",
+        "month": "2026-11",
+        "amount": 2500
+      }
+    ],
+    "recurringTransactions": [
+      {
+        "id": "demo-rec-broadband",
+        "description": "Fiber Broadband",
+        "amount": 1199,
+        "type": "expense",
+        "frequency": "monthly",
+        "startDate": "2026-01-01T00:00:00.000Z",
+        "nextOccurrence": "2026-11-01T00:00:00.000Z",
+        "paymentMethod": "UPI",
+        "accountId": "demo-acc-gpay",
+        "categoryId": "bills",
+        "active": true
+      }
+    ],
+    "transactions": [
+      {
+        "id": "demo-txn-salary-1",
+        "type": "income",
+        "amount": 75000,
+        "description": "Tech Corp Monthly Salary",
+        "date": "2026-09-01",
+        "paymentMethod": "Net Banking",
+        "accountId": "demo-acc-hdfc",
+        "categoryId": "salary",
+        "notes": "Direct bank deposit"
+      },
+      {
+        "id": "demo-txn-freelance-1",
+        "type": "income",
+        "amount": 20000,
+        "description": "React Dashboard Client Project",
+        "date": "2026-09-10",
+        "paymentMethod": "UPI",
+        "accountId": "demo-acc-hdfc",
+        "categoryId": "demo-cat-freelance",
+        "notes": "Milestone 2 payment"
+      },
+      {
+        "id": "demo-txn-groceries-1",
+        "type": "expense",
+        "amount": 4250,
+        "description": "Weekly Supermarket Run",
+        "date": "2026-09-05",
+        "paymentMethod": "UPI",
+        "accountId": "demo-acc-gpay",
+        "categoryId": "food"
+      },
+      {
+        "id": "demo-txn-cash-coffee",
+        "type": "expense",
+        "amount": 320,
+        "description": "Artisan Coffee",
+        "date": "2026-09-07",
+        "paymentMethod": "Cash",
+        "accountId": "demo-acc-cash",
+        "categoryId": "food"
+      },
+      {
+        "id": "demo-txn-macbook-deposit",
+        "type": "transfer",
+        "transferType": "goal_deposit",
+        "amount": 15000,
+        "description": "MacBook Savings Contribution",
+        "date": "2026-09-15",
+        "paymentMethod": "Net Banking",
+        "accountId": "demo-acc-hdfc",
+        "goalId": "demo-goal-macbook",
+        "goalName": "M3 MacBook Pro",
+        "notes": "Deducted from HDFC account into MacBook Goal"
+      }
+    ],
+    "settings": {
+      "demo_currency": "INR",
+      "demo_theme": "dark"
+    }
+  }
+}

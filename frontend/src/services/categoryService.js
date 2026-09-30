@@ -1,5 +1,5 @@
-import { STORAGE_KEYS, safeRead, safeWrite } from './storageService'
-import { EXPENSE_CATEGORIES, INCOME_CATEGORIES } from '../data/categories'
+import { STORAGE_KEYS, safeRead, safeWrite } from './storageService.js'
+import { EXPENSE_CATEGORIES, INCOME_CATEGORIES } from '../data/categories.js'
 
 export function getCustomCategories() {
   const custom = safeRead(STORAGE_KEYS.CATEGORIES, [])

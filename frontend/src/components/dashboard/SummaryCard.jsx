@@ -4,7 +4,7 @@ export default function SummaryCard({ title, value, subtitle, icon: Icon, color 
   return (
     <div
       className="rounded-xl border bg-white dark:bg-slate-800 shadow-sm p-4 h-full flex flex-col justify-between"
-      style={{ borderColor: 'var(--border-color, #E5E7EB)' }}
+      style={{ backgroundColor: 'var(--bg-card, #FFFFFF)', borderColor: 'var(--border-color, #E5E7EB)' }}
     >
       <div>
         <div className="flex items-start justify-between mb-3">
