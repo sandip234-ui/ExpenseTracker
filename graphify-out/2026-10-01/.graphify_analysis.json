@@ -969,7 +969,7 @@
     },
     {
       "type": "isolated_nodes",
-      "question": "What connects `VARIANTS`, `HOVER`, `VARIANTS` to the rest of the system?",
+      "question": "What connects `VARIANTS`, `CONFIG`, `PAGE_TITLES` to the rest of the system?",
       "why": "167 weakly-connected nodes found - possible documentation gaps or missing edges."
     },
     {

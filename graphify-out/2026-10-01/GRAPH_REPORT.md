@@ -172,7 +172,7 @@ Cohesion: 0.33
 Nodes (5): createTransaction(), deleteTransaction(), getTransactionById(), getTransactions(), updateTransaction()
 
 ## Knowledge Gaps
-- **167 isolated node(s):** `VARIANTS`, `HOVER`, `VARIANTS`, `CONFIG`, `PAGE_TITLES` (+162 more)
+- **167 isolated node(s):** `VARIANTS`, `CONFIG`, `PAGE_TITLES`, `MOBILE_NAV_ITEMS`, `NAV_ITEMS` (+162 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 238 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -185,7 +185,7 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.078) - this node is a cross-community bridge._
 - **Why does `calculateAccountBalance()` connect `storage.js` to `TransactionContext.jsx`, `test_transaction_rules.js`, `Dashboard.jsx`?**
   _High betweenness centrality (0.071) - this node is a cross-community bridge._
-- **What connects `VARIANTS`, `HOVER`, `VARIANTS` to the rest of the system?**
+- **What connects `VARIANTS`, `CONFIG`, `PAGE_TITLES` to the rest of the system?**
   _167 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `TransactionContext.jsx` be split into smaller, more focused modules?**
   _Cohesion score 0.060182488837119005 - nodes in this community are weakly interconnected._
