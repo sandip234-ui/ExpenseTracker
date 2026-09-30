@@ -42,10 +42,10 @@ const errorStyle = { color: '#DC2626', fontSize: '0.75rem', marginTop: '0.25rem'
 
 export default function TransactionForm({ initialData = null, onSubmit, submitLabel = 'Save Transaction' }) {
   const navigate = useNavigate()
-  const { accounts, customCategories, transactions, settings } = useTransactions()
+  const { accounts, categories: allCategoriesList, customCategories, transactions, settings } = useTransactions()
   const currencySymbol = settings?.currencySymbol || '₹'
 
-  const defaultAccId = accounts[0]?.id || 'account-cash'
+  const defaultAccId = accounts[0]?.id || ''
   
   const [form, setForm] = useState(() => {
     if (initialData) {
@@ -69,18 +69,37 @@ export default function TransactionForm({ initialData = null, onSubmit, submitLa
     }
   })
 
+  // Synchronize accountId when accounts load asynchronously
+  useEffect(() => {
+    if (accounts.length > 0 && (!form.accountId || !accounts.some((a) => a.id === form.accountId))) {
+      const targetAcc = accounts[0]
+      const validMethods = getPaymentMethodsForAccount(targetAcc)
+      setForm((f) => ({
+        ...f,
+        accountId: targetAcc.id,
+        paymentMethod: validMethods.includes(f.paymentMethod) ? f.paymentMethod : (validMethods[0] || 'Other'),
+      }))
+    }
+  }, [accounts]) // eslint-disable-line
+
   const [errors, setErrors] = useState({})
   const [loading, setLoading] = useState(false)
 
+  const categories = React.useMemo(() => {
+    if (allCategoriesList && allCategoriesList.length > 0) {
+      return allCategoriesList.filter((c) => form.type === 'all' || c.type === form.type || c.type === 'both')
+    }
+    return getAllCategories(form.type, customCategories)
+  }, [form.type, allCategoriesList, customCategories])
+
   // When type changes, clear category if current category does not belong to new type
   useEffect(() => {
-    const validCats = getAllCategories(form.type, customCategories).map((c) => c.id)
+    const validCats = categories.map((c) => c.id)
     if (form.category && !validCats.includes(form.category)) {
       setForm((f) => ({ ...f, category: '' }))
     }
-  }, [form.type, customCategories]) // eslint-disable-line
+  }, [form.type, categories]) // eslint-disable-line
 
-  const categories = getAllCategories(form.type, customCategories)
   const selectedAccount = accounts.find((a) => a.id === (form.accountId || defaultAccId)) || accounts[0]
   const availableMethods = getPaymentMethodsForAccount(selectedAccount)
   const availableBalance = getAvailableAccountBalance(selectedAccount, transactions, initialData)

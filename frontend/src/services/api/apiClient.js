@@ -51,9 +51,6 @@ export function getApiBaseUrl() {
   if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_BASE_URL) {
     return import.meta.env.VITE_API_BASE_URL.replace(/\/$/, '')
   }
-  if (typeof process !== 'undefined' && process.env && process.env.VITE_API_BASE_URL) {
-    return process.env.VITE_API_BASE_URL.replace(/\/$/, '')
-  }
   // In production builds, use relative /api for reverse proxy and custom domain compatibility
   if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.PROD) {
     return '/api'
@@ -99,7 +96,7 @@ export async function request(endpoint, options = {}) {
   }
 
   // Parse response
-  let data = null
+  let data
   const contentType = response.headers.get('content-type')
   if (contentType && contentType.includes('application/json')) {
     try {

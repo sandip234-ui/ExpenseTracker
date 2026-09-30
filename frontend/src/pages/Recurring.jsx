@@ -9,7 +9,7 @@ import EmptyState from '../components/common/EmptyState'
 import AnimatedGradientBorder from '../components/common/AnimatedGradientBorder'
 import {
   Repeat, Plus, Edit3, Trash2, CheckCircle2, XCircle,
-  Calendar, ArrowUpCircle, ArrowDownCircle, RefreshCw
+  ArrowUpCircle, ArrowDownCircle, RefreshCw
 } from 'lucide-react'
 
 const FREQUENCIES = [
@@ -42,6 +42,7 @@ export default function Recurring() {
   const {
     recurring,
     accounts,
+    categories: allCategoriesList,
     customCategories,
     addRecurring,
     updateRecurring,
@@ -57,13 +58,13 @@ export default function Recurring() {
   const [deleteTarget, setDeleteTarget] = useState(null)
 
   const todayStr = new Date().toISOString().split('T')[0]
-  const defaultAccId = accounts[0]?.id || 'account-cash'
+  const defaultAccId = accounts[0]?.id || ''
 
   const [formData, setFormData] = useState({
     type: 'expense',
     description: '',
     amount: '',
-    categoryId: 'subscriptions',
+    categoryId: '',
     accountId: defaultAccId,
     frequency: 'monthly',
     startDate: todayStr,
@@ -71,10 +72,12 @@ export default function Recurring() {
     active: true,
   })
 
-  const categories = useMemo(
-    () => getAllCategories(formData.type, customCategories),
-    [formData.type, customCategories]
-  )
+  const categories = useMemo(() => {
+    if (allCategoriesList && allCategoriesList.length > 0) {
+      return allCategoriesList.filter((c) => formData.type === 'all' || c.type === formData.type || c.type === 'both')
+    }
+    return getAllCategories(formData.type, customCategories)
+  }, [formData.type, allCategoriesList, customCategories])
 
   const openAddModal = () => {
     setEditingRule(null)
@@ -82,8 +85,8 @@ export default function Recurring() {
       type: 'expense',
       description: '',
       amount: '',
-      categoryId: 'subscriptions',
-      accountId: defaultAccId,
+      categoryId: categories[0]?.id || '',
+      accountId: accounts[0]?.id || '',
       frequency: 'monthly',
       startDate: todayStr,
       endDate: '',
@@ -98,8 +101,8 @@ export default function Recurring() {
       type: rule.type || 'expense',
       description: rule.description,
       amount: String(rule.amount),
-      categoryId: rule.categoryId || 'other',
-      accountId: rule.accountId || defaultAccId,
+      categoryId: rule.categoryId || '',
+      accountId: rule.accountId || accounts[0]?.id || '',
       frequency: rule.frequency || 'monthly',
       startDate: rule.startDate,
       endDate: rule.endDate || '',

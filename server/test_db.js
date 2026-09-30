@@ -27,10 +27,12 @@ async function runDatabaseTests() {
     // 3. CRUD & Ledger Source of Truth verification
     console.log('3. Testing CRUD & Ledger Source of Truth operations...')
     const testAccountId = `test-acc-${Date.now()}`
+    const testAccountName = `Automated Test Bank ${Date.now()}`
     const testAccount = await prisma.account.create({
       data: {
         id: testAccountId,
-        name: 'Automated Test Bank',
+        name: testAccountName,
+        normalizedName: testAccountName.toLowerCase(),
         type: 'bank',
         openingBalance: 10000,
         currency: 'INR',

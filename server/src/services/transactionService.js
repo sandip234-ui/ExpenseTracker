@@ -2,6 +2,7 @@ import prisma from '../lib/prisma.js'
 import {
   TransactionNotFoundError,
   AccountNotFoundError,
+  CategoryNotFoundError,
   InvalidAmountError,
   InsufficientBalanceError,
   InvalidCategoryTypeError,
@@ -94,7 +95,10 @@ export async function createTransaction(data, client = prisma) {
     let category = null
     if (data.categoryId) {
       category = await tx.category.findUnique({ where: { id: data.categoryId } })
-      if (category && type !== 'transfer') {
+      if (!category) {
+        throw new CategoryNotFoundError(`Category with ID "${data.categoryId}" not found.`)
+      }
+      if (type !== 'transfer') {
         const catType = category.type.toLowerCase()
         if (catType !== 'both' && catType !== type) {
           throw new InvalidCategoryTypeError(
@@ -149,7 +153,7 @@ export async function createTransaction(data, client = prisma) {
         transferType: data.transferType || null,
         goalName: data.goalName || null,
         accountId: account.id,
-        categoryId: category ? category.id : (data.categoryId || null),
+        categoryId: category ? category.id : null,
         goalId: data.goalId || null,
         recurringId: data.recurringId || null,
       },
@@ -218,7 +222,10 @@ export async function updateTransaction(id, data, client = prisma, userId = null
     let category = null
     if (targetCategoryId) {
       category = await tx.category.findUnique({ where: { id: targetCategoryId } })
-      if (category && newType !== 'transfer') {
+      if (!category) {
+        throw new CategoryNotFoundError(`Category with ID "${targetCategoryId}" not found.`)
+      }
+      if (newType !== 'transfer') {
         const catType = category.type.toLowerCase()
         if (catType !== 'both' && catType !== newType) {
           throw new InvalidCategoryTypeError(
@@ -262,7 +269,7 @@ export async function updateTransaction(id, data, client = prisma, userId = null
     if (data.description !== undefined) updateFields.description = String(data.description).trim()
     if (data.notes !== undefined) updateFields.notes = String(data.notes).trim()
     if (data.date !== undefined) updateFields.date = new Date(data.date)
-    if (data.categoryId !== undefined) updateFields.categoryId = targetCategoryId
+    if (data.categoryId !== undefined) updateFields.categoryId = category ? category.id : null
     if (data.goalId !== undefined) updateFields.goalId = data.goalId
     if (data.goalName !== undefined) updateFields.goalName = data.goalName
     if (data.transferType !== undefined) updateFields.transferType = data.transferType

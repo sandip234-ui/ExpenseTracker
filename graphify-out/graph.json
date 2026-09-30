@@ -372,16 +372,16 @@
       "source_location": "L11"
     },
     {
-      "id": "frontend_src_components_dashboard_recenttransactions_recenttransactions",
-      "label": "RecentTransactions()",
+      "id": "frontend_src_components_forms_transactionform_transactionform",
+      "label": "TransactionForm()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
       "community_name": "TransactionContext.jsx",
       "file_type": "code",
-      "norm_label": "recenttransactions()",
-      "source_file": "frontend/src/components/dashboard/RecentTransactions.jsx",
-      "source_location": "L8"
+      "norm_label": "transactionform()",
+      "source_file": "frontend/src/components/forms/TransactionForm.jsx",
+      "source_location": "L43"
     },
     {
       "id": "frontend_src_components_layout_applayout_applayout",
@@ -480,6 +480,30 @@
       "source_location": "L89"
     },
     {
+      "id": "frontend_src_context_transactioncontext_reducer",
+      "label": "reducer()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "TransactionContext.jsx",
+      "file_type": "code",
+      "norm_label": "reducer()",
+      "source_file": "frontend/src/context/TransactionContext.jsx",
+      "source_location": "L32"
+    },
+    {
+      "id": "frontend_src_context_transactioncontext_transactionprovider",
+      "label": "TransactionProvider()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "TransactionContext.jsx",
+      "file_type": "code",
+      "norm_label": "transactionprovider()",
+      "source_file": "frontend/src/context/TransactionContext.jsx",
+      "source_location": "L77"
+    },
+    {
       "id": "frontend_src_context_transactioncontext_usetransactions",
       "label": "useTransactions()",
       "_callable": true,
@@ -489,7 +513,19 @@
       "file_type": "code",
       "norm_label": "usetransactions()",
       "source_file": "frontend/src/context/TransactionContext.jsx",
-      "source_location": "L1165"
+      "source_location": "L1170"
+    },
+    {
+      "id": "frontend_src_data_categories_getpaymentmethodsforaccount",
+      "label": "getPaymentMethodsForAccount()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "TransactionContext.jsx",
+      "file_type": "code",
+      "norm_label": "getpaymentmethodsforaccount()",
+      "source_file": "frontend/src/data/categories.js",
+      "source_location": "L39"
     },
     {
       "id": "frontend_src_pages_addtransaction_addtransaction",
@@ -502,18 +538,6 @@
       "norm_label": "addtransaction()",
       "source_file": "frontend/src/pages/AddTransaction.jsx",
       "source_location": "L7"
-    },
-    {
-      "id": "frontend_src_pages_calendar_calendar",
-      "label": "Calendar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "TransactionContext.jsx",
-      "file_type": "code",
-      "norm_label": "calendar()",
-      "source_file": "frontend/src/pages/Calendar.jsx",
-      "source_location": "L17"
     },
     {
       "id": "frontend_src_pages_edittransaction_edittransaction",
@@ -552,18 +576,6 @@
       "source_location": "L6"
     },
     {
-      "id": "frontend_src_pages_recurring_recurring",
-      "label": "Recurring()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "TransactionContext.jsx",
-      "file_type": "code",
-      "norm_label": "recurring()",
-      "source_file": "frontend/src/pages/Recurring.jsx",
-      "source_location": "L41"
-    },
-    {
       "id": "frontend_src_pages_settings_section",
       "label": "Section()",
       "_callable": true,
@@ -576,76 +588,64 @@
       "source_location": "L37"
     },
     {
-      "id": "frontend_src_pages_transactions_transactions",
-      "label": "Transactions()",
+      "id": "frontend_src_services_accountservice_calculateaccountbalance",
+      "label": "calculateAccountBalance()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
       "community_name": "TransactionContext.jsx",
       "file_type": "code",
-      "norm_label": "transactions()",
-      "source_file": "frontend/src/pages/Transactions.jsx",
-      "source_location": "L31"
+      "norm_label": "calculateaccountbalance()",
+      "source_file": "frontend/src/services/accountService.js",
+      "source_location": "L39"
     },
     {
-      "id": "frontend_src_services_categoryservice_getallcategories",
-      "label": "getAllCategories()",
+      "id": "frontend_src_services_accountservice_getavailableaccountbalance",
+      "label": "getAvailableAccountBalance()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
       "community_name": "TransactionContext.jsx",
       "file_type": "code",
-      "norm_label": "getallcategories()",
-      "source_file": "frontend/src/services/categoryService.js",
-      "source_location": "L38"
+      "norm_label": "getavailableaccountbalance()",
+      "source_file": "frontend/src/services/accountService.js",
+      "source_location": "L66"
     },
     {
-      "id": "frontend_src_utils_formatters_formatamount",
-      "label": "formatAmount()",
+      "id": "frontend_src_services_insightservice_generatesmartwarnings",
+      "label": "generateSmartWarnings()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
       "community_name": "TransactionContext.jsx",
       "file_type": "code",
-      "norm_label": "formatamount()",
-      "source_file": "frontend/src/utils/formatters.js",
-      "source_location": "L34"
+      "norm_label": "generatesmartwarnings()",
+      "source_file": "frontend/src/services/insightService.js",
+      "source_location": "L100"
     },
     {
-      "id": "frontend_src_utils_formatters_formatcurrency",
-      "label": "formatCurrency()",
+      "id": "frontend_src_services_storage_exporttransactionstocsv",
+      "label": "exportTransactionsToCSV()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
       "community_name": "TransactionContext.jsx",
       "file_type": "code",
-      "norm_label": "formatcurrency()",
-      "source_file": "frontend/src/utils/formatters.js",
-      "source_location": "L6"
+      "norm_label": "exporttransactionstocsv()",
+      "source_file": "frontend/src/services/storage.js",
+      "source_location": "L76"
     },
     {
-      "id": "frontend_src_utils_formatters_formatdate",
-      "label": "formatDate()",
+      "id": "frontend_src_utils_validation_validatetransaction",
+      "label": "validateTransaction()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
       "community_name": "TransactionContext.jsx",
       "file_type": "code",
-      "norm_label": "formatdate()",
-      "source_file": "frontend/src/utils/formatters.js",
-      "source_location": "L14"
-    },
-    {
-      "id": "frontend_src_utils_formatters_formatrelativedate",
-      "label": "formatRelativeDate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "TransactionContext.jsx",
-      "file_type": "code",
-      "norm_label": "formatrelativedate()",
-      "source_file": "frontend/src/utils/formatters.js",
-      "source_location": "L21"
+      "norm_label": "validatetransaction()",
+      "source_file": "frontend/src/utils/validation.js",
+      "source_location": "L8"
     },
     {
       "id": "server_src_errors_domainerrors_accountnameexistserror_constructor",
@@ -1041,7 +1041,7 @@
       "file_type": "code",
       "norm_label": "createcategory()",
       "source_file": "server/src/services/categoryService.js",
-      "source_location": "L62"
+      "source_location": "L123"
     },
     {
       "id": "server_src_services_categoryservice_deletecategory",
@@ -1053,7 +1053,19 @@
       "file_type": "code",
       "norm_label": "deletecategory()",
       "source_file": "server/src/services/categoryService.js",
-      "source_location": "L135"
+      "source_location": "L196"
+    },
+    {
+      "id": "server_src_services_categoryservice_ensuredefaultsystemcategories",
+      "label": "ensureDefaultSystemCategories()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "domainErrors.js",
+      "file_type": "code",
+      "norm_label": "ensuredefaultsystemcategories()",
+      "source_file": "server/src/services/categoryService.js",
+      "source_location": "L34"
     },
     {
       "id": "server_src_services_categoryservice_getcategories",
@@ -1065,7 +1077,7 @@
       "file_type": "code",
       "norm_label": "getcategories()",
       "source_file": "server/src/services/categoryService.js",
-      "source_location": "L15"
+      "source_location": "L61"
     },
     {
       "id": "server_src_services_categoryservice_getcategorybyid",
@@ -1077,7 +1089,7 @@
       "file_type": "code",
       "norm_label": "getcategorybyid()",
       "source_file": "server/src/services/categoryService.js",
-      "source_location": "L42"
+      "source_location": "L94"
     },
     {
       "id": "server_src_services_categoryservice_updatecategory",
@@ -1089,7 +1101,7 @@
       "file_type": "code",
       "norm_label": "updatecategory()",
       "source_file": "server/src/services/categoryService.js",
-      "source_location": "L95"
+      "source_location": "L156"
     },
     {
       "id": "server_src_services_goalservice_calculategoalmetrics",
@@ -1269,7 +1281,7 @@
       "file_type": "code",
       "norm_label": "createtransaction()",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L68"
+      "source_location": "L69"
     },
     {
       "id": "server_src_services_transactionservice_deletetransaction",
@@ -1281,7 +1293,7 @@
       "file_type": "code",
       "norm_label": "deletetransaction()",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L294"
+      "source_location": "L301"
     },
     {
       "id": "server_src_services_transactionservice_gettransactionbyid",
@@ -1293,7 +1305,7 @@
       "file_type": "code",
       "norm_label": "gettransactionbyid()",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L50"
+      "source_location": "L51"
     },
     {
       "id": "server_src_services_transactionservice_gettransactions",
@@ -1305,7 +1317,7 @@
       "file_type": "code",
       "norm_label": "gettransactions()",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L23"
+      "source_location": "L24"
     },
     {
       "id": "server_src_services_transactionservice_updatetransaction",
@@ -1317,7 +1329,7 @@
       "file_type": "code",
       "norm_label": "updatetransaction()",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L180"
+      "source_location": "L184"
     },
     {
       "id": "server_src_utils_accountutils_cleanupduplicateaccountnames",
@@ -1524,11 +1536,131 @@
       "source_location": "L13"
     },
     {
+      "id": "server_src_controllers_budgetcontroller_createbudget",
+      "label": "createBudget()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "budgetController.js",
+      "file_type": "code",
+      "norm_label": "createbudget()",
+      "source_file": "server/src/controllers/budgetController.js",
+      "source_location": "L29"
+    },
+    {
+      "id": "server_src_controllers_budgetcontroller_deletebudget",
+      "label": "deleteBudget()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "budgetController.js",
+      "file_type": "code",
+      "norm_label": "deletebudget()",
+      "source_file": "server/src/controllers/budgetController.js",
+      "source_location": "L50"
+    },
+    {
+      "id": "server_src_controllers_budgetcontroller_getbudgetbyid",
+      "label": "getBudgetById()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "budgetController.js",
+      "file_type": "code",
+      "norm_label": "getbudgetbyid()",
+      "source_file": "server/src/controllers/budgetController.js",
+      "source_location": "L17"
+    },
+    {
+      "id": "server_src_controllers_budgetcontroller_getbudgets",
+      "label": "getBudgets()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "budgetController.js",
+      "file_type": "code",
+      "norm_label": "getbudgets()",
+      "source_file": "server/src/controllers/budgetController.js",
+      "source_location": "L8"
+    },
+    {
+      "id": "server_src_controllers_budgetcontroller_updatebudget",
+      "label": "updateBudget()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "budgetController.js",
+      "file_type": "code",
+      "norm_label": "updatebudget()",
+      "source_file": "server/src/controllers/budgetController.js",
+      "source_location": "L41"
+    },
+    {
+      "id": "server_src_controllers_recurringcontroller_createrecurring",
+      "label": "createRecurring()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "budgetController.js",
+      "file_type": "code",
+      "norm_label": "createrecurring()",
+      "source_file": "server/src/controllers/recurringController.js",
+      "source_location": "L35"
+    },
+    {
+      "id": "server_src_controllers_recurringcontroller_deleterecurring",
+      "label": "deleteRecurring()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "budgetController.js",
+      "file_type": "code",
+      "norm_label": "deleterecurring()",
+      "source_file": "server/src/controllers/recurringController.js",
+      "source_location": "L56"
+    },
+    {
+      "id": "server_src_controllers_recurringcontroller_getrecurring",
+      "label": "getRecurring()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "budgetController.js",
+      "file_type": "code",
+      "norm_label": "getrecurring()",
+      "source_file": "server/src/controllers/recurringController.js",
+      "source_location": "L8"
+    },
+    {
+      "id": "server_src_controllers_recurringcontroller_getrecurringbyid",
+      "label": "getRecurringById()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "budgetController.js",
+      "file_type": "code",
+      "norm_label": "getrecurringbyid()",
+      "source_file": "server/src/controllers/recurringController.js",
+      "source_location": "L23"
+    },
+    {
+      "id": "server_src_controllers_recurringcontroller_updaterecurring",
+      "label": "updateRecurring()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "budgetController.js",
+      "file_type": "code",
+      "norm_label": "updaterecurring()",
+      "source_file": "server/src/controllers/recurringController.js",
+      "source_location": "L47"
+    },
+    {
       "id": "server_src_controllers_notificationcontroller_dismissall",
       "label": "dismissAll()",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "community_name": "notificationService.js",
       "file_type": "code",
       "norm_label": "dismissall()",
@@ -1540,7 +1672,7 @@
       "label": "dismissNotification()",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "community_name": "notificationService.js",
       "file_type": "code",
       "norm_label": "dismissnotification()",
@@ -1552,7 +1684,7 @@
       "label": "getNotificationStates()",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "community_name": "notificationService.js",
       "file_type": "code",
       "norm_label": "getnotificationstates()",
@@ -1564,7 +1696,7 @@
       "label": "markAsRead()",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "community_name": "notificationService.js",
       "file_type": "code",
       "norm_label": "markasread()",
@@ -1576,7 +1708,7 @@
       "label": "dismissAll()",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "community_name": "notificationService.js",
       "file_type": "code",
       "norm_label": "dismissall()",
@@ -1588,7 +1720,7 @@
       "label": "dismissNotification()",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "community_name": "notificationService.js",
       "file_type": "code",
       "norm_label": "dismissnotification()",
@@ -1600,7 +1732,7 @@
       "label": "getNotificationStates()",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "community_name": "notificationService.js",
       "file_type": "code",
       "norm_label": "getnotificationstates()",
@@ -1612,7 +1744,7 @@
       "label": "markAsRead()",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "community_name": "notificationService.js",
       "file_type": "code",
       "norm_label": "markasread()",
@@ -1620,155 +1752,11 @@
       "source_location": "L27"
     },
     {
-      "id": "server_prisma_seed_main",
-      "label": "main()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "seed.js",
-      "file_type": "code",
-      "norm_label": "main()",
-      "source_file": "server/prisma/seed.js",
-      "source_location": "L68"
-    },
-    {
-      "id": "server_src_config_index_validateenvironmentconfig",
-      "label": "validateEnvironmentConfig()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "test_production_security.js",
-      "file_type": "code",
-      "norm_label": "validateenvironmentconfig()",
-      "source_file": "server/src/config/index.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "server_src_middleware_errorhandler_errorhandler",
-      "label": "errorHandler()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "test_production_security.js",
-      "file_type": "code",
-      "norm_label": "errorhandler()",
-      "source_file": "server/src/middleware/errorHandler.js",
-      "source_location": "L20"
-    },
-    {
-      "id": "server_src_middleware_ratelimiter_createtestratelimiter",
-      "label": "createTestRateLimiter()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "test_production_security.js",
-      "file_type": "code",
-      "norm_label": "createtestratelimiter()",
-      "source_file": "server/src/middleware/rateLimiter.js",
-      "source_location": "L27"
-    },
-    {
-      "id": "server_test_production_security_runproductionsecuritytests",
-      "label": "runProductionSecurityTests()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "test_production_security.js",
-      "file_type": "code",
-      "norm_label": "runproductionsecuritytests()",
-      "source_file": "server/test_production_security.js",
-      "source_location": "L23"
-    },
-    {
-      "id": "server_src_controllers_goalcontroller_creategoal",
-      "label": "createGoal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "goalController.js",
-      "file_type": "code",
-      "norm_label": "creategoal()",
-      "source_file": "server/src/controllers/goalController.js",
-      "source_location": "L29"
-    },
-    {
-      "id": "server_src_controllers_goalcontroller_deletegoal",
-      "label": "deleteGoal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "goalController.js",
-      "file_type": "code",
-      "norm_label": "deletegoal()",
-      "source_file": "server/src/controllers/goalController.js",
-      "source_location": "L50"
-    },
-    {
-      "id": "server_src_controllers_goalcontroller_deposittogoal",
-      "label": "depositToGoal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "goalController.js",
-      "file_type": "code",
-      "norm_label": "deposittogoal()",
-      "source_file": "server/src/controllers/goalController.js",
-      "source_location": "L59"
-    },
-    {
-      "id": "server_src_controllers_goalcontroller_getgoalbyid",
-      "label": "getGoalById()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "goalController.js",
-      "file_type": "code",
-      "norm_label": "getgoalbyid()",
-      "source_file": "server/src/controllers/goalController.js",
-      "source_location": "L17"
-    },
-    {
-      "id": "server_src_controllers_goalcontroller_getgoals",
-      "label": "getGoals()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "goalController.js",
-      "file_type": "code",
-      "norm_label": "getgoals()",
-      "source_file": "server/src/controllers/goalController.js",
-      "source_location": "L8"
-    },
-    {
-      "id": "server_src_controllers_goalcontroller_updategoal",
-      "label": "updateGoal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "goalController.js",
-      "file_type": "code",
-      "norm_label": "updategoal()",
-      "source_file": "server/src/controllers/goalController.js",
-      "source_location": "L41"
-    },
-    {
-      "id": "server_src_controllers_goalcontroller_withdrawfromgoal",
-      "label": "withdrawFromGoal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "goalController.js",
-      "file_type": "code",
-      "norm_label": "withdrawfromgoal()",
-      "source_file": "server/src/controllers/goalController.js",
-      "source_location": "L69"
-    },
-    {
       "id": "server_test_api_runapitests",
       "label": "runApiTests()",
       "_callable": true,
       "_origin": "ast",
-      "community": 18,
+      "community": 16,
       "community_name": "prisma.js",
       "file_type": "code",
       "norm_label": "runapitests()",
@@ -1780,7 +1768,7 @@
       "label": "runDatabaseTests()",
       "_callable": true,
       "_origin": "ast",
-      "community": 18,
+      "community": 16,
       "community_name": "prisma.js",
       "file_type": "code",
       "norm_label": "rundatabasetests()",
@@ -1788,76 +1776,148 @@
       "source_location": "L6"
     },
     {
-      "id": "server_src_controllers_accountcontroller_createaccount",
-      "label": "createAccount()",
+      "id": "server_prisma_seed_main",
+      "label": "main()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "seed.js",
+      "file_type": "code",
+      "norm_label": "main()",
+      "source_file": "server/prisma/seed.js",
+      "source_location": "L68"
+    },
+    {
+      "id": "server_src_config_index_validateenvironmentconfig",
+      "label": "validateEnvironmentConfig()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "test_production_security.js",
+      "file_type": "code",
+      "norm_label": "validateenvironmentconfig()",
+      "source_file": "server/src/config/index.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "server_src_middleware_errorhandler_errorhandler",
+      "label": "errorHandler()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "test_production_security.js",
+      "file_type": "code",
+      "norm_label": "errorhandler()",
+      "source_file": "server/src/middleware/errorHandler.js",
+      "source_location": "L20"
+    },
+    {
+      "id": "server_src_middleware_ratelimiter_createtestratelimiter",
+      "label": "createTestRateLimiter()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "test_production_security.js",
+      "file_type": "code",
+      "norm_label": "createtestratelimiter()",
+      "source_file": "server/src/middleware/rateLimiter.js",
+      "source_location": "L27"
+    },
+    {
+      "id": "server_test_production_security_runproductionsecuritytests",
+      "label": "runProductionSecurityTests()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "test_production_security.js",
+      "file_type": "code",
+      "norm_label": "runproductionsecuritytests()",
+      "source_file": "server/test_production_security.js",
+      "source_location": "L23"
+    },
+    {
+      "id": "server_src_controllers_goalcontroller_creategoal",
+      "label": "createGoal()",
       "_callable": true,
       "_origin": "ast",
       "community": 19,
-      "community_name": "accountController.js",
+      "community_name": "goalController.js",
       "file_type": "code",
-      "norm_label": "createaccount()",
-      "source_file": "server/src/controllers/accountController.js",
+      "norm_label": "creategoal()",
+      "source_file": "server/src/controllers/goalController.js",
       "source_location": "L29"
     },
     {
-      "id": "server_src_controllers_accountcontroller_deleteaccount",
-      "label": "deleteAccount()",
+      "id": "server_src_controllers_goalcontroller_deletegoal",
+      "label": "deleteGoal()",
       "_callable": true,
       "_origin": "ast",
       "community": 19,
-      "community_name": "accountController.js",
+      "community_name": "goalController.js",
       "file_type": "code",
-      "norm_label": "deleteaccount()",
-      "source_file": "server/src/controllers/accountController.js",
-      "source_location": "L47"
+      "norm_label": "deletegoal()",
+      "source_file": "server/src/controllers/goalController.js",
+      "source_location": "L50"
     },
     {
-      "id": "server_src_controllers_accountcontroller_getaccountbyid",
-      "label": "getAccountById()",
+      "id": "server_src_controllers_goalcontroller_deposittogoal",
+      "label": "depositToGoal()",
       "_callable": true,
       "_origin": "ast",
       "community": 19,
-      "community_name": "accountController.js",
+      "community_name": "goalController.js",
       "file_type": "code",
-      "norm_label": "getaccountbyid()",
-      "source_file": "server/src/controllers/accountController.js",
+      "norm_label": "deposittogoal()",
+      "source_file": "server/src/controllers/goalController.js",
+      "source_location": "L59"
+    },
+    {
+      "id": "server_src_controllers_goalcontroller_getgoalbyid",
+      "label": "getGoalById()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "goalController.js",
+      "file_type": "code",
+      "norm_label": "getgoalbyid()",
+      "source_file": "server/src/controllers/goalController.js",
       "source_location": "L17"
     },
     {
-      "id": "server_src_controllers_accountcontroller_getallaccounts",
-      "label": "getAllAccounts()",
+      "id": "server_src_controllers_goalcontroller_getgoals",
+      "label": "getGoals()",
       "_callable": true,
       "_origin": "ast",
       "community": 19,
-      "community_name": "accountController.js",
+      "community_name": "goalController.js",
       "file_type": "code",
-      "norm_label": "getallaccounts()",
-      "source_file": "server/src/controllers/accountController.js",
+      "norm_label": "getgoals()",
+      "source_file": "server/src/controllers/goalController.js",
       "source_location": "L8"
     },
     {
-      "id": "server_src_controllers_accountcontroller_getnetworth",
-      "label": "getNetWorth()",
+      "id": "server_src_controllers_goalcontroller_updategoal",
+      "label": "updateGoal()",
       "_callable": true,
       "_origin": "ast",
       "community": 19,
-      "community_name": "accountController.js",
+      "community_name": "goalController.js",
       "file_type": "code",
-      "norm_label": "getnetworth()",
-      "source_file": "server/src/controllers/accountController.js",
-      "source_location": "L56"
+      "norm_label": "updategoal()",
+      "source_file": "server/src/controllers/goalController.js",
+      "source_location": "L41"
     },
     {
-      "id": "server_src_controllers_accountcontroller_updateaccount",
-      "label": "updateAccount()",
+      "id": "server_src_controllers_goalcontroller_withdrawfromgoal",
+      "label": "withdrawFromGoal()",
       "_callable": true,
       "_origin": "ast",
       "community": 19,
-      "community_name": "accountController.js",
+      "community_name": "goalController.js",
       "file_type": "code",
-      "norm_label": "updateaccount()",
-      "source_file": "server/src/controllers/accountController.js",
-      "source_location": "L38"
+      "norm_label": "withdrawfromgoal()",
+      "source_file": "server/src/controllers/goalController.js",
+      "source_location": "L69"
     },
     {
       "id": "frontend_src_context_authcontext_authprovider",
@@ -2025,7 +2085,7 @@
       "file_type": "code",
       "norm_label": "request()",
       "source_file": "frontend/src/services/api/apiClient.js",
-      "source_location": "L71"
+      "source_location": "L68"
     },
     {
       "id": "frontend_src_services_api_apiclient_setauthtoken",
@@ -2457,7 +2517,7 @@
       "file_type": "code",
       "norm_label": "isapimode()",
       "source_file": "frontend/src/services/dataProvider/config.js",
-      "source_location": "L29"
+      "source_location": "L24"
     },
     {
       "id": "frontend_src_services_dataprovider_config_setdatasourcemode",
@@ -2469,7 +2529,7 @@
       "file_type": "code",
       "norm_label": "setdatasourcemode()",
       "source_file": "frontend/src/services/dataProvider/config.js",
-      "source_location": "L33"
+      "source_location": "L28"
     },
     {
       "id": "frontend_test_api_adapter_logpass",
@@ -2520,11 +2580,83 @@
       "source_location": "L51"
     },
     {
+      "id": "server_src_controllers_accountcontroller_createaccount",
+      "label": "createAccount()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "accountController.js",
+      "file_type": "code",
+      "norm_label": "createaccount()",
+      "source_file": "server/src/controllers/accountController.js",
+      "source_location": "L29"
+    },
+    {
+      "id": "server_src_controllers_accountcontroller_deleteaccount",
+      "label": "deleteAccount()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "accountController.js",
+      "file_type": "code",
+      "norm_label": "deleteaccount()",
+      "source_file": "server/src/controllers/accountController.js",
+      "source_location": "L47"
+    },
+    {
+      "id": "server_src_controllers_accountcontroller_getaccountbyid",
+      "label": "getAccountById()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "accountController.js",
+      "file_type": "code",
+      "norm_label": "getaccountbyid()",
+      "source_file": "server/src/controllers/accountController.js",
+      "source_location": "L17"
+    },
+    {
+      "id": "server_src_controllers_accountcontroller_getallaccounts",
+      "label": "getAllAccounts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "accountController.js",
+      "file_type": "code",
+      "norm_label": "getallaccounts()",
+      "source_file": "server/src/controllers/accountController.js",
+      "source_location": "L8"
+    },
+    {
+      "id": "server_src_controllers_accountcontroller_getnetworth",
+      "label": "getNetWorth()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "accountController.js",
+      "file_type": "code",
+      "norm_label": "getnetworth()",
+      "source_file": "server/src/controllers/accountController.js",
+      "source_location": "L56"
+    },
+    {
+      "id": "server_src_controllers_accountcontroller_updateaccount",
+      "label": "updateAccount()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "accountController.js",
+      "file_type": "code",
+      "norm_label": "updateaccount()",
+      "source_file": "server/src/controllers/accountController.js",
+      "source_location": "L38"
+    },
+    {
       "id": "server_src_controllers_authcontroller_getcookieoptions",
       "label": "getCookieOptions()",
       "_callable": true,
       "_origin": "ast",
-      "community": 21,
+      "community": 22,
       "community_name": "authController.js",
       "file_type": "code",
       "norm_label": "getcookieoptions()",
@@ -2536,7 +2668,7 @@
       "label": "getMe()",
       "_callable": true,
       "_origin": "ast",
-      "community": 21,
+      "community": 22,
       "community_name": "authController.js",
       "file_type": "code",
       "norm_label": "getme()",
@@ -2548,7 +2680,7 @@
       "label": "login()",
       "_callable": true,
       "_origin": "ast",
-      "community": 21,
+      "community": 22,
       "community_name": "authController.js",
       "file_type": "code",
       "norm_label": "login()",
@@ -2560,7 +2692,7 @@
       "label": "logout()",
       "_callable": true,
       "_origin": "ast",
-      "community": 21,
+      "community": 22,
       "community_name": "authController.js",
       "file_type": "code",
       "norm_label": "logout()",
@@ -2572,72 +2704,12 @@
       "label": "register()",
       "_callable": true,
       "_origin": "ast",
-      "community": 21,
+      "community": 22,
       "community_name": "authController.js",
       "file_type": "code",
       "norm_label": "register()",
       "source_file": "server/src/controllers/authController.js",
       "source_location": "L23"
-    },
-    {
-      "id": "server_src_controllers_budgetcontroller_createbudget",
-      "label": "createBudget()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "budgetController.js",
-      "file_type": "code",
-      "norm_label": "createbudget()",
-      "source_file": "server/src/controllers/budgetController.js",
-      "source_location": "L29"
-    },
-    {
-      "id": "server_src_controllers_budgetcontroller_deletebudget",
-      "label": "deleteBudget()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "budgetController.js",
-      "file_type": "code",
-      "norm_label": "deletebudget()",
-      "source_file": "server/src/controllers/budgetController.js",
-      "source_location": "L50"
-    },
-    {
-      "id": "server_src_controllers_budgetcontroller_getbudgetbyid",
-      "label": "getBudgetById()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "budgetController.js",
-      "file_type": "code",
-      "norm_label": "getbudgetbyid()",
-      "source_file": "server/src/controllers/budgetController.js",
-      "source_location": "L17"
-    },
-    {
-      "id": "server_src_controllers_budgetcontroller_getbudgets",
-      "label": "getBudgets()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "budgetController.js",
-      "file_type": "code",
-      "norm_label": "getbudgets()",
-      "source_file": "server/src/controllers/budgetController.js",
-      "source_location": "L8"
-    },
-    {
-      "id": "server_src_controllers_budgetcontroller_updatebudget",
-      "label": "updateBudget()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "budgetController.js",
-      "file_type": "code",
-      "norm_label": "updatebudget()",
-      "source_file": "server/src/controllers/budgetController.js",
-      "source_location": "L41"
     },
     {
       "id": "server_src_controllers_categorycontroller_createcategory",
@@ -2700,71 +2772,11 @@
       "source_location": "L41"
     },
     {
-      "id": "server_src_controllers_recurringcontroller_createrecurring",
-      "label": "createRecurring()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "recurringController.js",
-      "file_type": "code",
-      "norm_label": "createrecurring()",
-      "source_file": "server/src/controllers/recurringController.js",
-      "source_location": "L35"
-    },
-    {
-      "id": "server_src_controllers_recurringcontroller_deleterecurring",
-      "label": "deleteRecurring()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "recurringController.js",
-      "file_type": "code",
-      "norm_label": "deleterecurring()",
-      "source_file": "server/src/controllers/recurringController.js",
-      "source_location": "L56"
-    },
-    {
-      "id": "server_src_controllers_recurringcontroller_getrecurring",
-      "label": "getRecurring()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "recurringController.js",
-      "file_type": "code",
-      "norm_label": "getrecurring()",
-      "source_file": "server/src/controllers/recurringController.js",
-      "source_location": "L8"
-    },
-    {
-      "id": "server_src_controllers_recurringcontroller_getrecurringbyid",
-      "label": "getRecurringById()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "recurringController.js",
-      "file_type": "code",
-      "norm_label": "getrecurringbyid()",
-      "source_file": "server/src/controllers/recurringController.js",
-      "source_location": "L23"
-    },
-    {
-      "id": "server_src_controllers_recurringcontroller_updaterecurring",
-      "label": "updateRecurring()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "recurringController.js",
-      "file_type": "code",
-      "norm_label": "updaterecurring()",
-      "source_file": "server/src/controllers/recurringController.js",
-      "source_location": "L47"
-    },
-    {
       "id": "server_src_controllers_transactioncontroller_createtransaction",
       "label": "createTransaction()",
       "_callable": true,
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "community_name": "transactionController.js",
       "file_type": "code",
       "norm_label": "createtransaction()",
@@ -2776,7 +2788,7 @@
       "label": "deleteTransaction()",
       "_callable": true,
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "community_name": "transactionController.js",
       "file_type": "code",
       "norm_label": "deletetransaction()",
@@ -2788,7 +2800,7 @@
       "label": "getTransactionById()",
       "_callable": true,
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "community_name": "transactionController.js",
       "file_type": "code",
       "norm_label": "gettransactionbyid()",
@@ -2800,7 +2812,7 @@
       "label": "getTransactions()",
       "_callable": true,
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "community_name": "transactionController.js",
       "file_type": "code",
       "norm_label": "gettransactions()",
@@ -2812,7 +2824,7 @@
       "label": "updateTransaction()",
       "_callable": true,
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "community_name": "transactionController.js",
       "file_type": "code",
       "norm_label": "updatetransaction()",
@@ -2824,60 +2836,12 @@
       "label": "validateRequest()",
       "_callable": true,
       "_origin": "ast",
-      "community": 26,
+      "community": 25,
       "community_name": "validators/index.js",
       "file_type": "code",
       "norm_label": "validaterequest()",
       "source_file": "server/src/validators/index.js",
       "source_location": "L13"
-    },
-    {
-      "id": "frontend_src_components_forms_transactionform_transactionform",
-      "label": "TransactionForm()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "storage.js",
-      "file_type": "code",
-      "norm_label": "transactionform()",
-      "source_file": "frontend/src/components/forms/TransactionForm.jsx",
-      "source_location": "L43"
-    },
-    {
-      "id": "frontend_src_context_transactioncontext_reducer",
-      "label": "reducer()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "storage.js",
-      "file_type": "code",
-      "norm_label": "reducer()",
-      "source_file": "frontend/src/context/TransactionContext.jsx",
-      "source_location": "L31"
-    },
-    {
-      "id": "frontend_src_context_transactioncontext_transactionprovider",
-      "label": "TransactionProvider()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "storage.js",
-      "file_type": "code",
-      "norm_label": "transactionprovider()",
-      "source_file": "frontend/src/context/TransactionContext.jsx",
-      "source_location": "L75"
-    },
-    {
-      "id": "frontend_src_data_categories_getpaymentmethodsforaccount",
-      "label": "getPaymentMethodsForAccount()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "storage.js",
-      "file_type": "code",
-      "norm_label": "getpaymentmethodsforaccount()",
-      "source_file": "frontend/src/data/categories.js",
-      "source_location": "L39"
     },
     {
       "id": "frontend_src_pages_accounts_accounts",
@@ -2928,18 +2892,6 @@
       "source_location": "L14"
     },
     {
-      "id": "frontend_src_services_accountservice_calculateaccountbalance",
-      "label": "calculateAccountBalance()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "storage.js",
-      "file_type": "code",
-      "norm_label": "calculateaccountbalance()",
-      "source_file": "frontend/src/services/accountService.js",
-      "source_location": "L39"
-    },
-    {
       "id": "frontend_src_services_accountservice_deleteaccount",
       "label": "deleteAccount()",
       "_callable": true,
@@ -2962,18 +2914,6 @@
       "norm_label": "getaccounts()",
       "source_file": "frontend/src/services/accountService.js",
       "source_location": "L3"
-    },
-    {
-      "id": "frontend_src_services_accountservice_getavailableaccountbalance",
-      "label": "getAvailableAccountBalance()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "storage.js",
-      "file_type": "code",
-      "norm_label": "getavailableaccountbalance()",
-      "source_file": "frontend/src/services/accountService.js",
-      "source_location": "L66"
     },
     {
       "id": "frontend_src_services_accountservice_gettotalnetworth",
@@ -3360,18 +3300,6 @@
       "source_location": "L130"
     },
     {
-      "id": "frontend_src_services_storage_exporttransactionstocsv",
-      "label": "exportTransactionsToCSV()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "storage.js",
-      "file_type": "code",
-      "norm_label": "exporttransactionstocsv()",
-      "source_file": "frontend/src/services/storage.js",
-      "source_location": "L76"
-    },
-    {
       "id": "frontend_src_services_storage_getsettings",
       "label": "getSettings()",
       "_callable": true,
@@ -3492,18 +3420,6 @@
       "source_location": "L49"
     },
     {
-      "id": "frontend_src_utils_validation_validatetransaction",
-      "label": "validateTransaction()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "storage.js",
-      "file_type": "code",
-      "norm_label": "validatetransaction()",
-      "source_file": "frontend/src/utils/validation.js",
-      "source_location": "L8"
-    },
-    {
       "id": "frontend_test_edge_cases_assert",
       "label": "assert()",
       "_callable": true,
@@ -3568,8 +3484,8 @@
       "label": "CategoryChart()",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
+      "community": 5,
+      "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "categorychart()",
       "source_file": "frontend/src/components/dashboard/CategoryChart.jsx",
@@ -3580,8 +3496,8 @@
       "label": "CustomTooltip()",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
+      "community": 5,
+      "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "customtooltip()",
       "source_file": "frontend/src/components/dashboard/CategoryChart.jsx",
@@ -3592,55 +3508,19 @@
       "label": "renderCustomLabel()",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
+      "community": 5,
+      "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "rendercustomlabel()",
       "source_file": "frontend/src/components/dashboard/CategoryChart.jsx",
       "source_location": "L7"
     },
     {
-      "id": "frontend_src_data_categories_getcategoriesfortype",
-      "label": "getCategoriesForType()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "getcategoriesfortype()",
-      "source_file": "frontend/src/data/categories.js",
-      "source_location": "L67"
-    },
-    {
-      "id": "frontend_src_data_categories_getcategorybyid",
-      "label": "getCategoryById()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "getcategorybyid()",
-      "source_file": "frontend/src/data/categories.js",
-      "source_location": "L62"
-    },
-    {
-      "id": "frontend_src_utils_validation_validateimportdata",
-      "label": "validateImportData()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "validateimportdata()",
-      "source_file": "frontend/src/utils/validation.js",
-      "source_location": "L56"
-    },
-    {
       "id": "frontend_src_components_dashboard_monthlychart_customtooltip",
       "label": "CustomTooltip()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "customtooltip()",
@@ -3652,7 +3532,7 @@
       "label": "MonthlyChart()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "monthlychart()",
@@ -3660,11 +3540,23 @@
       "source_location": "L28"
     },
     {
+      "id": "frontend_src_components_dashboard_recenttransactions_recenttransactions",
+      "label": "RecentTransactions()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Dashboard.jsx",
+      "file_type": "code",
+      "norm_label": "recenttransactions()",
+      "source_file": "frontend/src/components/dashboard/RecentTransactions.jsx",
+      "source_location": "L8"
+    },
+    {
       "id": "frontend_src_components_dashboard_summarycard_summarycard",
       "label": "SummaryCard()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "summarycard()",
@@ -3672,11 +3564,23 @@
       "source_location": "L3"
     },
     {
+      "id": "frontend_src_data_categories_getcategorybyid",
+      "label": "getCategoryById()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Dashboard.jsx",
+      "file_type": "code",
+      "norm_label": "getcategorybyid()",
+      "source_file": "frontend/src/data/categories.js",
+      "source_location": "L62"
+    },
+    {
       "id": "frontend_src_pages_analytics_analytics",
       "label": "Analytics()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "analytics()",
@@ -3688,7 +3592,7 @@
       "label": "CustomTooltip()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "customtooltip()",
@@ -3700,7 +3604,7 @@
       "label": "Budgets()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "budgets()",
@@ -3708,11 +3612,23 @@
       "source_location": "L39"
     },
     {
+      "id": "frontend_src_pages_calendar_calendar",
+      "label": "Calendar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Dashboard.jsx",
+      "file_type": "code",
+      "norm_label": "calendar()",
+      "source_file": "frontend/src/pages/Calendar.jsx",
+      "source_location": "L17"
+    },
+    {
       "id": "frontend_src_pages_dashboard_dashboard",
       "label": "Dashboard()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "dashboard()",
@@ -3720,11 +3636,35 @@
       "source_location": "L25"
     },
     {
+      "id": "frontend_src_pages_recurring_recurring",
+      "label": "Recurring()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Dashboard.jsx",
+      "file_type": "code",
+      "norm_label": "recurring()",
+      "source_file": "frontend/src/pages/Recurring.jsx",
+      "source_location": "L41"
+    },
+    {
+      "id": "frontend_src_pages_transactions_transactions",
+      "label": "Transactions()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Dashboard.jsx",
+      "file_type": "code",
+      "norm_label": "transactions()",
+      "source_file": "frontend/src/pages/Transactions.jsx",
+      "source_location": "L31"
+    },
+    {
       "id": "frontend_src_services_budgetservice_addbudget",
       "label": "addBudget()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "addbudget()",
@@ -3736,7 +3676,7 @@
       "label": "calculateBudgetStatus()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "calculatebudgetstatus()",
@@ -3748,7 +3688,7 @@
       "label": "calculateOverallBudget()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "calculateoverallbudget()",
@@ -3760,7 +3700,7 @@
       "label": "deleteBudget()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "deletebudget()",
@@ -3772,7 +3712,7 @@
       "label": "getBudgets()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "getbudgets()",
@@ -3784,7 +3724,7 @@
       "label": "getBudgetsForMonth()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "getbudgetsformonth()",
@@ -3796,7 +3736,7 @@
       "label": "updateBudget()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "updatebudget()",
@@ -3808,7 +3748,7 @@
       "label": "findCategory()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "findcategory()",
@@ -3816,23 +3756,23 @@
       "source_location": "L64"
     },
     {
-      "id": "frontend_src_services_insightservice_generatesmartwarnings",
-      "label": "generateSmartWarnings()",
+      "id": "frontend_src_services_categoryservice_getallcategories",
+      "label": "getAllCategories()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
-      "norm_label": "generatesmartwarnings()",
-      "source_file": "frontend/src/services/insightService.js",
-      "source_location": "L100"
+      "norm_label": "getallcategories()",
+      "source_file": "frontend/src/services/categoryService.js",
+      "source_location": "L38"
     },
     {
       "id": "frontend_src_services_insightservice_generatespendinginsights",
       "label": "generateSpendingInsights()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "generatespendinginsights()",
@@ -3844,7 +3784,7 @@
       "label": "getBalance()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "getbalance()",
@@ -3856,7 +3796,7 @@
       "label": "getCategoryData()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "getcategorydata()",
@@ -3868,7 +3808,7 @@
       "label": "getMonthlyData()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "getmonthlydata()",
@@ -3880,7 +3820,7 @@
       "label": "getRecentTransactions()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "getrecenttransactions()",
@@ -3892,7 +3832,7 @@
       "label": "getThisMonthExpenses()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "getthismonthexpenses()",
@@ -3904,7 +3844,7 @@
       "label": "getThisMonthIncome()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "getthismonthincome()",
@@ -3916,7 +3856,7 @@
       "label": "getThisMonthTransactions()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "getthismonthtransactions()",
@@ -3928,7 +3868,7 @@
       "label": "getTotalExpenses()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "gettotalexpenses()",
@@ -3940,7 +3880,7 @@
       "label": "getTotalIncome()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "gettotalincome()",
@@ -3952,7 +3892,7 @@
       "label": "getYearlyMonthlyData()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "getyearlymonthlydata()",
@@ -3960,16 +3900,88 @@
       "source_location": "L102"
     },
     {
+      "id": "frontend_src_utils_formatters_formatamount",
+      "label": "formatAmount()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Dashboard.jsx",
+      "file_type": "code",
+      "norm_label": "formatamount()",
+      "source_file": "frontend/src/utils/formatters.js",
+      "source_location": "L34"
+    },
+    {
+      "id": "frontend_src_utils_formatters_formatcurrency",
+      "label": "formatCurrency()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Dashboard.jsx",
+      "file_type": "code",
+      "norm_label": "formatcurrency()",
+      "source_file": "frontend/src/utils/formatters.js",
+      "source_location": "L6"
+    },
+    {
+      "id": "frontend_src_utils_formatters_formatdate",
+      "label": "formatDate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Dashboard.jsx",
+      "file_type": "code",
+      "norm_label": "formatdate()",
+      "source_file": "frontend/src/utils/formatters.js",
+      "source_location": "L14"
+    },
+    {
+      "id": "frontend_src_utils_formatters_formatrelativedate",
+      "label": "formatRelativeDate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Dashboard.jsx",
+      "file_type": "code",
+      "norm_label": "formatrelativedate()",
+      "source_file": "frontend/src/utils/formatters.js",
+      "source_location": "L21"
+    },
+    {
       "id": "frontend_src_utils_formatters_formatshortcurrency",
       "label": "formatShortCurrency()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "formatshortcurrency()",
       "source_file": "frontend/src/utils/formatters.js",
       "source_location": "L41"
+    },
+    {
+      "id": "frontend_src_data_categories_getcategoriesfortype",
+      "label": "getCategoriesForType()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "getcategoriesfortype()",
+      "source_file": "frontend/src/data/categories.js",
+      "source_location": "L67"
+    },
+    {
+      "id": "frontend_src_utils_validation_validateimportdata",
+      "label": "validateImportData()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "validateimportdata()",
+      "source_file": "frontend/src/utils/validation.js",
+      "source_location": "L56"
     },
     {
       "id": "scripts_migration_conflictdetector_detectdatabaseconflicts",
@@ -4319,15 +4331,59 @@
       "source_location": "L4"
     },
     {
-      "id": "frontend_src_components_dashboard_recenttransactions",
-      "label": "RecentTransactions.jsx",
+      "id": "frontend_src_components_forms_transactionform",
+      "label": "TransactionForm.jsx",
       "_origin": "ast",
       "community": 0,
       "community_name": "TransactionContext.jsx",
       "file_type": "code",
-      "norm_label": "recenttransactions.jsx",
-      "source_file": "frontend/src/components/dashboard/RecentTransactions.jsx",
+      "norm_label": "transactionform.jsx",
+      "source_file": "frontend/src/components/forms/TransactionForm.jsx",
       "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_components_forms_transactionform_errorstyle",
+      "label": "errorStyle",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "TransactionContext.jsx",
+      "file_type": "code",
+      "norm_label": "errorstyle",
+      "source_file": "frontend/src/components/forms/TransactionForm.jsx",
+      "source_location": "L41"
+    },
+    {
+      "id": "frontend_src_components_forms_transactionform_initial_state",
+      "label": "INITIAL_STATE",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "TransactionContext.jsx",
+      "file_type": "code",
+      "norm_label": "initial_state",
+      "source_file": "frontend/src/components/forms/TransactionForm.jsx",
+      "source_location": "L11"
+    },
+    {
+      "id": "frontend_src_components_forms_transactionform_inputstyle",
+      "label": "inputStyle",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "TransactionContext.jsx",
+      "file_type": "code",
+      "norm_label": "inputstyle",
+      "source_file": "frontend/src/components/forms/TransactionForm.jsx",
+      "source_location": "L22"
+    },
+    {
+      "id": "frontend_src_components_forms_transactionform_labelstyle",
+      "label": "labelStyle",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "TransactionContext.jsx",
+      "file_type": "code",
+      "norm_label": "labelstyle",
+      "source_file": "frontend/src/components/forms/TransactionForm.jsx",
+      "source_location": "L33"
     },
     {
       "id": "frontend_src_components_layout_applayout",
@@ -4548,39 +4604,6 @@
       "norm_label": "addtransaction.jsx",
       "source_file": "frontend/src/pages/AddTransaction.jsx",
       "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_pages_budgets",
-      "label": "Budgets.jsx",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "TransactionContext.jsx",
-      "file_type": "code",
-      "norm_label": "budgets.jsx",
-      "source_file": "frontend/src/pages/Budgets.jsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_pages_budgets_inputstyle",
-      "label": "inputStyle",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "TransactionContext.jsx",
-      "file_type": "code",
-      "norm_label": "inputstyle",
-      "source_file": "frontend/src/pages/Budgets.jsx",
-      "source_location": "L20"
-    },
-    {
-      "id": "frontend_src_pages_budgets_labelstyle",
-      "label": "labelStyle",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "TransactionContext.jsx",
-      "file_type": "code",
-      "norm_label": "labelstyle",
-      "source_file": "frontend/src/pages/Budgets.jsx",
-      "source_location": "L31"
     },
     {
       "id": "frontend_src_pages_calendar",
@@ -4814,17 +4837,6 @@
       "source_location": "L20"
     },
     {
-      "id": "frontend_src_utils_formatters",
-      "label": "frontend/src/utils/formatters.js",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "TransactionContext.jsx",
-      "file_type": "code",
-      "norm_label": "frontend/src/utils/formatters.js",
-      "source_file": "frontend/src/utils/formatters.js",
-      "source_location": "L1"
-    },
-    {
       "id": "ref_lucide_react",
       "label": "lucide-react",
       "_origin": "ast",
@@ -4911,6 +4923,17 @@
       "norm_label": "server/src/services/categoryservice.js",
       "source_file": "server/src/services/categoryService.js",
       "source_location": "L1"
+    },
+    {
+      "id": "server_src_services_categoryservice_default_system_categories",
+      "label": "DEFAULT_SYSTEM_CATEGORIES",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "domainErrors.js",
+      "file_type": "code",
+      "norm_label": "default_system_categories",
+      "source_file": "server/src/services/categoryService.js",
+      "source_location": "L15"
     },
     {
       "id": "server_src_services_goalservice",
@@ -5188,17 +5211,6 @@
       "source_location": "L25"
     },
     {
-      "id": "ref_supertest",
-      "label": "supertest",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "server/package.json",
-      "file_type": "concept",
-      "norm_label": "supertest",
-      "source_file": "server/package.json",
-      "source_location": "L26"
-    },
-    {
       "id": "server_src_middleware_authmiddleware",
       "label": "authMiddleware.js",
       "_origin": "ast",
@@ -5219,17 +5231,6 @@
       "norm_label": "authservice.js",
       "source_file": "server/src/services/authService.js",
       "source_location": "L1"
-    },
-    {
-      "id": "ref_bcryptjs",
-      "label": "bcryptjs",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "authService.js",
-      "file_type": "concept",
-      "norm_label": "bcryptjs",
-      "source_file": "server/package.json",
-      "source_location": "L14"
     },
     {
       "id": "ref_jsonwebtoken",
@@ -5262,7 +5263,7 @@
       "file_type": "code",
       "norm_label": "app",
       "source_file": "server/src/app.js",
-      "source_location": "L67"
+      "source_location": "L70"
     },
     {
       "id": "server_src_server",
@@ -5342,10 +5343,32 @@
       "source_location": "L20"
     },
     {
+      "id": "server_src_controllers_budgetcontroller",
+      "label": "budgetController.js",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "budgetController.js",
+      "file_type": "code",
+      "norm_label": "budgetcontroller.js",
+      "source_file": "server/src/controllers/budgetController.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_controllers_recurringcontroller",
+      "label": "recurringController.js",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "budgetController.js",
+      "file_type": "code",
+      "norm_label": "recurringcontroller.js",
+      "source_file": "server/src/controllers/recurringController.js",
+      "source_location": "L1"
+    },
+    {
       "id": "server_package_dependencies",
       "label": "dependencies",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "community_name": "dependencies",
       "file_type": "code",
       "norm_label": "dependencies",
@@ -5356,7 +5379,7 @@
       "id": "server_package_dependencies_bcryptjs",
       "label": "bcryptjs",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "community_name": "dependencies",
       "file_type": "code",
       "norm_label": "bcryptjs",
@@ -5367,7 +5390,7 @@
       "id": "server_package_dependencies_cookie_parser",
       "label": "cookie-parser",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "community_name": "dependencies",
       "file_type": "code",
       "norm_label": "cookie-parser",
@@ -5378,7 +5401,7 @@
       "id": "server_package_dependencies_cors",
       "label": "cors",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "community_name": "dependencies",
       "file_type": "code",
       "norm_label": "cors",
@@ -5389,7 +5412,7 @@
       "id": "server_package_dependencies_dotenv",
       "label": "dotenv",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "community_name": "dependencies",
       "file_type": "code",
       "norm_label": "dotenv",
@@ -5400,7 +5423,7 @@
       "id": "server_package_dependencies_express",
       "label": "express",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "community_name": "dependencies",
       "file_type": "code",
       "norm_label": "express",
@@ -5411,7 +5434,7 @@
       "id": "server_package_dependencies_express_rate_limit",
       "label": "express-rate-limit",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "community_name": "dependencies",
       "file_type": "code",
       "norm_label": "express-rate-limit",
@@ -5422,7 +5445,7 @@
       "id": "server_package_dependencies_helmet",
       "label": "helmet",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "community_name": "dependencies",
       "file_type": "code",
       "norm_label": "helmet",
@@ -5433,7 +5456,7 @@
       "id": "server_package_dependencies_jsonwebtoken",
       "label": "jsonwebtoken",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "community_name": "dependencies",
       "file_type": "code",
       "norm_label": "jsonwebtoken",
@@ -5444,7 +5467,7 @@
       "id": "server_package_dependencies_prisma_client",
       "label": "@prisma/client",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "community_name": "dependencies",
       "file_type": "code",
       "norm_label": "@prisma/client",
@@ -5455,7 +5478,7 @@
       "id": "server_package_dependencies_zod",
       "label": "zod",
       "_origin": "ast",
-      "community": 13,
+      "community": 14,
       "community_name": "dependencies",
       "file_type": "code",
       "norm_label": "zod",
@@ -5466,7 +5489,7 @@
       "id": "server_src_controllers_notificationcontroller",
       "label": "notificationController.js",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "community_name": "notificationService.js",
       "file_type": "code",
       "norm_label": "notificationcontroller.js",
@@ -5477,7 +5500,7 @@
       "id": "server_src_services_notificationservice",
       "label": "notificationService.js",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "community_name": "notificationService.js",
       "file_type": "code",
       "norm_label": "notificationservice.js",
@@ -5485,164 +5508,10 @@
       "source_location": "L1"
     },
     {
-      "id": "server_prisma_seed",
-      "label": "seed.js",
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "seed.js",
-      "file_type": "code",
-      "norm_label": "seed.js",
-      "source_file": "server/prisma/seed.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_prisma_seed_default_accounts",
-      "label": "DEFAULT_ACCOUNTS",
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "seed.js",
-      "file_type": "code",
-      "norm_label": "default_accounts",
-      "source_file": "server/prisma/seed.js",
-      "source_location": "L7"
-    },
-    {
-      "id": "server_prisma_seed_default_expense_categories",
-      "label": "DEFAULT_EXPENSE_CATEGORIES",
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "seed.js",
-      "file_type": "code",
-      "norm_label": "default_expense_categories",
-      "source_file": "server/prisma/seed.js",
-      "source_location": "L37"
-    },
-    {
-      "id": "server_prisma_seed_default_income_categories",
-      "label": "DEFAULT_INCOME_CATEGORIES",
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "seed.js",
-      "file_type": "code",
-      "norm_label": "default_income_categories",
-      "source_file": "server/prisma/seed.js",
-      "source_location": "L49"
-    },
-    {
-      "id": "server_prisma_seed_default_settings",
-      "label": "DEFAULT_SETTINGS",
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "seed.js",
-      "file_type": "code",
-      "norm_label": "default_settings",
-      "source_file": "server/prisma/seed.js",
-      "source_location": "L62"
-    },
-    {
-      "id": "server_prisma_seed_default_system_categories",
-      "label": "DEFAULT_SYSTEM_CATEGORIES",
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "seed.js",
-      "file_type": "code",
-      "norm_label": "default_system_categories",
-      "source_file": "server/prisma/seed.js",
-      "source_location": "L57"
-    },
-    {
-      "id": "server_prisma_seed_prisma",
-      "label": "prisma",
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "seed.js",
-      "file_type": "code",
-      "norm_label": "prisma",
-      "source_file": "server/prisma/seed.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "ref_prisma_client",
-      "label": "@prisma/client",
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "seed.js",
-      "file_type": "concept",
-      "norm_label": "@prisma/client",
-      "source_file": "server/package.json",
-      "source_location": "L13"
-    },
-    {
-      "id": "server_src_config_index",
-      "label": "config/index.js",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "test_production_security.js",
-      "file_type": "code",
-      "norm_label": "config/index.js",
-      "source_file": "server/src/config/index.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_config_index_config",
-      "label": "config",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "test_production_security.js",
-      "file_type": "code",
-      "norm_label": "config",
-      "source_file": "server/src/config/index.js",
-      "source_location": "L50"
-    },
-    {
-      "id": "server_src_middleware_errorhandler",
-      "label": "errorHandler.js",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "test_production_security.js",
-      "file_type": "code",
-      "norm_label": "errorhandler.js",
-      "source_file": "server/src/middleware/errorHandler.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_middleware_ratelimiter",
-      "label": "rateLimiter.js",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "test_production_security.js",
-      "file_type": "code",
-      "norm_label": "ratelimiter.js",
-      "source_file": "server/src/middleware/rateLimiter.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_test_production_security",
-      "label": "test_production_security.js",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "test_production_security.js",
-      "file_type": "code",
-      "norm_label": "test_production_security.js",
-      "source_file": "server/test_production_security.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_controllers_goalcontroller",
-      "label": "goalController.js",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "goalController.js",
-      "file_type": "code",
-      "norm_label": "goalcontroller.js",
-      "source_file": "server/src/controllers/goalController.js",
-      "source_location": "L1"
-    },
-    {
       "id": "server_src_lib_prisma",
       "label": "prisma.js",
       "_origin": "ast",
-      "community": 18,
+      "community": 16,
       "community_name": "prisma.js",
       "file_type": "code",
       "norm_label": "prisma.js",
@@ -5653,7 +5522,7 @@
       "id": "server_src_lib_prisma_prisma",
       "label": "prisma",
       "_origin": "ast",
-      "community": 18,
+      "community": 16,
       "community_name": "prisma.js",
       "file_type": "code",
       "norm_label": "prisma",
@@ -5664,7 +5533,7 @@
       "id": "server_test_api",
       "label": "test_api.js",
       "_origin": "ast",
-      "community": 18,
+      "community": 16,
       "community_name": "prisma.js",
       "file_type": "code",
       "norm_label": "test_api.js",
@@ -5675,7 +5544,7 @@
       "id": "server_test_db",
       "label": "test_db.js",
       "_origin": "ast",
-      "community": 18,
+      "community": 16,
       "community_name": "prisma.js",
       "file_type": "code",
       "norm_label": "test_db.js",
@@ -5683,14 +5552,179 @@
       "source_location": "L1"
     },
     {
-      "id": "server_src_controllers_accountcontroller",
-      "label": "accountController.js",
+      "id": "ref_bcryptjs",
+      "label": "bcryptjs",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "prisma.js",
+      "file_type": "concept",
+      "norm_label": "bcryptjs",
+      "source_file": "server/package.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "ref_supertest",
+      "label": "supertest",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "prisma.js",
+      "file_type": "concept",
+      "norm_label": "supertest",
+      "source_file": "server/package.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "server_prisma_seed",
+      "label": "seed.js",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "seed.js",
+      "file_type": "code",
+      "norm_label": "seed.js",
+      "source_file": "server/prisma/seed.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_prisma_seed_default_accounts",
+      "label": "DEFAULT_ACCOUNTS",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "seed.js",
+      "file_type": "code",
+      "norm_label": "default_accounts",
+      "source_file": "server/prisma/seed.js",
+      "source_location": "L7"
+    },
+    {
+      "id": "server_prisma_seed_default_expense_categories",
+      "label": "DEFAULT_EXPENSE_CATEGORIES",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "seed.js",
+      "file_type": "code",
+      "norm_label": "default_expense_categories",
+      "source_file": "server/prisma/seed.js",
+      "source_location": "L37"
+    },
+    {
+      "id": "server_prisma_seed_default_income_categories",
+      "label": "DEFAULT_INCOME_CATEGORIES",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "seed.js",
+      "file_type": "code",
+      "norm_label": "default_income_categories",
+      "source_file": "server/prisma/seed.js",
+      "source_location": "L49"
+    },
+    {
+      "id": "server_prisma_seed_default_settings",
+      "label": "DEFAULT_SETTINGS",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "seed.js",
+      "file_type": "code",
+      "norm_label": "default_settings",
+      "source_file": "server/prisma/seed.js",
+      "source_location": "L62"
+    },
+    {
+      "id": "server_prisma_seed_default_system_categories",
+      "label": "DEFAULT_SYSTEM_CATEGORIES",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "seed.js",
+      "file_type": "code",
+      "norm_label": "default_system_categories",
+      "source_file": "server/prisma/seed.js",
+      "source_location": "L57"
+    },
+    {
+      "id": "server_prisma_seed_prisma",
+      "label": "prisma",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "seed.js",
+      "file_type": "code",
+      "norm_label": "prisma",
+      "source_file": "server/prisma/seed.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "ref_prisma_client",
+      "label": "@prisma/client",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "seed.js",
+      "file_type": "concept",
+      "norm_label": "@prisma/client",
+      "source_file": "server/package.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "server_src_config_index",
+      "label": "config/index.js",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "test_production_security.js",
+      "file_type": "code",
+      "norm_label": "config/index.js",
+      "source_file": "server/src/config/index.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_config_index_config",
+      "label": "config",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "test_production_security.js",
+      "file_type": "code",
+      "norm_label": "config",
+      "source_file": "server/src/config/index.js",
+      "source_location": "L50"
+    },
+    {
+      "id": "server_src_middleware_errorhandler",
+      "label": "errorHandler.js",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "test_production_security.js",
+      "file_type": "code",
+      "norm_label": "errorhandler.js",
+      "source_file": "server/src/middleware/errorHandler.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_middleware_ratelimiter",
+      "label": "rateLimiter.js",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "test_production_security.js",
+      "file_type": "code",
+      "norm_label": "ratelimiter.js",
+      "source_file": "server/src/middleware/rateLimiter.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_test_production_security",
+      "label": "test_production_security.js",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "test_production_security.js",
+      "file_type": "code",
+      "norm_label": "test_production_security.js",
+      "source_file": "server/test_production_security.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_src_controllers_goalcontroller",
+      "label": "goalController.js",
       "_origin": "ast",
       "community": 19,
-      "community_name": "accountController.js",
+      "community_name": "goalController.js",
       "file_type": "code",
-      "norm_label": "accountcontroller.js",
-      "source_file": "server/src/controllers/accountController.js",
+      "norm_label": "goalcontroller.js",
+      "source_file": "server/src/controllers/goalController.js",
       "source_location": "L1"
     },
     {
@@ -5735,7 +5769,7 @@
       "file_type": "code",
       "norm_label": "apiclient",
       "source_file": "frontend/src/services/api/apiClient.js",
-      "source_location": "L129"
+      "source_location": "L126"
     },
     {
       "id": "frontend_src_services_api_authapi",
@@ -5955,7 +5989,7 @@
       "file_type": "code",
       "norm_label": "data_source",
       "source_file": "frontend/src/services/dataProvider/config.js",
-      "source_location": "L40"
+      "source_location": "L35"
     },
     {
       "id": "frontend_src_services_dataprovider_index",
@@ -6013,10 +6047,21 @@
       "source_location": "L1"
     },
     {
+      "id": "server_src_controllers_accountcontroller",
+      "label": "accountController.js",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "accountController.js",
+      "file_type": "code",
+      "norm_label": "accountcontroller.js",
+      "source_file": "server/src/controllers/accountController.js",
+      "source_location": "L1"
+    },
+    {
       "id": "scripts_package",
       "label": "scripts/package.json",
       "_origin": "ast",
-      "community": 20,
+      "community": 21,
       "community_name": "scripts/package.json",
       "file_type": "code",
       "norm_label": "scripts/package.json",
@@ -6027,7 +6072,7 @@
       "id": "scripts_package_description",
       "label": "description",
       "_origin": "ast",
-      "community": 20,
+      "community": 21,
       "community_name": "scripts/package.json",
       "file_type": "code",
       "norm_label": "description",
@@ -6038,7 +6083,7 @@
       "id": "scripts_package_name",
       "label": "name",
       "_origin": "ast",
-      "community": 20,
+      "community": 21,
       "community_name": "scripts/package.json",
       "file_type": "code",
       "norm_label": "name",
@@ -6049,7 +6094,7 @@
       "id": "scripts_package_private",
       "label": "private",
       "_origin": "ast",
-      "community": 20,
+      "community": 21,
       "community_name": "scripts/package.json",
       "file_type": "code",
       "norm_label": "private",
@@ -6060,7 +6105,7 @@
       "id": "scripts_package_type",
       "label": "type",
       "_origin": "ast",
-      "community": 20,
+      "community": 21,
       "community_name": "scripts/package.json",
       "file_type": "code",
       "norm_label": "type",
@@ -6071,7 +6116,7 @@
       "id": "scripts_package_version",
       "label": "version",
       "_origin": "ast",
-      "community": 20,
+      "community": 21,
       "community_name": "scripts/package.json",
       "file_type": "code",
       "norm_label": "version",
@@ -6082,22 +6127,11 @@
       "id": "server_src_controllers_authcontroller",
       "label": "authController.js",
       "_origin": "ast",
-      "community": 21,
+      "community": 22,
       "community_name": "authController.js",
       "file_type": "code",
       "norm_label": "authcontroller.js",
       "source_file": "server/src/controllers/authController.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "server_src_controllers_budgetcontroller",
-      "label": "budgetController.js",
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "budgetController.js",
-      "file_type": "code",
-      "norm_label": "budgetcontroller.js",
-      "source_file": "server/src/controllers/budgetController.js",
       "source_location": "L1"
     },
     {
@@ -6112,21 +6146,10 @@
       "source_location": "L1"
     },
     {
-      "id": "server_src_controllers_recurringcontroller",
-      "label": "recurringController.js",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "recurringController.js",
-      "file_type": "code",
-      "norm_label": "recurringcontroller.js",
-      "source_file": "server/src/controllers/recurringController.js",
-      "source_location": "L1"
-    },
-    {
       "id": "server_src_controllers_transactioncontroller",
       "label": "transactionController.js",
       "_origin": "ast",
-      "community": 25,
+      "community": 24,
       "community_name": "transactionController.js",
       "file_type": "code",
       "norm_label": "transactioncontroller.js",
@@ -6137,67 +6160,12 @@
       "id": "server_src_validators_index",
       "label": "validators/index.js",
       "_origin": "ast",
-      "community": 26,
+      "community": 25,
       "community_name": "validators/index.js",
       "file_type": "code",
       "norm_label": "validators/index.js",
       "source_file": "server/src/validators/index.js",
       "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_components_forms_transactionform",
-      "label": "TransactionForm.jsx",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "storage.js",
-      "file_type": "code",
-      "norm_label": "transactionform.jsx",
-      "source_file": "frontend/src/components/forms/TransactionForm.jsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_components_forms_transactionform_errorstyle",
-      "label": "errorStyle",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "storage.js",
-      "file_type": "code",
-      "norm_label": "errorstyle",
-      "source_file": "frontend/src/components/forms/TransactionForm.jsx",
-      "source_location": "L41"
-    },
-    {
-      "id": "frontend_src_components_forms_transactionform_initial_state",
-      "label": "INITIAL_STATE",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "storage.js",
-      "file_type": "code",
-      "norm_label": "initial_state",
-      "source_file": "frontend/src/components/forms/TransactionForm.jsx",
-      "source_location": "L11"
-    },
-    {
-      "id": "frontend_src_components_forms_transactionform_inputstyle",
-      "label": "inputStyle",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "storage.js",
-      "file_type": "code",
-      "norm_label": "inputstyle",
-      "source_file": "frontend/src/components/forms/TransactionForm.jsx",
-      "source_location": "L22"
-    },
-    {
-      "id": "frontend_src_components_forms_transactionform_labelstyle",
-      "label": "labelStyle",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "storage.js",
-      "file_type": "code",
-      "norm_label": "labelstyle",
-      "source_file": "frontend/src/components/forms/TransactionForm.jsx",
-      "source_location": "L33"
     },
     {
       "id": "frontend_src_services_accountservice",
@@ -7080,879 +7048,21 @@
       "source_location": "L22"
     },
     {
-      "id": "frontend_eslint_config",
-      "label": "eslint.config.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "eslint.config.js",
-      "source_file": "frontend/eslint.config.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_package",
-      "label": "frontend/package.json",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "frontend/package.json",
-      "source_file": "frontend/package.json",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_package_dependencies",
-      "label": "dependencies",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "dependencies",
-      "source_file": "frontend/package.json",
-      "source_location": "L12"
-    },
-    {
-      "id": "frontend_package_dependencies_lucide_react",
-      "label": "lucide-react",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "lucide-react",
-      "source_file": "frontend/package.json",
-      "source_location": "L14"
-    },
-    {
-      "id": "frontend_package_dependencies_motion",
-      "label": "motion",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "motion",
-      "source_file": "frontend/package.json",
-      "source_location": "L15"
-    },
-    {
-      "id": "frontend_package_dependencies_react",
-      "label": "react",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "react",
-      "source_file": "frontend/package.json",
-      "source_location": "L16"
-    },
-    {
-      "id": "frontend_package_dependencies_react_dom",
-      "label": "react-dom",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "react-dom",
-      "source_file": "frontend/package.json",
-      "source_location": "L17"
-    },
-    {
-      "id": "frontend_package_dependencies_react_router_dom",
-      "label": "react-router-dom",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "react-router-dom",
-      "source_file": "frontend/package.json",
-      "source_location": "L18"
-    },
-    {
-      "id": "frontend_package_dependencies_recharts",
-      "label": "recharts",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "recharts",
-      "source_file": "frontend/package.json",
-      "source_location": "L19"
-    },
-    {
-      "id": "frontend_package_dependencies_tailwindcss",
-      "label": "tailwindcss",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "tailwindcss",
-      "source_file": "frontend/package.json",
-      "source_location": "L20"
-    },
-    {
-      "id": "frontend_package_dependencies_tailwindcss_vite",
-      "label": "@tailwindcss/vite",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "@tailwindcss/vite",
-      "source_file": "frontend/package.json",
-      "source_location": "L13"
-    },
-    {
-      "id": "frontend_package_dependencies_uuid",
-      "label": "uuid",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "uuid",
-      "source_file": "frontend/package.json",
-      "source_location": "L21"
-    },
-    {
-      "id": "frontend_package_devdependencies",
-      "label": "devDependencies",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "devdependencies",
-      "source_file": "frontend/package.json",
-      "source_location": "L23"
-    },
-    {
-      "id": "frontend_package_devdependencies_eslint",
-      "label": "eslint",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "eslint",
-      "source_file": "frontend/package.json",
-      "source_location": "L28"
-    },
-    {
-      "id": "frontend_package_devdependencies_eslint_js",
-      "label": "@eslint/js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "@eslint/js",
-      "source_file": "frontend/package.json",
-      "source_location": "L24"
-    },
-    {
-      "id": "frontend_package_devdependencies_eslint_plugin_react_hooks",
-      "label": "eslint-plugin-react-hooks",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "eslint-plugin-react-hooks",
-      "source_file": "frontend/package.json",
-      "source_location": "L29"
-    },
-    {
-      "id": "frontend_package_devdependencies_eslint_plugin_react_refresh",
-      "label": "eslint-plugin-react-refresh",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "eslint-plugin-react-refresh",
-      "source_file": "frontend/package.json",
-      "source_location": "L30"
-    },
-    {
-      "id": "frontend_package_devdependencies_globals",
-      "label": "globals",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "globals",
-      "source_file": "frontend/package.json",
-      "source_location": "L31"
-    },
-    {
-      "id": "frontend_package_devdependencies_types_react",
-      "label": "@types/react",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "@types/react",
-      "source_file": "frontend/package.json",
-      "source_location": "L25"
-    },
-    {
-      "id": "frontend_package_devdependencies_types_react_dom",
-      "label": "@types/react-dom",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "@types/react-dom",
-      "source_file": "frontend/package.json",
-      "source_location": "L26"
-    },
-    {
-      "id": "frontend_package_devdependencies_vite",
-      "label": "vite",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "vite",
-      "source_file": "frontend/package.json",
-      "source_location": "L32"
-    },
-    {
-      "id": "frontend_package_devdependencies_vitejs_plugin_react",
-      "label": "@vitejs/plugin-react",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "@vitejs/plugin-react",
-      "source_file": "frontend/package.json",
-      "source_location": "L27"
-    },
-    {
-      "id": "frontend_package_name",
-      "label": "name",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "name",
-      "source_file": "frontend/package.json",
-      "source_location": "L2"
-    },
-    {
-      "id": "frontend_package_private",
-      "label": "private",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "private",
-      "source_file": "frontend/package.json",
-      "source_location": "L3"
-    },
-    {
-      "id": "frontend_package_scripts",
-      "label": "scripts",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "scripts",
-      "source_file": "frontend/package.json",
-      "source_location": "L6"
-    },
-    {
-      "id": "frontend_package_scripts_build",
-      "label": "build",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "build",
-      "source_file": "frontend/package.json",
-      "source_location": "L8"
-    },
-    {
-      "id": "frontend_package_scripts_dev",
-      "label": "dev",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "dev",
-      "source_file": "frontend/package.json",
-      "source_location": "L7"
-    },
-    {
-      "id": "frontend_package_scripts_lint",
-      "label": "lint",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "lint",
-      "source_file": "frontend/package.json",
-      "source_location": "L9"
-    },
-    {
-      "id": "frontend_package_scripts_preview",
-      "label": "preview",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "preview",
-      "source_file": "frontend/package.json",
-      "source_location": "L10"
-    },
-    {
-      "id": "frontend_package_type",
-      "label": "type",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "type",
-      "source_file": "frontend/package.json",
-      "source_location": "L5"
-    },
-    {
-      "id": "frontend_package_version",
-      "label": "version",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "version",
-      "source_file": "frontend/package.json",
-      "source_location": "L4"
-    },
-    {
-      "id": "frontend_vite_config",
-      "label": "vite.config.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "code",
-      "norm_label": "vite.config.js",
-      "source_file": "frontend/vite.config.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "ref_eslint",
-      "label": "eslint",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "concept",
-      "norm_label": "eslint",
-      "source_file": "frontend/package.json",
-      "source_location": "L28"
-    },
-    {
-      "id": "ref_eslint_js",
-      "label": "@eslint/js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "concept",
-      "norm_label": "@eslint/js",
-      "source_file": "frontend/package.json",
-      "source_location": "L24"
-    },
-    {
-      "id": "ref_eslint_plugin_react_hooks",
-      "label": "eslint-plugin-react-hooks",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "concept",
-      "norm_label": "eslint-plugin-react-hooks",
-      "source_file": "frontend/package.json",
-      "source_location": "L29"
-    },
-    {
-      "id": "ref_eslint_plugin_react_refresh",
-      "label": "eslint-plugin-react-refresh",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "concept",
-      "norm_label": "eslint-plugin-react-refresh",
-      "source_file": "frontend/package.json",
-      "source_location": "L30"
-    },
-    {
-      "id": "ref_globals",
-      "label": "globals",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "concept",
-      "norm_label": "globals",
-      "source_file": "frontend/package.json",
-      "source_location": "L31"
-    },
-    {
-      "id": "ref_motion",
-      "label": "motion",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "concept",
-      "norm_label": "motion",
-      "source_file": "frontend/package.json",
-      "source_location": "L15"
-    },
-    {
-      "id": "ref_tailwindcss",
-      "label": "tailwindcss",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "concept",
-      "norm_label": "tailwindcss",
-      "source_file": "frontend/package.json",
-      "source_location": "L20"
-    },
-    {
-      "id": "ref_tailwindcss_vite",
-      "label": "@tailwindcss/vite",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "concept",
-      "norm_label": "@tailwindcss/vite",
-      "source_file": "frontend/package.json",
-      "source_location": "L13"
-    },
-    {
-      "id": "ref_types_react",
-      "label": "@types/react",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "concept",
-      "norm_label": "@types/react",
-      "source_file": "frontend/package.json",
-      "source_location": "L25"
-    },
-    {
-      "id": "ref_types_react_dom",
-      "label": "@types/react-dom",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "concept",
-      "norm_label": "@types/react-dom",
-      "source_file": "frontend/package.json",
-      "source_location": "L26"
-    },
-    {
-      "id": "ref_vite",
-      "label": "vite",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "concept",
-      "norm_label": "vite",
-      "source_file": "frontend/package.json",
-      "source_location": "L32"
-    },
-    {
-      "id": "ref_vitejs_plugin_react",
-      "label": "@vitejs/plugin-react",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "frontend/package.json",
-      "file_type": "concept",
-      "norm_label": "@vitejs/plugin-react",
-      "source_file": "frontend/package.json",
-      "source_location": "L27"
-    },
-    {
       "id": "frontend_src_components_dashboard_categorychart",
       "label": "CategoryChart.jsx",
       "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
+      "community": 5,
+      "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "categorychart.jsx",
       "source_file": "frontend/src/components/dashboard/CategoryChart.jsx",
       "source_location": "L1"
     },
     {
-      "id": "frontend_src_data_categories",
-      "label": "categories.js",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "categories.js",
-      "source_file": "frontend/src/data/categories.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_data_categories_currencies",
-      "label": "CURRENCIES",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "currencies",
-      "source_file": "frontend/src/data/categories.js",
-      "source_location": "L54"
-    },
-    {
-      "id": "frontend_src_data_categories_expense_categories",
-      "label": "EXPENSE_CATEGORIES",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "expense_categories",
-      "source_file": "frontend/src/data/categories.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_data_categories_income_categories",
-      "label": "INCOME_CATEGORIES",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "income_categories",
-      "source_file": "frontend/src/data/categories.js",
-      "source_location": "L14"
-    },
-    {
-      "id": "frontend_src_data_categories_payment_methods",
-      "label": "PAYMENT_METHODS",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "payment_methods",
-      "source_file": "frontend/src/data/categories.js",
-      "source_location": "L23"
-    },
-    {
-      "id": "frontend_src_utils_validation",
-      "label": "validation.js",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "validation.js",
-      "source_file": "frontend/src/utils/validation.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_test_transaction_rules",
-      "label": "test_transaction_rules.js",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "test_transaction_rules.js",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_test_transaction_rules_accchangetxns",
-      "label": "accChangeTxns",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "accchangetxns",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L111"
-    },
-    {
-      "id": "frontend_test_transaction_rules_accchangetxnsedited",
-      "label": "accChangeTxnsEdited",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "accchangetxnsedited",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L119"
-    },
-    {
-      "id": "frontend_test_transaction_rules_accounts",
-      "label": "accounts",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "accounts",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L22"
-    },
-    {
-      "id": "frontend_test_transaction_rules_availablebalforinctoexp",
-      "label": "availableBalForIncToExp",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "availablebalforinctoexp",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L101"
-    },
-    {
-      "id": "frontend_test_transaction_rules_availableforedit",
-      "label": "availableForEdit",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "availableforedit",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L63"
-    },
-    {
-      "id": "frontend_test_transaction_rules_bankaccount",
-      "label": "bankAccount",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "bankaccount",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L18"
-    },
-    {
-      "id": "frontend_test_transaction_rules_bankbalbeforeedit",
-      "label": "bankBalBeforeEdit",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "bankbalbeforeedit",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L60"
-    },
-    {
-      "id": "frontend_test_transaction_rules_cashaccount",
-      "label": "cashAccount",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "cashaccount",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L19"
-    },
-    {
-      "id": "frontend_test_transaction_rules_cashmethods",
-      "label": "cashMethods",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "cashmethods",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L159"
-    },
-    {
-      "id": "frontend_test_transaction_rules_currentbankbal",
-      "label": "currentBankBal",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "currentbankbal",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L40"
-    },
-    {
-      "id": "frontend_test_transaction_rules_editvalidation",
-      "label": "editValidation",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "editvalidation",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L66"
-    },
-    {
-      "id": "frontend_test_transaction_rules_ex6txns",
-      "label": "ex6Txns",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "ex6txns",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L86"
-    },
-    {
-      "id": "frontend_test_transaction_rules_ex6txnsedited",
-      "label": "ex6TxnsEdited",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "ex6txnsedited",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L93"
-    },
-    {
-      "id": "frontend_test_transaction_rules_ex6txnsrevertedtoexp",
-      "label": "ex6TxnsRevertedToExp",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "ex6txnsrevertedtoexp",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L103"
-    },
-    {
-      "id": "frontend_test_transaction_rules_expcategories",
-      "label": "expCategories",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "expcategories",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L126"
-    },
-    {
-      "id": "frontend_test_transaction_rules_freetextvalidation",
-      "label": "freeTextValidation",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "freetextvalidation",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L139"
-    },
-    {
-      "id": "frontend_test_transaction_rules_inccategories",
-      "label": "incCategories",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "inccategories",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L127"
-    },
-    {
-      "id": "frontend_test_transaction_rules_legacytxn",
-      "label": "legacyTxn",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "legacytxn",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L168"
-    },
-    {
-      "id": "frontend_test_transaction_rules_originalexp",
-      "label": "originalExp",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "originalexp",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L55"
-    },
-    {
-      "id": "frontend_test_transaction_rules_txns",
-      "label": "txns",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "txns",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L26"
-    },
-    {
-      "id": "frontend_test_transaction_rules_txnsafteredit",
-      "label": "txnsAfterEdit",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "txnsafteredit",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L73"
-    },
-    {
-      "id": "frontend_test_transaction_rules_txnsafterincomeedit",
-      "label": "txnsAfterIncomeEdit",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "txnsafterincomeedit",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L80"
-    },
-    {
-      "id": "frontend_test_transaction_rules_txnswithexp",
-      "label": "txnsWithExp",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "txnswithexp",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L56"
-    },
-    {
-      "id": "frontend_test_transaction_rules_txnswithlegacy",
-      "label": "txnsWithLegacy",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "txnswithlegacy",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L169"
-    },
-    {
-      "id": "frontend_test_transaction_rules_upiaccount",
-      "label": "upiAccount",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "upiaccount",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L20"
-    },
-    {
-      "id": "frontend_test_transaction_rules_upimethods",
-      "label": "upiMethods",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "upimethods",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L156"
-    },
-    {
-      "id": "frontend_test_transaction_rules_validationfail",
-      "label": "validationFail",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "test_transaction_rules.js",
-      "file_type": "code",
-      "norm_label": "validationfail",
-      "source_file": "frontend/test_transaction_rules.js",
-      "source_location": "L41"
-    },
-    {
       "id": "frontend_src_components_dashboard_monthlychart",
       "label": "MonthlyChart.jsx",
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "monthlychart.jsx",
@@ -7960,10 +7070,21 @@
       "source_location": "L1"
     },
     {
+      "id": "frontend_src_components_dashboard_recenttransactions",
+      "label": "RecentTransactions.jsx",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Dashboard.jsx",
+      "file_type": "code",
+      "norm_label": "recenttransactions.jsx",
+      "source_file": "frontend/src/components/dashboard/RecentTransactions.jsx",
+      "source_location": "L1"
+    },
+    {
       "id": "frontend_src_components_dashboard_summarycard",
       "label": "SummaryCard.jsx",
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "summarycard.jsx",
@@ -7974,7 +7095,7 @@
       "id": "frontend_src_pages_analytics",
       "label": "Analytics.jsx",
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "analytics.jsx",
@@ -7982,10 +7103,43 @@
       "source_location": "L1"
     },
     {
+      "id": "frontend_src_pages_budgets",
+      "label": "Budgets.jsx",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Dashboard.jsx",
+      "file_type": "code",
+      "norm_label": "budgets.jsx",
+      "source_file": "frontend/src/pages/Budgets.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_pages_budgets_inputstyle",
+      "label": "inputStyle",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Dashboard.jsx",
+      "file_type": "code",
+      "norm_label": "inputstyle",
+      "source_file": "frontend/src/pages/Budgets.jsx",
+      "source_location": "L20"
+    },
+    {
+      "id": "frontend_src_pages_budgets_labelstyle",
+      "label": "labelStyle",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Dashboard.jsx",
+      "file_type": "code",
+      "norm_label": "labelstyle",
+      "source_file": "frontend/src/pages/Budgets.jsx",
+      "source_location": "L31"
+    },
+    {
       "id": "frontend_src_pages_dashboard",
       "label": "Dashboard.jsx",
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "dashboard.jsx",
@@ -7996,7 +7150,7 @@
       "id": "frontend_src_services_budgetservice",
       "label": "frontend/src/services/budgetService.js",
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "frontend/src/services/budgetservice.js",
@@ -8007,7 +7161,7 @@
       "id": "frontend_src_services_insightservice",
       "label": "insightService.js",
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "insightservice.js",
@@ -8018,7 +7172,7 @@
       "id": "frontend_src_utils_calculations",
       "label": "calculations.js",
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "code",
       "norm_label": "calculations.js",
@@ -8026,15 +7180,884 @@
       "source_location": "L1"
     },
     {
+      "id": "frontend_src_utils_formatters",
+      "label": "frontend/src/utils/formatters.js",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Dashboard.jsx",
+      "file_type": "code",
+      "norm_label": "frontend/src/utils/formatters.js",
+      "source_file": "frontend/src/utils/formatters.js",
+      "source_location": "L1"
+    },
+    {
       "id": "ref_recharts",
       "label": "recharts",
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "community_name": "Dashboard.jsx",
       "file_type": "concept",
       "norm_label": "recharts",
       "source_file": "frontend/package.json",
       "source_location": "L19"
+    },
+    {
+      "id": "frontend_eslint_config",
+      "label": "eslint.config.js",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "eslint.config.js",
+      "source_file": "frontend/eslint.config.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_package",
+      "label": "frontend/package.json",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "frontend/package.json",
+      "source_file": "frontend/package.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_package_dependencies",
+      "label": "dependencies",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "dependencies",
+      "source_file": "frontend/package.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "frontend_package_dependencies_lucide_react",
+      "label": "lucide-react",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "lucide-react",
+      "source_file": "frontend/package.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "frontend_package_dependencies_motion",
+      "label": "motion",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "motion",
+      "source_file": "frontend/package.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "frontend_package_dependencies_react",
+      "label": "react",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "react",
+      "source_file": "frontend/package.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "frontend_package_dependencies_react_dom",
+      "label": "react-dom",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "react-dom",
+      "source_file": "frontend/package.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "frontend_package_dependencies_react_router_dom",
+      "label": "react-router-dom",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "react-router-dom",
+      "source_file": "frontend/package.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "frontend_package_dependencies_recharts",
+      "label": "recharts",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "recharts",
+      "source_file": "frontend/package.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "frontend_package_dependencies_tailwindcss",
+      "label": "tailwindcss",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "tailwindcss",
+      "source_file": "frontend/package.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "frontend_package_dependencies_tailwindcss_vite",
+      "label": "@tailwindcss/vite",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "@tailwindcss/vite",
+      "source_file": "frontend/package.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "frontend_package_dependencies_uuid",
+      "label": "uuid",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "uuid",
+      "source_file": "frontend/package.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "frontend_package_devdependencies",
+      "label": "devDependencies",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "devdependencies",
+      "source_file": "frontend/package.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "frontend_package_devdependencies_eslint",
+      "label": "eslint",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "eslint",
+      "source_file": "frontend/package.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "frontend_package_devdependencies_eslint_js",
+      "label": "@eslint/js",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "@eslint/js",
+      "source_file": "frontend/package.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "frontend_package_devdependencies_eslint_plugin_react_hooks",
+      "label": "eslint-plugin-react-hooks",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "eslint-plugin-react-hooks",
+      "source_file": "frontend/package.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "frontend_package_devdependencies_eslint_plugin_react_refresh",
+      "label": "eslint-plugin-react-refresh",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "eslint-plugin-react-refresh",
+      "source_file": "frontend/package.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "frontend_package_devdependencies_globals",
+      "label": "globals",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "globals",
+      "source_file": "frontend/package.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "frontend_package_devdependencies_types_react",
+      "label": "@types/react",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "@types/react",
+      "source_file": "frontend/package.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "frontend_package_devdependencies_types_react_dom",
+      "label": "@types/react-dom",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "@types/react-dom",
+      "source_file": "frontend/package.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "frontend_package_devdependencies_vite",
+      "label": "vite",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "vite",
+      "source_file": "frontend/package.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "frontend_package_devdependencies_vitejs_plugin_react",
+      "label": "@vitejs/plugin-react",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "@vitejs/plugin-react",
+      "source_file": "frontend/package.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "frontend_package_name",
+      "label": "name",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "name",
+      "source_file": "frontend/package.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "frontend_package_private",
+      "label": "private",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "private",
+      "source_file": "frontend/package.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "frontend_package_scripts",
+      "label": "scripts",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "scripts",
+      "source_file": "frontend/package.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "frontend_package_scripts_build",
+      "label": "build",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "build",
+      "source_file": "frontend/package.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "frontend_package_scripts_dev",
+      "label": "dev",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "dev",
+      "source_file": "frontend/package.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "frontend_package_scripts_lint",
+      "label": "lint",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "lint",
+      "source_file": "frontend/package.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "frontend_package_scripts_preview",
+      "label": "preview",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "preview",
+      "source_file": "frontend/package.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "frontend_package_type",
+      "label": "type",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "type",
+      "source_file": "frontend/package.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "frontend_package_version",
+      "label": "version",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "version",
+      "source_file": "frontend/package.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "frontend_vite_config",
+      "label": "vite.config.js",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "code",
+      "norm_label": "vite.config.js",
+      "source_file": "frontend/vite.config.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "ref_eslint",
+      "label": "eslint",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "concept",
+      "norm_label": "eslint",
+      "source_file": "frontend/package.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "ref_eslint_js",
+      "label": "@eslint/js",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "concept",
+      "norm_label": "@eslint/js",
+      "source_file": "frontend/package.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "ref_eslint_plugin_react_hooks",
+      "label": "eslint-plugin-react-hooks",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "concept",
+      "norm_label": "eslint-plugin-react-hooks",
+      "source_file": "frontend/package.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "ref_eslint_plugin_react_refresh",
+      "label": "eslint-plugin-react-refresh",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "concept",
+      "norm_label": "eslint-plugin-react-refresh",
+      "source_file": "frontend/package.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "ref_globals",
+      "label": "globals",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "concept",
+      "norm_label": "globals",
+      "source_file": "frontend/package.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "ref_motion",
+      "label": "motion",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "concept",
+      "norm_label": "motion",
+      "source_file": "frontend/package.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "ref_tailwindcss",
+      "label": "tailwindcss",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "concept",
+      "norm_label": "tailwindcss",
+      "source_file": "frontend/package.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "ref_tailwindcss_vite",
+      "label": "@tailwindcss/vite",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "concept",
+      "norm_label": "@tailwindcss/vite",
+      "source_file": "frontend/package.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "ref_types_react",
+      "label": "@types/react",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "concept",
+      "norm_label": "@types/react",
+      "source_file": "frontend/package.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "ref_types_react_dom",
+      "label": "@types/react-dom",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "concept",
+      "norm_label": "@types/react-dom",
+      "source_file": "frontend/package.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "ref_vite",
+      "label": "vite",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "concept",
+      "norm_label": "vite",
+      "source_file": "frontend/package.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "ref_vitejs_plugin_react",
+      "label": "@vitejs/plugin-react",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "frontend/package.json",
+      "file_type": "concept",
+      "norm_label": "@vitejs/plugin-react",
+      "source_file": "frontend/package.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "frontend_src_data_categories",
+      "label": "categories.js",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "categories.js",
+      "source_file": "frontend/src/data/categories.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_data_categories_currencies",
+      "label": "CURRENCIES",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "currencies",
+      "source_file": "frontend/src/data/categories.js",
+      "source_location": "L54"
+    },
+    {
+      "id": "frontend_src_data_categories_expense_categories",
+      "label": "EXPENSE_CATEGORIES",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "expense_categories",
+      "source_file": "frontend/src/data/categories.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_data_categories_income_categories",
+      "label": "INCOME_CATEGORIES",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "income_categories",
+      "source_file": "frontend/src/data/categories.js",
+      "source_location": "L14"
+    },
+    {
+      "id": "frontend_src_data_categories_payment_methods",
+      "label": "PAYMENT_METHODS",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "payment_methods",
+      "source_file": "frontend/src/data/categories.js",
+      "source_location": "L23"
+    },
+    {
+      "id": "frontend_src_utils_validation",
+      "label": "validation.js",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "validation.js",
+      "source_file": "frontend/src/utils/validation.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_test_transaction_rules",
+      "label": "test_transaction_rules.js",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "test_transaction_rules.js",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_test_transaction_rules_accchangetxns",
+      "label": "accChangeTxns",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "accchangetxns",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L111"
+    },
+    {
+      "id": "frontend_test_transaction_rules_accchangetxnsedited",
+      "label": "accChangeTxnsEdited",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "accchangetxnsedited",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L119"
+    },
+    {
+      "id": "frontend_test_transaction_rules_accounts",
+      "label": "accounts",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "accounts",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L22"
+    },
+    {
+      "id": "frontend_test_transaction_rules_availablebalforinctoexp",
+      "label": "availableBalForIncToExp",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "availablebalforinctoexp",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L101"
+    },
+    {
+      "id": "frontend_test_transaction_rules_availableforedit",
+      "label": "availableForEdit",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "availableforedit",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L63"
+    },
+    {
+      "id": "frontend_test_transaction_rules_bankaccount",
+      "label": "bankAccount",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "bankaccount",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L18"
+    },
+    {
+      "id": "frontend_test_transaction_rules_bankbalbeforeedit",
+      "label": "bankBalBeforeEdit",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "bankbalbeforeedit",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L60"
+    },
+    {
+      "id": "frontend_test_transaction_rules_cashaccount",
+      "label": "cashAccount",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "cashaccount",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L19"
+    },
+    {
+      "id": "frontend_test_transaction_rules_cashmethods",
+      "label": "cashMethods",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "cashmethods",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L159"
+    },
+    {
+      "id": "frontend_test_transaction_rules_currentbankbal",
+      "label": "currentBankBal",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "currentbankbal",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L40"
+    },
+    {
+      "id": "frontend_test_transaction_rules_editvalidation",
+      "label": "editValidation",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "editvalidation",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L66"
+    },
+    {
+      "id": "frontend_test_transaction_rules_ex6txns",
+      "label": "ex6Txns",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "ex6txns",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L86"
+    },
+    {
+      "id": "frontend_test_transaction_rules_ex6txnsedited",
+      "label": "ex6TxnsEdited",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "ex6txnsedited",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L93"
+    },
+    {
+      "id": "frontend_test_transaction_rules_ex6txnsrevertedtoexp",
+      "label": "ex6TxnsRevertedToExp",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "ex6txnsrevertedtoexp",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L103"
+    },
+    {
+      "id": "frontend_test_transaction_rules_expcategories",
+      "label": "expCategories",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "expcategories",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L126"
+    },
+    {
+      "id": "frontend_test_transaction_rules_freetextvalidation",
+      "label": "freeTextValidation",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "freetextvalidation",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L139"
+    },
+    {
+      "id": "frontend_test_transaction_rules_inccategories",
+      "label": "incCategories",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "inccategories",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L127"
+    },
+    {
+      "id": "frontend_test_transaction_rules_legacytxn",
+      "label": "legacyTxn",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "legacytxn",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L168"
+    },
+    {
+      "id": "frontend_test_transaction_rules_originalexp",
+      "label": "originalExp",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "originalexp",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L55"
+    },
+    {
+      "id": "frontend_test_transaction_rules_txns",
+      "label": "txns",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "txns",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L26"
+    },
+    {
+      "id": "frontend_test_transaction_rules_txnsafteredit",
+      "label": "txnsAfterEdit",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "txnsafteredit",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L73"
+    },
+    {
+      "id": "frontend_test_transaction_rules_txnsafterincomeedit",
+      "label": "txnsAfterIncomeEdit",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "txnsafterincomeedit",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L80"
+    },
+    {
+      "id": "frontend_test_transaction_rules_txnswithexp",
+      "label": "txnsWithExp",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "txnswithexp",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L56"
+    },
+    {
+      "id": "frontend_test_transaction_rules_txnswithlegacy",
+      "label": "txnsWithLegacy",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "txnswithlegacy",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L169"
+    },
+    {
+      "id": "frontend_test_transaction_rules_upiaccount",
+      "label": "upiAccount",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "upiaccount",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L20"
+    },
+    {
+      "id": "frontend_test_transaction_rules_upimethods",
+      "label": "upiMethods",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "upimethods",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L156"
+    },
+    {
+      "id": "frontend_test_transaction_rules_validationfail",
+      "label": "validationFail",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "test_transaction_rules.js",
+      "file_type": "code",
+      "norm_label": "validationfail",
+      "source_file": "frontend/test_transaction_rules.js",
+      "source_location": "L41"
     },
     {
       "id": "scripts_migration_conflictdetector",
@@ -8671,7 +8694,7 @@
       "id": "ref_node_assert",
       "label": "ref_node_assert",
       "_origin": "semantic",
-      "community": 18,
+      "community": 16,
       "community_name": "prisma.js",
       "external": true,
       "file_type": "concept",
@@ -8683,7 +8706,7 @@
       "id": "frontend_src_services_storage_migratestorage",
       "label": "frontend_src_services_storage_migratestorage",
       "_origin": "semantic",
-      "community": 27,
+      "community": 26,
       "community_name": "frontend_src_services_storage_migratestorage",
       "external": true,
       "file_type": "concept",
@@ -8815,6 +8838,18 @@
     },
     {
       "source": "frontend_src_components_forms_transactionform_transactionform",
+      "target": "frontend_src_services_accountservice_getavailableaccountbalance",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "frontend/src/components/forms/TransactionForm.jsx",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_components_forms_transactionform_transactionform",
       "target": "frontend_src_utils_validation_validatetransaction",
       "relation": "calls",
       "_origin": "ast",
@@ -8822,7 +8857,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/components/forms/TransactionForm.jsx",
-      "source_location": "L129",
+      "source_location": "L148",
       "weight": 1.0
     },
     {
@@ -8834,7 +8869,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/components/forms/TransactionForm.jsx",
-      "source_location": "L216",
+      "source_location": "L235",
       "weight": 1.0
     },
     {
@@ -8870,19 +8905,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/components/forms/TransactionForm.jsx",
-      "source_location": "L77",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_components_forms_transactionform_transactionform",
-      "target": "frontend_src_services_accountservice_getavailableaccountbalance",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "frontend/src/components/forms/TransactionForm.jsx",
-      "source_location": "L86",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -8978,7 +9001,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/context/TransactionContext.jsx",
-      "source_location": "L1022",
+      "source_location": "L1026",
       "weight": 1.0
     },
     {
@@ -8990,7 +9013,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/context/TransactionContext.jsx",
-      "source_location": "L1080",
+      "source_location": "L1084",
       "weight": 1.0
     },
     {
@@ -9002,7 +9025,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/context/TransactionContext.jsx",
-      "source_location": "L172",
+      "source_location": "L176",
       "weight": 1.0
     },
     {
@@ -9014,7 +9037,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/context/TransactionContext.jsx",
-      "source_location": "L229",
+      "source_location": "L233",
       "weight": 1.0
     },
     {
@@ -9026,7 +9049,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/context/TransactionContext.jsx",
-      "source_location": "L295",
+      "source_location": "L299",
       "weight": 1.0
     },
     {
@@ -9038,7 +9061,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/context/TransactionContext.jsx",
-      "source_location": "L77",
+      "source_location": "L79",
       "weight": 1.0
     },
     {
@@ -9254,7 +9277,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/pages/Budgets.jsx",
-      "source_location": "L124",
+      "source_location": "L126",
       "weight": 1.0
     },
     {
@@ -9266,7 +9289,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/pages/Budgets.jsx",
-      "source_location": "L130",
+      "source_location": "L132",
       "weight": 1.0
     },
     {
@@ -9278,7 +9301,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/pages/Budgets.jsx",
-      "source_location": "L141",
+      "source_location": "L143",
       "weight": 1.0
     },
     {
@@ -9290,7 +9313,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/pages/Budgets.jsx",
-      "source_location": "L206",
+      "source_location": "L208",
       "weight": 1.0
     },
     {
@@ -9302,7 +9325,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/pages/Budgets.jsx",
-      "source_location": "L273",
+      "source_location": "L275",
       "weight": 1.0
     },
     {
@@ -9314,7 +9337,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/pages/Budgets.jsx",
-      "source_location": "L274",
+      "source_location": "L276",
       "weight": 1.0
     },
     {
@@ -9338,7 +9361,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/pages/Budgets.jsx",
-      "source_location": "L60",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -9350,7 +9373,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/pages/Budgets.jsx",
-      "source_location": "L90",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -9362,7 +9385,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/pages/Budgets.jsx",
-      "source_location": "L95",
+      "source_location": "L97",
       "weight": 1.0
     },
     {
@@ -9722,7 +9745,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/pages/Recurring.jsx",
-      "source_location": "L191",
+      "source_location": "L194",
       "weight": 1.0
     },
     {
@@ -9734,7 +9757,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/pages/Recurring.jsx",
-      "source_location": "L251",
+      "source_location": "L254",
       "weight": 1.0
     },
     {
@@ -9746,7 +9769,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/pages/Recurring.jsx",
-      "source_location": "L269",
+      "source_location": "L272",
       "weight": 1.0
     },
     {
@@ -9758,7 +9781,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/pages/Recurring.jsx",
-      "source_location": "L51",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -9770,7 +9793,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/pages/Recurring.jsx",
-      "source_location": "L75",
+      "source_location": "L79",
       "weight": 1.0
     },
     {
@@ -10070,7 +10093,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/api/apiClient.js",
-      "source_location": "L72",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -10082,7 +10105,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/api/apiClient.js",
-      "source_location": "L76",
+      "source_location": "L73",
       "weight": 1.0
     },
     {
@@ -10094,7 +10117,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/api/apiClient.js",
-      "source_location": "L93",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -10574,7 +10597,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/dataProvider/config.js",
-      "source_location": "L30",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -12902,7 +12925,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/categoryService.js",
-      "source_location": "L73",
+      "source_location": "L134",
       "weight": 1.0
     },
     {
@@ -12914,7 +12937,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/categoryService.js",
-      "source_location": "L78",
+      "source_location": "L139",
       "weight": 1.0
     },
     {
@@ -12926,7 +12949,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/categoryService.js",
-      "source_location": "L144",
+      "source_location": "L205",
       "weight": 1.0
     },
     {
@@ -12938,7 +12961,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/categoryService.js",
-      "source_location": "L146",
+      "source_location": "L207",
       "weight": 1.0
     },
     {
@@ -12950,7 +12973,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/categoryService.js",
-      "source_location": "L150",
+      "source_location": "L211",
+      "weight": 1.0
+    },
+    {
+      "source": "server_src_services_categoryservice_getcategories",
+      "target": "server_src_services_categoryservice_ensuredefaultsystemcategories",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "server/src/services/categoryService.js",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "server_src_services_categoryservice_getcategorybyid",
+      "target": "server_src_services_categoryservice_ensuredefaultsystemcategories",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "server/src/services/categoryService.js",
+      "source_location": "L115",
       "weight": 1.0
     },
     {
@@ -12962,7 +13009,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/categoryService.js",
-      "source_location": "L104",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
@@ -12974,7 +13021,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/categoryService.js",
-      "source_location": "L106",
+      "source_location": "L167",
       "weight": 1.0
     },
     {
@@ -12986,7 +13033,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/categoryService.js",
-      "source_location": "L110",
+      "source_location": "L171",
       "weight": 1.0
     },
     {
@@ -12998,7 +13045,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/categoryService.js",
-      "source_location": "L124",
+      "source_location": "L185",
       "weight": 1.0
     },
     {
@@ -13334,7 +13381,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L100",
+      "source_location": "L104",
       "weight": 1.0
     },
     {
@@ -13346,7 +13393,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L110",
+      "source_location": "L114",
       "weight": 1.0
     },
     {
@@ -13358,7 +13405,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L119",
+      "source_location": "L123",
       "weight": 1.0
     },
     {
@@ -13370,7 +13417,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L122",
+      "source_location": "L126",
       "weight": 1.0
     },
     {
@@ -13382,7 +13429,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L123",
+      "source_location": "L127",
       "weight": 1.0
     },
     {
@@ -13394,7 +13441,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L133",
+      "source_location": "L137",
       "weight": 1.0
     },
     {
@@ -13406,7 +13453,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L72",
+      "source_location": "L73",
       "weight": 1.0
     },
     {
@@ -13418,7 +13465,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L77",
+      "source_location": "L78",
       "weight": 1.0
     },
     {
@@ -13430,7 +13477,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L83",
+      "source_location": "L84",
       "weight": 1.0
     },
     {
@@ -13442,7 +13489,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L88",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "server_src_services_transactionservice_createtransaction",
+      "target": "server_src_errors_domainerrors_categorynotfounderror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "server/src/services/transactionService.js",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -13454,7 +13513,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L304",
+      "source_location": "L311",
       "weight": 1.0
     },
     {
@@ -13466,7 +13525,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L190",
+      "source_location": "L194",
       "weight": 1.0
     },
     {
@@ -13478,7 +13537,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L201",
+      "source_location": "L205",
       "weight": 1.0
     },
     {
@@ -13490,7 +13549,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L203",
+      "source_location": "L207",
       "weight": 1.0
     },
     {
@@ -13502,7 +13561,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L208",
+      "source_location": "L212",
       "weight": 1.0
     },
     {
@@ -13514,7 +13573,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L213",
+      "source_location": "L217",
+      "weight": 1.0
+    },
+    {
+      "source": "server_src_services_transactionservice_updatetransaction",
+      "target": "server_src_errors_domainerrors_categorynotfounderror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "server/src/services/transactionService.js",
+      "source_location": "L226",
       "weight": 1.0
     },
     {
@@ -13526,7 +13597,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L224",
+      "source_location": "L231",
       "weight": 1.0
     },
     {
@@ -13538,7 +13609,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L235",
+      "source_location": "L242",
       "weight": 1.0
     },
     {
@@ -13550,7 +13621,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L238",
+      "source_location": "L245",
       "weight": 1.0
     },
     {
@@ -13562,7 +13633,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L239",
+      "source_location": "L246",
       "weight": 1.0
     },
     {
@@ -13574,7 +13645,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L250",
+      "source_location": "L257",
       "weight": 1.0
     },
     {
@@ -14346,18 +14417,6 @@
       "weight": 1.0
     },
     {
-      "source": "frontend_src_components_forms_transactionform",
-      "target": "frontend_src_components_common_button_button",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/src/components/forms/TransactionForm.jsx",
-      "source_location": "L9",
-      "weight": 1.0
-    },
-    {
       "source": "frontend_src_components_layout_applayout",
       "target": "frontend_src_components_layout_sidebar_sidebar",
       "relation": "imports",
@@ -14883,66 +14942,6 @@
       "context": "import",
       "source_file": "frontend/src/pages/Analytics.jsx",
       "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_pages_budgets",
-      "target": "frontend_src_components_common_card_card",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/src/pages/Budgets.jsx",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_pages_budgets",
-      "target": "frontend_src_components_common_button_button",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/src/pages/Budgets.jsx",
-      "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_pages_budgets",
-      "target": "frontend_src_components_common_modal_modal",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/src/pages/Budgets.jsx",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_pages_budgets",
-      "target": "frontend_src_components_common_emptystate_emptystate",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/src/pages/Budgets.jsx",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_pages_budgets",
-      "target": "frontend_src_components_common_animatedgradientborder_animatedgradientborder",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/src/pages/Budgets.jsx",
-      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -15603,66 +15602,6 @@
       "context": "import",
       "source_file": "frontend/src/pages/Recurring.jsx",
       "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_pages_recurring",
-      "target": "frontend_src_components_common_card_card",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/src/pages/Recurring.jsx",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_pages_recurring",
-      "target": "frontend_src_components_common_button_button",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/src/pages/Recurring.jsx",
-      "source_location": "L6",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_pages_recurring",
-      "target": "frontend_src_components_common_modal_modal",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/src/pages/Recurring.jsx",
-      "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_pages_recurring",
-      "target": "frontend_src_components_common_emptystate_emptystate",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/src/pages/Recurring.jsx",
-      "source_location": "L8",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_pages_recurring",
-      "target": "frontend_src_components_common_animatedgradientborder_animatedgradientborder",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/src/pages/Recurring.jsx",
-      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -18314,7 +18253,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -18326,7 +18265,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -18338,7 +18277,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -18350,7 +18289,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -18362,12 +18301,24 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
       "source": "server_src_services_transactionservice",
       "target": "server_src_errors_domainerrors_accountnotfounderror",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "server/src/services/transactionService.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "server_src_services_transactionservice",
+      "target": "server_src_errors_domainerrors_categorynotfounderror",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -18459,18 +18410,6 @@
       "context": "import",
       "source_file": "server/test_api.js",
       "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "server_test_db",
-      "target": "server_src_lib_prisma_prisma",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "server/test_db.js",
-      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -23414,7 +23353,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -23426,7 +23365,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -25136,7 +25075,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/context/TransactionContext.jsx",
-      "source_location": "L1165",
+      "source_location": "L1170",
       "weight": 1.0
     },
     {
@@ -25169,7 +25108,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/context/TransactionContext.jsx",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -25180,7 +25119,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/context/TransactionContext.jsx",
-      "source_location": "L75",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -25741,7 +25680,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/api/apiClient.js",
-      "source_location": "L129",
+      "source_location": "L126",
       "weight": 1.0
     },
     {
@@ -25763,7 +25702,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/api/apiClient.js",
-      "source_location": "L71",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -26071,7 +26010,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/dataProvider/config.js",
-      "source_location": "L29",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -26082,7 +26021,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/dataProvider/config.js",
-      "source_location": "L33",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -26093,7 +26032,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/dataProvider/config.js",
-      "source_location": "L40",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -28172,7 +28111,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "server/src/app.js",
-      "source_location": "L67",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -29310,18 +29249,18 @@
     },
     {
       "source": "server_src_services_categoryservice",
-      "target": "server_src_services_categoryservice_deletecategory",
+      "target": "server_src_services_categoryservice_createcategory",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "server/src/services/categoryService.js",
-      "source_location": "L135",
+      "source_location": "L123",
       "weight": 1.0
     },
     {
       "source": "server_src_services_categoryservice",
-      "target": "server_src_services_categoryservice_getcategories",
+      "target": "server_src_services_categoryservice_default_system_categories",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -29332,35 +29271,57 @@
     },
     {
       "source": "server_src_services_categoryservice",
-      "target": "server_src_services_categoryservice_getcategorybyid",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "server/src/services/categoryService.js",
-      "source_location": "L42",
-      "weight": 1.0
-    },
-    {
-      "source": "server_src_services_categoryservice",
-      "target": "server_src_services_categoryservice_createcategory",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "server/src/services/categoryService.js",
-      "source_location": "L62",
-      "weight": 1.0
-    },
-    {
-      "source": "server_src_services_categoryservice",
       "target": "server_src_services_categoryservice_updatecategory",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "server/src/services/categoryService.js",
-      "source_location": "L95",
+      "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "server_src_services_categoryservice",
+      "target": "server_src_services_categoryservice_deletecategory",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "server/src/services/categoryService.js",
+      "source_location": "L196",
+      "weight": 1.0
+    },
+    {
+      "source": "server_src_services_categoryservice",
+      "target": "server_src_services_categoryservice_ensuredefaultsystemcategories",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "server/src/services/categoryService.js",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "server_src_services_categoryservice",
+      "target": "server_src_services_categoryservice_getcategories",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "server/src/services/categoryService.js",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "server_src_services_categoryservice",
+      "target": "server_src_services_categoryservice_getcategorybyid",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "server/src/services/categoryService.js",
+      "source_location": "L94",
       "weight": 1.0
     },
     {
@@ -29580,7 +29541,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L180",
+      "source_location": "L184",
       "weight": 1.0
     },
     {
@@ -29591,7 +29552,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -29602,7 +29563,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L294",
+      "source_location": "L301",
       "weight": 1.0
     },
     {
@@ -29613,7 +29574,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L50",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -29624,7 +29585,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "server/src/services/transactionService.js",
-      "source_location": "L68",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -30298,7 +30259,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "frontend/src/context/TransactionContext.jsx",
-      "source_location": "L76",
+      "source_location": "L78",
       "weight": 1.0
     },
     {
@@ -30382,7 +30343,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "server/src/app.js",
-      "source_location": "L59",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -30394,7 +30355,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "server/src/app.js",
-      "source_location": "L62",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -30538,7 +30499,7 @@
       "confidence_score": 0.85,
       "context": "collection",
       "source_file": "frontend/src/services/api/apiClient.js",
-      "source_location": "L144",
+      "source_location": "L141",
       "weight": 1.0
     },
     {
@@ -30550,7 +30511,7 @@
       "confidence_score": 0.85,
       "context": "collection",
       "source_file": "frontend/src/services/api/apiClient.js",
-      "source_location": "L145",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -30562,7 +30523,7 @@
       "confidence_score": 0.85,
       "context": "collection",
       "source_file": "frontend/src/services/api/apiClient.js",
-      "source_location": "L146",
+      "source_location": "L143",
       "weight": 1.0
     },
     {
@@ -30963,5 +30924,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7985d7be315175a4618d7c2df94edb63028f67b5"
+  "built_at_commit": "6bb553866d37267b349ce7f14aedeb86b9a15c25"
 }

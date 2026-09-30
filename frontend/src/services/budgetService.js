@@ -93,7 +93,7 @@ export function calculateBudgetStatus(budget, transactions = []) {
 /**
  * Calculates overall budget overview for a month.
  */
-export function calculateOverallBudget(budgetsForMonth = [], transactions = [], monthString) {
+export function calculateOverallBudget(budgetsForMonth = [], transactions = []) {
   if (budgetsForMonth.length === 0) {
     return {
       totalBudget: 0,

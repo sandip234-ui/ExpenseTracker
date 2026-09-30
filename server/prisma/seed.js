@@ -70,17 +70,35 @@ async function main() {
 
   // 1. Seed Accounts
   for (const account of DEFAULT_ACCOUNTS) {
-    await prisma.account.upsert({
-      where: { id: account.id },
-      update: {
-        name: account.name,
-        type: account.type,
-        currency: account.currency,
-        icon: account.icon,
-        color: account.color,
+    const normalizedName = account.name.trim().toLowerCase()
+    const existing = await prisma.account.findFirst({
+      where: {
+        OR: [
+          { id: account.id },
+          { userId: 'user_default_primary', normalizedName },
+        ],
       },
-      create: account,
     })
+    if (existing) {
+      await prisma.account.update({
+        where: { id: existing.id },
+        data: {
+          name: account.name,
+          normalizedName,
+          type: account.type,
+          currency: account.currency,
+          icon: account.icon,
+          color: account.color,
+        },
+      })
+    } else {
+      await prisma.account.create({
+        data: {
+          ...account,
+          normalizedName,
+        },
+      })
+    }
   }
   console.log(`✓ Seeded ${DEFAULT_ACCOUNTS.length} default accounts.`)
 
@@ -110,9 +128,18 @@ async function main() {
   // 3. Seed Settings
   for (const setting of DEFAULT_SETTINGS) {
     await prisma.setting.upsert({
-      where: { key: setting.key },
+      where: {
+        userId_key: {
+          userId: 'user_default_primary',
+          key: setting.key,
+        },
+      },
       update: { value: setting.value },
-      create: setting,
+      create: {
+        userId: 'user_default_primary',
+        key: setting.key,
+        value: setting.value,
+      },
     })
   }
   console.log(`✓ Seeded ${DEFAULT_SETTINGS.length} default settings.`)

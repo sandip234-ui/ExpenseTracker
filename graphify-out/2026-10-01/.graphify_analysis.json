@@ -23,8 +23,12 @@
       "frontend_src_components_common_toast",
       "frontend_src_components_common_toast_config",
       "frontend_src_components_common_toast_toast",
-      "frontend_src_components_dashboard_recenttransactions",
-      "frontend_src_components_dashboard_recenttransactions_recenttransactions",
+      "frontend_src_components_forms_transactionform",
+      "frontend_src_components_forms_transactionform_errorstyle",
+      "frontend_src_components_forms_transactionform_initial_state",
+      "frontend_src_components_forms_transactionform_inputstyle",
+      "frontend_src_components_forms_transactionform_labelstyle",
+      "frontend_src_components_forms_transactionform_transactionform",
       "frontend_src_components_layout_applayout",
       "frontend_src_components_layout_applayout_applayout",
       "frontend_src_components_layout_header",
@@ -45,8 +49,11 @@
       "frontend_src_context_authcontext_useauth",
       "frontend_src_context_transactioncontext",
       "frontend_src_context_transactioncontext_initialstate",
+      "frontend_src_context_transactioncontext_reducer",
       "frontend_src_context_transactioncontext_transactioncontext",
+      "frontend_src_context_transactioncontext_transactionprovider",
       "frontend_src_context_transactioncontext_usetransactions",
+      "frontend_src_data_categories_getpaymentmethodsforaccount",
       "frontend_src_index",
       "frontend_src_main",
       "frontend_src_pages_accounts",
@@ -56,11 +63,7 @@
       "frontend_src_pages_accounts_labelstyle",
       "frontend_src_pages_addtransaction",
       "frontend_src_pages_addtransaction_addtransaction",
-      "frontend_src_pages_budgets",
-      "frontend_src_pages_budgets_inputstyle",
-      "frontend_src_pages_budgets_labelstyle",
       "frontend_src_pages_calendar",
-      "frontend_src_pages_calendar_calendar",
       "frontend_src_pages_calendar_days_of_week",
       "frontend_src_pages_edittransaction",
       "frontend_src_pages_edittransaction_edittransaction",
@@ -78,7 +81,6 @@
       "frontend_src_pages_recurring_frequencies",
       "frontend_src_pages_recurring_inputstyle",
       "frontend_src_pages_recurring_labelstyle",
-      "frontend_src_pages_recurring_recurring",
       "frontend_src_pages_settings",
       "frontend_src_pages_settings_color_options",
       "frontend_src_pages_settings_inputstyle",
@@ -86,19 +88,17 @@
       "frontend_src_pages_settings_section",
       "frontend_src_pages_transactions",
       "frontend_src_pages_transactions_inputstyle",
-      "frontend_src_pages_transactions_transactions",
+      "frontend_src_services_accountservice_calculateaccountbalance",
+      "frontend_src_services_accountservice_getavailableaccountbalance",
       "frontend_src_services_api_index_authapi",
       "frontend_src_services_api_index_clearauthtoken",
       "frontend_src_services_api_index_getauthtoken",
-      "frontend_src_services_categoryservice_getallcategories",
       "frontend_src_services_dataprovider_index_data_source",
       "frontend_src_services_dataprovider_index_isapimode",
       "frontend_src_services_dataprovider_index_localprovider",
-      "frontend_src_utils_formatters",
-      "frontend_src_utils_formatters_formatamount",
-      "frontend_src_utils_formatters_formatcurrency",
-      "frontend_src_utils_formatters_formatdate",
-      "frontend_src_utils_formatters_formatrelativedate",
+      "frontend_src_services_insightservice_generatesmartwarnings",
+      "frontend_src_services_storage_exporttransactionstocsv",
+      "frontend_src_utils_validation_validatetransaction",
       "ref_lucide_react",
       "ref_react",
       "ref_react_dom",
@@ -158,7 +158,9 @@
       "server_src_services_budgetservice_updatebudget",
       "server_src_services_categoryservice",
       "server_src_services_categoryservice_createcategory",
+      "server_src_services_categoryservice_default_system_categories",
       "server_src_services_categoryservice_deletecategory",
+      "server_src_services_categoryservice_ensuredefaultsystemcategories",
       "server_src_services_categoryservice_getcategories",
       "server_src_services_categoryservice_getcategorybyid",
       "server_src_services_categoryservice_updatecategory",
@@ -284,24 +286,13 @@
       "frontend_test_phase7_api_first_runphase7verification"
     ],
     "3": [
-      "frontend_src_components_forms_transactionform",
-      "frontend_src_components_forms_transactionform_errorstyle",
-      "frontend_src_components_forms_transactionform_initial_state",
-      "frontend_src_components_forms_transactionform_inputstyle",
-      "frontend_src_components_forms_transactionform_labelstyle",
-      "frontend_src_components_forms_transactionform_transactionform",
-      "frontend_src_context_transactioncontext_reducer",
-      "frontend_src_context_transactioncontext_transactionprovider",
-      "frontend_src_data_categories_getpaymentmethodsforaccount",
       "frontend_src_pages_accounts_accounts",
       "frontend_src_pages_goals_goals",
       "frontend_src_pages_settings_settings",
       "frontend_src_services_accountservice",
       "frontend_src_services_accountservice_addaccount",
-      "frontend_src_services_accountservice_calculateaccountbalance",
       "frontend_src_services_accountservice_deleteaccount",
       "frontend_src_services_accountservice_getaccounts",
-      "frontend_src_services_accountservice_getavailableaccountbalance",
       "frontend_src_services_accountservice_gettotalnetworth",
       "frontend_src_services_accountservice_saveaccounts",
       "frontend_src_services_accountservice_updateaccount",
@@ -340,7 +331,6 @@
       "frontend_src_services_storage_deletetransaction",
       "frontend_src_services_storage_exportfullbackup",
       "frontend_src_services_storage_exporttransactions",
-      "frontend_src_services_storage_exporttransactionstocsv",
       "frontend_src_services_storage_getsettings",
       "frontend_src_services_storage_gettransactions",
       "frontend_src_services_storage_importbackupdata",
@@ -355,7 +345,6 @@
       "frontend_src_services_storageservice_safewrite",
       "frontend_src_services_storageservice_storage_keys",
       "frontend_src_utils_formatters_todayiso",
-      "frontend_src_utils_validation_validatetransaction",
       "frontend_test_edge_cases",
       "frontend_test_edge_cases_accounts",
       "frontend_test_edge_cases_assert",
@@ -435,6 +424,62 @@
       "server_src_validations_transactionschema_updatetransactionschema"
     ],
     "5": [
+      "frontend_src_components_dashboard_categorychart",
+      "frontend_src_components_dashboard_categorychart_categorychart",
+      "frontend_src_components_dashboard_categorychart_customtooltip",
+      "frontend_src_components_dashboard_categorychart_rendercustomlabel",
+      "frontend_src_components_dashboard_monthlychart",
+      "frontend_src_components_dashboard_monthlychart_customtooltip",
+      "frontend_src_components_dashboard_monthlychart_monthlychart",
+      "frontend_src_components_dashboard_recenttransactions",
+      "frontend_src_components_dashboard_recenttransactions_recenttransactions",
+      "frontend_src_components_dashboard_summarycard",
+      "frontend_src_components_dashboard_summarycard_summarycard",
+      "frontend_src_data_categories_getcategorybyid",
+      "frontend_src_pages_analytics",
+      "frontend_src_pages_analytics_analytics",
+      "frontend_src_pages_analytics_customtooltip",
+      "frontend_src_pages_budgets",
+      "frontend_src_pages_budgets_budgets",
+      "frontend_src_pages_budgets_inputstyle",
+      "frontend_src_pages_budgets_labelstyle",
+      "frontend_src_pages_calendar_calendar",
+      "frontend_src_pages_dashboard",
+      "frontend_src_pages_dashboard_dashboard",
+      "frontend_src_pages_recurring_recurring",
+      "frontend_src_pages_transactions_transactions",
+      "frontend_src_services_budgetservice",
+      "frontend_src_services_budgetservice_addbudget",
+      "frontend_src_services_budgetservice_calculatebudgetstatus",
+      "frontend_src_services_budgetservice_calculateoverallbudget",
+      "frontend_src_services_budgetservice_deletebudget",
+      "frontend_src_services_budgetservice_getbudgets",
+      "frontend_src_services_budgetservice_getbudgetsformonth",
+      "frontend_src_services_budgetservice_updatebudget",
+      "frontend_src_services_categoryservice_findcategory",
+      "frontend_src_services_categoryservice_getallcategories",
+      "frontend_src_services_insightservice",
+      "frontend_src_services_insightservice_generatespendinginsights",
+      "frontend_src_utils_calculations",
+      "frontend_src_utils_calculations_getbalance",
+      "frontend_src_utils_calculations_getcategorydata",
+      "frontend_src_utils_calculations_getmonthlydata",
+      "frontend_src_utils_calculations_getrecenttransactions",
+      "frontend_src_utils_calculations_getthismonthexpenses",
+      "frontend_src_utils_calculations_getthismonthincome",
+      "frontend_src_utils_calculations_getthismonthtransactions",
+      "frontend_src_utils_calculations_gettotalexpenses",
+      "frontend_src_utils_calculations_gettotalincome",
+      "frontend_src_utils_calculations_getyearlymonthlydata",
+      "frontend_src_utils_formatters",
+      "frontend_src_utils_formatters_formatamount",
+      "frontend_src_utils_formatters_formatcurrency",
+      "frontend_src_utils_formatters_formatdate",
+      "frontend_src_utils_formatters_formatrelativedate",
+      "frontend_src_utils_formatters_formatshortcurrency",
+      "ref_recharts"
+    ],
+    "6": [
       "frontend_eslint_config",
       "frontend_package",
       "frontend_package_dependencies",
@@ -480,16 +525,11 @@
       "ref_vite",
       "ref_vitejs_plugin_react"
     ],
-    "6": [
-      "frontend_src_components_dashboard_categorychart",
-      "frontend_src_components_dashboard_categorychart_categorychart",
-      "frontend_src_components_dashboard_categorychart_customtooltip",
-      "frontend_src_components_dashboard_categorychart_rendercustomlabel",
+    "7": [
       "frontend_src_data_categories",
       "frontend_src_data_categories_currencies",
       "frontend_src_data_categories_expense_categories",
       "frontend_src_data_categories_getcategoriesfortype",
-      "frontend_src_data_categories_getcategorybyid",
       "frontend_src_data_categories_income_categories",
       "frontend_src_data_categories_payment_methods",
       "frontend_src_utils_validation",
@@ -522,44 +562,6 @@
       "frontend_test_transaction_rules_upiaccount",
       "frontend_test_transaction_rules_upimethods",
       "frontend_test_transaction_rules_validationfail"
-    ],
-    "7": [
-      "frontend_src_components_dashboard_monthlychart",
-      "frontend_src_components_dashboard_monthlychart_customtooltip",
-      "frontend_src_components_dashboard_monthlychart_monthlychart",
-      "frontend_src_components_dashboard_summarycard",
-      "frontend_src_components_dashboard_summarycard_summarycard",
-      "frontend_src_pages_analytics",
-      "frontend_src_pages_analytics_analytics",
-      "frontend_src_pages_analytics_customtooltip",
-      "frontend_src_pages_budgets_budgets",
-      "frontend_src_pages_dashboard",
-      "frontend_src_pages_dashboard_dashboard",
-      "frontend_src_services_budgetservice",
-      "frontend_src_services_budgetservice_addbudget",
-      "frontend_src_services_budgetservice_calculatebudgetstatus",
-      "frontend_src_services_budgetservice_calculateoverallbudget",
-      "frontend_src_services_budgetservice_deletebudget",
-      "frontend_src_services_budgetservice_getbudgets",
-      "frontend_src_services_budgetservice_getbudgetsformonth",
-      "frontend_src_services_budgetservice_updatebudget",
-      "frontend_src_services_categoryservice_findcategory",
-      "frontend_src_services_insightservice",
-      "frontend_src_services_insightservice_generatesmartwarnings",
-      "frontend_src_services_insightservice_generatespendinginsights",
-      "frontend_src_utils_calculations",
-      "frontend_src_utils_calculations_getbalance",
-      "frontend_src_utils_calculations_getcategorydata",
-      "frontend_src_utils_calculations_getmonthlydata",
-      "frontend_src_utils_calculations_getrecenttransactions",
-      "frontend_src_utils_calculations_getthismonthexpenses",
-      "frontend_src_utils_calculations_getthismonthincome",
-      "frontend_src_utils_calculations_getthismonthtransactions",
-      "frontend_src_utils_calculations_gettotalexpenses",
-      "frontend_src_utils_calculations_gettotalincome",
-      "frontend_src_utils_calculations_getyearlymonthlydata",
-      "frontend_src_utils_formatters_formatshortcurrency",
-      "ref_recharts"
     ],
     "8": [
       "ref_fs",
@@ -634,7 +636,6 @@
       "ref_dotenv",
       "ref_express_rate_limit",
       "ref_prisma",
-      "ref_supertest",
       "server_package",
       "server_package_description",
       "server_package_devdependencies",
@@ -652,7 +653,6 @@
       "server_package_version"
     ],
     "11": [
-      "ref_bcryptjs",
       "ref_crypto",
       "ref_jsonwebtoken",
       "server_src_errors_domainerrors_emailalreadyexistserror",
@@ -682,6 +682,20 @@
       "server_test_health_server"
     ],
     "13": [
+      "server_src_controllers_budgetcontroller",
+      "server_src_controllers_budgetcontroller_createbudget",
+      "server_src_controllers_budgetcontroller_deletebudget",
+      "server_src_controllers_budgetcontroller_getbudgetbyid",
+      "server_src_controllers_budgetcontroller_getbudgets",
+      "server_src_controllers_budgetcontroller_updatebudget",
+      "server_src_controllers_recurringcontroller",
+      "server_src_controllers_recurringcontroller_createrecurring",
+      "server_src_controllers_recurringcontroller_deleterecurring",
+      "server_src_controllers_recurringcontroller_getrecurring",
+      "server_src_controllers_recurringcontroller_getrecurringbyid",
+      "server_src_controllers_recurringcontroller_updaterecurring"
+    ],
+    "14": [
       "server_package_dependencies",
       "server_package_dependencies_bcryptjs",
       "server_package_dependencies_cookie_parser",
@@ -694,7 +708,7 @@
       "server_package_dependencies_prisma_client",
       "server_package_dependencies_zod"
     ],
-    "14": [
+    "15": [
       "server_src_controllers_notificationcontroller",
       "server_src_controllers_notificationcontroller_dismissall",
       "server_src_controllers_notificationcontroller_dismissnotification",
@@ -706,7 +720,18 @@
       "server_src_services_notificationservice_getnotificationstates",
       "server_src_services_notificationservice_markasread"
     ],
-    "15": [
+    "16": [
+      "ref_bcryptjs",
+      "ref_node_assert",
+      "ref_supertest",
+      "server_src_lib_prisma",
+      "server_src_lib_prisma_prisma",
+      "server_test_api",
+      "server_test_api_runapitests",
+      "server_test_db",
+      "server_test_db_rundatabasetests"
+    ],
+    "17": [
       "ref_prisma_client",
       "server_prisma_seed",
       "server_prisma_seed_default_accounts",
@@ -717,7 +742,7 @@
       "server_prisma_seed_main",
       "server_prisma_seed_prisma"
     ],
-    "16": [
+    "18": [
       "server_src_config_index",
       "server_src_config_index_config",
       "server_src_config_index_validateenvironmentconfig",
@@ -728,7 +753,7 @@
       "server_test_production_security",
       "server_test_production_security_runproductionsecuritytests"
     ],
-    "17": [
+    "19": [
       "server_src_controllers_goalcontroller",
       "server_src_controllers_goalcontroller_creategoal",
       "server_src_controllers_goalcontroller_deletegoal",
@@ -738,16 +763,7 @@
       "server_src_controllers_goalcontroller_updategoal",
       "server_src_controllers_goalcontroller_withdrawfromgoal"
     ],
-    "18": [
-      "ref_node_assert",
-      "server_src_lib_prisma",
-      "server_src_lib_prisma_prisma",
-      "server_test_api",
-      "server_test_api_runapitests",
-      "server_test_db",
-      "server_test_db_rundatabasetests"
-    ],
-    "19": [
+    "20": [
       "server_src_controllers_accountcontroller",
       "server_src_controllers_accountcontroller_createaccount",
       "server_src_controllers_accountcontroller_deleteaccount",
@@ -756,7 +772,7 @@
       "server_src_controllers_accountcontroller_getnetworth",
       "server_src_controllers_accountcontroller_updateaccount"
     ],
-    "20": [
+    "21": [
       "scripts_package",
       "scripts_package_description",
       "scripts_package_name",
@@ -764,21 +780,13 @@
       "scripts_package_type",
       "scripts_package_version"
     ],
-    "21": [
+    "22": [
       "server_src_controllers_authcontroller",
       "server_src_controllers_authcontroller_getcookieoptions",
       "server_src_controllers_authcontroller_getme",
       "server_src_controllers_authcontroller_login",
       "server_src_controllers_authcontroller_logout",
       "server_src_controllers_authcontroller_register"
-    ],
-    "22": [
-      "server_src_controllers_budgetcontroller",
-      "server_src_controllers_budgetcontroller_createbudget",
-      "server_src_controllers_budgetcontroller_deletebudget",
-      "server_src_controllers_budgetcontroller_getbudgetbyid",
-      "server_src_controllers_budgetcontroller_getbudgets",
-      "server_src_controllers_budgetcontroller_updatebudget"
     ],
     "23": [
       "server_src_controllers_categorycontroller",
@@ -789,14 +797,6 @@
       "server_src_controllers_categorycontroller_updatecategory"
     ],
     "24": [
-      "server_src_controllers_recurringcontroller",
-      "server_src_controllers_recurringcontroller_createrecurring",
-      "server_src_controllers_recurringcontroller_deleterecurring",
-      "server_src_controllers_recurringcontroller_getrecurring",
-      "server_src_controllers_recurringcontroller_getrecurringbyid",
-      "server_src_controllers_recurringcontroller_updaterecurring"
-    ],
-    "25": [
       "server_src_controllers_transactioncontroller",
       "server_src_controllers_transactioncontroller_createtransaction",
       "server_src_controllers_transactioncontroller_deletetransaction",
@@ -804,43 +804,42 @@
       "server_src_controllers_transactioncontroller_gettransactions",
       "server_src_controllers_transactioncontroller_updatetransaction"
     ],
-    "26": [
+    "25": [
       "server_src_validators_index",
       "server_src_validators_index_validaterequest"
     ],
-    "27": [
+    "26": [
       "frontend_src_services_storage_migratestorage"
     ]
   },
   "cohesion": {
-    "0": 0.060182488837119005,
-    "1": 0.06541822721598002,
+    "0": 0.053775965831877305,
+    "1": 0.06426182513139035,
     "2": 0.05574229691876751,
-    "3": 0.06611813106082869,
+    "3": 0.08074534161490683,
     "4": 0.060515873015873016,
-    "5": 0.05179704016913319,
-    "6": 0.05975609756097561,
-    "7": 0.16507936507936508,
+    "5": 0.11250873515024458,
+    "6": 0.05179704016913319,
+    "7": 0.06507936507936508,
     "8": 0.11587301587301588,
     "9": 0.06896551724137931,
-    "10": 0.10526315789473684,
-    "11": 0.21978021978021978,
+    "10": 0.1111111111111111,
+    "11": 0.24358974358974358,
     "12": 0.21212121212121213,
-    "13": 0.18181818181818182,
-    "14": 0.2,
-    "15": 0.2222222222222222,
-    "16": 0.5277777777777778,
-    "17": 0.25,
-    "18": 0.42857142857142855,
-    "19": 0.2857142857142857,
-    "20": 0.3333333333333333,
-    "21": 0.4666666666666667,
-    "22": 0.3333333333333333,
+    "13": 0.15151515151515152,
+    "14": 0.18181818181818182,
+    "15": 0.2,
+    "16": 0.2777777777777778,
+    "17": 0.2222222222222222,
+    "18": 0.5277777777777778,
+    "19": 0.25,
+    "20": 0.2857142857142857,
+    "21": 0.3333333333333333,
+    "22": 0.4666666666666667,
     "23": 0.3333333333333333,
     "24": 0.3333333333333333,
-    "25": 0.3333333333333333,
-    "26": 1.0,
-    "27": 1.0
+    "25": 1.0,
+    "26": 1.0
   },
   "gods": [
     {
@@ -907,17 +906,6 @@
       "why": "connects across different repos/directories; bridges separate communities"
     },
     {
-      "source": "CustomTooltip()",
-      "target": "formatCurrency()",
-      "source_files": [
-        "frontend/src/components/dashboard/CategoryChart.jsx",
-        "frontend/src/utils/formatters.js"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "calls",
-      "why": "bridges separate communities; peripheral node `CustomTooltip()` unexpectedly reaches hub `formatCurrency()`"
-    },
-    {
       "source": "runTests()",
       "target": "cleanupDuplicateAccountNames()",
       "source_files": [
@@ -949,43 +937,21 @@
       "confidence": "INFERRED",
       "relation": "indirect_call",
       "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "createGoal()",
+      "target": "InvalidAmountError",
+      "source_files": [
+        "server/src/services/goalService.js",
+        "server/src/errors/domainErrors.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `createGoal()` unexpectedly reaches hub `InvalidAmountError`"
     }
   ],
-  "questions": [
-    {
-      "type": "bridge_node",
-      "question": "Why does `express` connect `routes/index.js` to `test_production_security.js`, `server/package.json`, `app.js`?",
-      "why": "High betweenness centrality (0.107) - this node is a cross-community bridge."
-    },
-    {
-      "type": "bridge_node",
-      "question": "Why does `react` connect `TransactionContext.jsx` to `storage.js`, `frontend/package.json`, `test_transaction_rules.js`, `Dashboard.jsx`?",
-      "why": "High betweenness centrality (0.078) - this node is a cross-community bridge."
-    },
-    {
-      "type": "bridge_node",
-      "question": "Why does `calculateAccountBalance()` connect `storage.js` to `TransactionContext.jsx`, `test_transaction_rules.js`, `Dashboard.jsx`?",
-      "why": "High betweenness centrality (0.071) - this node is a cross-community bridge."
-    },
-    {
-      "type": "isolated_nodes",
-      "question": "What connects `VARIANTS`, `CONFIG`, `PAGE_TITLES` to the rest of the system?",
-      "why": "167 weakly-connected nodes found - possible documentation gaps or missing edges."
-    },
-    {
-      "type": "low_cohesion",
-      "question": "Should `TransactionContext.jsx` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.060182488837119005 - nodes in this community are weakly interconnected."
-    },
-    {
-      "type": "low_cohesion",
-      "question": "Should `domainErrors.js` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.06541822721598002 - nodes in this community are weakly interconnected."
-    },
-    {
-      "type": "low_cohesion",
-      "question": "Should `api/index.js` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.05574229691876751 - nodes in this community are weakly interconnected."
-    }
-  ]
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
 }

@@ -17,11 +17,6 @@ export function getDataSourceMode() {
     return import.meta.env.VITE_DATA_SOURCE.toLowerCase()
   }
 
-  // Node environment
-  if (typeof process !== 'undefined' && process.env && process.env.VITE_DATA_SOURCE) {
-    return process.env.VITE_DATA_SOURCE.toLowerCase()
-  }
-
   // Default is API mode (Phase 7 API-first cutover)
   return 'api'
 }

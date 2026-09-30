@@ -9,6 +9,9 @@ import { notFoundHandler, errorHandler } from './middleware/errorHandler.js'
 export function createApp() {
   const app = express()
 
+  // Configure trust proxy for reverse proxies (Render / Cloudflare)
+  app.set('trust proxy', 1)
+
   // 1. Security Headers via Helmet
   app.use(
     helmet({

@@ -18,6 +18,7 @@ const TransactionContext = createContext(null)
 const initialState = {
   transactions: [],
   accounts: [],
+  categories: [],
   customCategories: [],
   budgets: [],
   goals: [],
@@ -35,6 +36,7 @@ function reducer(state, action) {
         ...state,
         transactions: action.payload.transactions,
         accounts: action.payload.accounts,
+        categories: action.payload.categories || [],
         customCategories: action.payload.customCategories,
         budgets: action.payload.budgets,
         goals: action.payload.goals,
@@ -110,6 +112,7 @@ export function TransactionProvider({ children }) {
           payload: {
             transactions: txns,
             accounts: accs,
+            categories: cats,
             customCategories: customCats,
             budgets: bdgs,
             goals: gls,
@@ -140,6 +143,7 @@ export function TransactionProvider({ children }) {
           payload: {
             transactions: txns,
             accounts: accs,
+            categories: cats,
             customCategories: customCats,
             budgets: bdgs,
             goals: gls,
@@ -182,7 +186,7 @@ export function TransactionProvider({ children }) {
     const root = document.documentElement
 
     const applyTheme = () => {
-      let isDark = false
+      let isDark
       if (theme === 'dark') {
         isDark = true
       } else if (theme === 'system') {
@@ -219,7 +223,7 @@ export function TransactionProvider({ children }) {
 
   const addTransaction = useCallback(
     async (data) => {
-      const defaultAccountId = state.accounts[0]?.id || 'account-cash'
+      const defaultAccountId = state.accounts[0]?.id || ''
       const accountId = data.accountId || defaultAccountId
       const account = state.accounts.find((a) => a.id === accountId)
       const amount = Number(data.amount)
@@ -893,7 +897,7 @@ export function TransactionProvider({ children }) {
 
   const addRecurring = useCallback(
     async (data) => {
-      const defaultAccountId = state.accounts[0]?.id || 'account-cash'
+      const defaultAccountId = state.accounts[0]?.id || ''
       if (!isApiMode()) {
         const rule = {
           id: `rec-${uuidv4().slice(0, 8)}`,
@@ -1092,6 +1096,7 @@ export function TransactionProvider({ children }) {
     // Entities
     transactions: state.transactions,
     accounts: state.accounts,
+    categories: state.categories || [],
     customCategories: state.customCategories,
     budgets: state.budgets,
     goals: state.goals,

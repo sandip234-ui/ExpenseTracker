@@ -1,9 +1,9 @@
 {
   "frontend/eslint.config.js": {
-    "mtime": 1790105721.4916668,
-    "seen": 1790761892.996864,
-    "ast_hash": "3aa4b57d7f08181d86bde52a4dcb7f22",
-    "semantic_hash": "3aa4b57d7f08181d86bde52a4dcb7f22"
+    "mtime": 1790800466.9960325,
+    "seen": 1790800504.478005,
+    "ast_hash": "55a0e0aec22a9ab2354a4cea921a20c2",
+    "semantic_hash": "55a0e0aec22a9ab2354a4cea921a20c2"
   },
   "frontend/package.json": {
     "mtime": 1790145860.8506706,
@@ -84,10 +84,10 @@
     "semantic_hash": "19546e17a4a05466e88178d6940e0d01"
   },
   "frontend/src/components/forms/TransactionForm.jsx": {
-    "mtime": 1790189528.023136,
-    "seen": 1790761892.9968781,
-    "ast_hash": "0338f12a87e3b9d75a6675823bc01562",
-    "semantic_hash": "0338f12a87e3b9d75a6675823bc01562"
+    "mtime": 1790799555.5806646,
+    "seen": 1790800504.478631,
+    "ast_hash": "813b1fe4e8f91488635e3e2f5969c2c5",
+    "semantic_hash": "813b1fe4e8f91488635e3e2f5969c2c5"
   },
   "frontend/src/components/layout/AppLayout.jsx": {
     "mtime": 1790140613.7068238,
@@ -120,10 +120,10 @@
     "semantic_hash": "aebd3776b480637804d9d03ca0de0a6d"
   },
   "frontend/src/context/TransactionContext.jsx": {
-    "mtime": 1790792248.112727,
-    "seen": 1790792913.189279,
-    "ast_hash": "b6813c494ce56d7d795b72dbfb500b8c",
-    "semantic_hash": "b6813c494ce56d7d795b72dbfb500b8c"
+    "mtime": 1790800482.59985,
+    "seen": 1790800504.478883,
+    "ast_hash": "5b7d23d0fc668ecd9f3e598f52777a20",
+    "semantic_hash": "5b7d23d0fc668ecd9f3e598f52777a20"
   },
   "frontend/src/data/categories.js": {
     "mtime": 1790189436.048783,
@@ -156,10 +156,10 @@
     "semantic_hash": "3e6aedc0c87cdfcc4eed05232737256c"
   },
   "frontend/src/pages/Budgets.jsx": {
-    "mtime": 1790147014.5115156,
-    "seen": 1790761892.996889,
-    "ast_hash": "d0d16fe305009505b3027ee33fa31fc5",
-    "semantic_hash": "d0d16fe305009505b3027ee33fa31fc5"
+    "mtime": 1790800392.974728,
+    "seen": 1790800504.479073,
+    "ast_hash": "142e5973680c9c4c64ae855c41948a51",
+    "semantic_hash": "142e5973680c9c4c64ae855c41948a51"
   },
   "frontend/src/pages/Calendar.jsx": {
     "mtime": 1790147160.8738868,
@@ -192,10 +192,10 @@
     "semantic_hash": "6b2a8f252ac50e8af7b92d1f5c2c858a"
   },
   "frontend/src/pages/Recurring.jsx": {
-    "mtime": 1790147079.6359065,
-    "seen": 1790761892.996895,
-    "ast_hash": "fb589683fc56b838a8807209ca77d089",
-    "semantic_hash": "fb589683fc56b838a8807209ca77d089"
+    "mtime": 1790800354.6477334,
+    "seen": 1790800504.4793012,
+    "ast_hash": "10b2ae51297428551cbe9e8fd44fea5a",
+    "semantic_hash": "10b2ae51297428551cbe9e8fd44fea5a"
   },
   "frontend/src/pages/Settings.jsx": {
     "mtime": 1790141732.628339,
@@ -216,16 +216,16 @@
     "semantic_hash": "d862e010843ae166e954053670420df7"
   },
   "frontend/src/services/budgetService.js": {
-    "mtime": 1790779004.670828,
-    "seen": 1790779926.52652,
-    "ast_hash": "236fb75ac007666e854996a7190c5e45",
-    "semantic_hash": "236fb75ac007666e854996a7190c5e45"
+    "mtime": 1790800438.5310934,
+    "seen": 1790800504.479792,
+    "ast_hash": "c17211449478dc4e30f7fee58dac4456",
+    "semantic_hash": "c17211449478dc4e30f7fee58dac4456"
   },
   "frontend/src/services/categoryService.js": {
-    "mtime": 1790778997.5268483,
-    "seen": 1790779926.5265212,
-    "ast_hash": "e2e71cdca560f4c4c2c69beb6f7a73fc",
-    "semantic_hash": "e2e71cdca560f4c4c2c69beb6f7a73fc"
+    "mtime": 1790800433.0528274,
+    "seen": 1790800504.4797928,
+    "ast_hash": "2cd4857c8910219d30fe633ee92fb399",
+    "semantic_hash": "2cd4857c8910219d30fe633ee92fb399"
   },
   "frontend/src/services/goalService.js": {
     "mtime": 1790145611.2150264,
@@ -240,10 +240,10 @@
     "semantic_hash": "636e71925f9db0ee03ad92ce541401f7"
   },
   "frontend/src/services/recurringService.js": {
-    "mtime": 1790779011.9942663,
-    "seen": 1790779926.526599,
-    "ast_hash": "78d53f6212cf143e8d2bf3f8b4ac8e62",
-    "semantic_hash": "78d53f6212cf143e8d2bf3f8b4ac8e62"
+    "mtime": 1790800364.9570181,
+    "seen": 1790800504.4799948,
+    "ast_hash": "8c896d8dc8d7185782595a1fe0c32516",
+    "semantic_hash": "8c896d8dc8d7185782595a1fe0c32516"
   },
   "frontend/src/services/storage.js": {
     "mtime": 1790778991.0277262,
@@ -300,10 +300,10 @@
     "semantic_hash": "19540ea9f13907f22607fa679f21d244"
   },
   "server/src/app.js": {
-    "mtime": 1790791140.056687,
-    "seen": 1790791338.778912,
-    "ast_hash": "803b2e3fc4d8245f1310100b57ac497b",
-    "semantic_hash": "803b2e3fc4d8245f1310100b57ac497b"
+    "mtime": 1790799451.6668918,
+    "seen": 1790800504.480715,
+    "ast_hash": "4dbb04a945e539395f8db70ed9a03b03",
+    "semantic_hash": "4dbb04a945e539395f8db70ed9a03b03"
   },
   "server/src/config/index.js": {
     "mtime": 1790791059.0383494,
@@ -360,10 +360,10 @@
     "semantic_hash": "f2b9989b66efeef90a75ea588e7cf2ef"
   },
   "server/prisma/seed.js": {
-    "mtime": 1790762909.8817995,
-    "seen": 1790791837.523218,
-    "ast_hash": "ed5447832bb1046570742e10c2e7063d",
-    "semantic_hash": "ed5447832bb1046570742e10c2e7063d"
+    "mtime": 1790799736.0765715,
+    "seen": 1790800504.480714,
+    "ast_hash": "8c41e502f5d05a97d4ff39145cad35ce",
+    "semantic_hash": "8c41e502f5d05a97d4ff39145cad35ce"
   },
   "server/src/lib/prisma.js": {
     "mtime": 1790762713.8608031,
@@ -372,10 +372,10 @@
     "semantic_hash": "eab737d42e36fed16c1dc1d54debe3e1"
   },
   "server/test_db.js": {
-    "mtime": 1790762932.6986964,
-    "seen": 1790791837.524739,
-    "ast_hash": "fc8c456143c22dbc94ef48190804a0bf",
-    "semantic_hash": "fc8c456143c22dbc94ef48190804a0bf"
+    "mtime": 1790799766.3920507,
+    "seen": 1790800504.482325,
+    "ast_hash": "30e588cd53d26cb8d66e4ca1cc450241",
+    "semantic_hash": "30e588cd53d26cb8d66e4ca1cc450241"
   },
   "server/src/errors/domainErrors.js": {
     "mtime": 1790793304.7785215,
@@ -396,16 +396,16 @@
     "semantic_hash": "54d439489fe003330ef6454fddb42022"
   },
   "server/src/services/categoryService.js": {
-    "mtime": 1790790128.061464,
-    "seen": 1790790909.934359,
-    "ast_hash": "4b3cad399dc9f6c4af0ab7bb1fb99526",
-    "semantic_hash": "4b3cad399dc9f6c4af0ab7bb1fb99526"
+    "mtime": 1790799464.1345704,
+    "seen": 1790800504.481815,
+    "ast_hash": "e1cf102148b93d75b7028e2b547773b9",
+    "semantic_hash": "e1cf102148b93d75b7028e2b547773b9"
   },
   "server/src/services/goalService.js": {
-    "mtime": 1790790856.296228,
-    "seen": 1790790909.93436,
-    "ast_hash": "95096e5e377282d938e26cb6f7717825",
-    "semantic_hash": "95096e5e377282d938e26cb6f7717825"
+    "mtime": 1790799903.105117,
+    "seen": 1790800504.481816,
+    "ast_hash": "59bc024ae6302f4a1306adfc725586a2",
+    "semantic_hash": "59bc024ae6302f4a1306adfc725586a2"
   },
   "server/src/services/recurringService.js": {
     "mtime": 1790790096.6832373,
@@ -414,10 +414,10 @@
     "semantic_hash": "37e4481bf1247a16b6bac040567d011d"
   },
   "server/src/services/transactionService.js": {
-    "mtime": 1790790824.1259387,
-    "seen": 1790790909.934402,
-    "ast_hash": "9b9bb81ed61d53c598022a61ec53e8d8",
-    "semantic_hash": "9b9bb81ed61d53c598022a61ec53e8d8"
+    "mtime": 1790799497.2125607,
+    "seen": 1790800504.481926,
+    "ast_hash": "94e9151513efc3467418372fcd98d4f8",
+    "semantic_hash": "94e9151513efc3467418372fcd98d4f8"
   },
   "server/src/utils/formatters.js": {
     "mtime": 1790763396.6803026,
@@ -558,10 +558,10 @@
     "semantic_hash": "3995fb050a9fc1ff598b47e7822b5870"
   },
   "frontend/src/services/api/apiClient.js": {
-    "mtime": 1790791162.3311932,
-    "seen": 1790791338.777552,
-    "ast_hash": "cad397508810a132ba63729d57ebc854",
-    "semantic_hash": "cad397508810a132ba63729d57ebc854"
+    "mtime": 1790800489.443497,
+    "seen": 1790800504.479459,
+    "ast_hash": "93b362d98cf991832ef01a9dc4b36b03",
+    "semantic_hash": "93b362d98cf991832ef01a9dc4b36b03"
   },
   "frontend/src/services/api/budgetApi.js": {
     "mtime": 1790778955.3641214,
@@ -606,10 +606,10 @@
     "semantic_hash": "b8f9232a6d9968125256e58ee869afd1"
   },
   "frontend/src/services/dataProvider/config.js": {
-    "mtime": 1790783201.478418,
-    "seen": 1790783707.456991,
-    "ast_hash": "b23b3a01aad13a744743f9ec6762e9e6",
-    "semantic_hash": "b23b3a01aad13a744743f9ec6762e9e6"
+    "mtime": 1790800417.596611,
+    "seen": 1790800504.479836,
+    "ast_hash": "72a74fc78445632e10a8848af9784a42",
+    "semantic_hash": "72a74fc78445632e10a8848af9784a42"
   },
   "frontend/src/services/dataProvider/index.js": {
     "mtime": 1790784261.275463,

@@ -105,7 +105,7 @@ export function checkAndGenerateRecurringTransactions(recurringRules = [], exist
           amount: Number(rule.amount),
           description: rule.description,
           category: rule.categoryId || 'other',
-          accountId: rule.accountId || 'account-cash',
+          accountId: rule.accountId || '',
           date: next,
           paymentMethod: 'Recurring',
           notes: `Auto-generated recurring transaction (${rule.frequency})`,

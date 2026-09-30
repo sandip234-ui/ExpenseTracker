@@ -14,7 +14,7 @@ import EmptyState from '../components/common/EmptyState'
 import AnimatedGradientBorder from '../components/common/AnimatedGradientBorder'
 import {
   PiggyBank, Plus, Edit3, Trash2, ChevronLeft, ChevronRight,
-  AlertTriangle, CheckCircle2, TrendingDown, Layers
+  AlertTriangle, CheckCircle2
 } from 'lucide-react'
 
 const inputStyle = {
@@ -37,7 +37,7 @@ const labelStyle = {
 }
 
 export default function Budgets() {
-  const { budgets, transactions, customCategories, addBudget, updateBudget, deleteBudget, settings } = useTransactions()
+  const { budgets, transactions, categories: allCategoriesList, customCategories, addBudget, updateBudget, deleteBudget, settings } = useTransactions()
   const currencySymbol = settings?.currencySymbol || '₹'
 
   // Current selected month: 'YYYY-MM'
@@ -50,16 +50,18 @@ export default function Budgets() {
   const [editingBudget, setEditingBudget] = useState(null)
   const [deleteTarget, setDeleteTarget] = useState(null)
 
+  const expenseCategories = useMemo(() => {
+    if (allCategoriesList && allCategoriesList.length > 0) {
+      return allCategoriesList.filter((c) => c.type === 'expense' || c.type === 'both')
+    }
+    return getAllCategories('expense', customCategories)
+  }, [allCategoriesList, customCategories])
+
   const [formData, setFormData] = useState({
-    categoryId: 'food',
+    categoryId: '',
     amount: '',
     month: selectedMonth,
   })
-
-  const expenseCategories = useMemo(
-    () => getAllCategories('expense', customCategories),
-    [customCategories]
-  )
 
   // Month navigation helpers
   const handlePrevMonth = () => {
@@ -99,7 +101,7 @@ export default function Budgets() {
   const openAddModal = () => {
     setEditingBudget(null)
     setFormData({
-      categoryId: expenseCategories[0]?.id || 'food',
+      categoryId: expenseCategories[0]?.id || '',
       amount: '',
       month: selectedMonth,
     })

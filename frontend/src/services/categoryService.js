@@ -36,7 +36,7 @@ export function deleteCategory(id) {
  * Returns merged category list (default + custom) for a given type or all.
  */
 export function getAllCategories(type = 'all', customCategories = []) {
-  let defaults = []
+  let defaults
   if (type === 'income') {
     defaults = INCOME_CATEGORIES
   } else if (type === 'expense') {

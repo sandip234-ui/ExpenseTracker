@@ -274,7 +274,7 @@ export async function depositToGoal(firstArg, secondArg = null, maybeClient = pr
   if (client.$transaction && client !== prisma) {
     return runInTx(client)
   }
-  return prisma.$transaction(runInTx)
+  return prisma.$transaction(runInTx, { maxWait: 10000, timeout: 20000 })
 }
 
 /**
@@ -384,7 +384,7 @@ export async function withdrawFromGoal(firstArg, secondArg = null, maybeClient =
   if (client.$transaction && client !== prisma) {
     return runInTx(client)
   }
-  return prisma.$transaction(runInTx)
+  return prisma.$transaction(runInTx, { maxWait: 10000, timeout: 20000 })
 }
 
 /**
