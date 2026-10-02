@@ -35,7 +35,7 @@ export default function Sidebar() {
       {/* Logo */}
       <div className="flex items-center gap-3 px-5 py-4 border-b" style={{ borderColor: 'var(--border-color, #E5E7EB)' }}>
         <div
-          className="flex items-center justify-center w-8 h-8 rounded-xl flex-shrink-0"
+          className="flex items-center justify-center w-8 h-8 rounded-xl shrink-0"
           style={{ background: 'linear-gradient(135deg, #6366F1, #8B5CF6)' }}
         >
           <TrendingUp size={16} color="white" />
@@ -68,7 +68,7 @@ export default function Sidebar() {
       <div className="px-4 py-3 border-t flex flex-col gap-2" style={{ borderColor: 'var(--border-color, #E5E7EB)' }}>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 overflow-hidden">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: '#EEF2FF', color: '#6366F1' }}>
+            <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ background: '#EEF2FF', color: '#6366F1' }}>
               <User size={15} />
             </div>
             <div className="truncate">
