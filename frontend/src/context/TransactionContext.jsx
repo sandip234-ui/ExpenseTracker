@@ -22,7 +22,6 @@ const initialState = {
   customCategories: [],
   budgets: [],
   goals: [],
-  recurring: [],
   settings: getSettings(),
   toast: null,
   isLoading: false,
@@ -40,7 +39,6 @@ function reducer(state, action) {
         customCategories: action.payload.customCategories,
         budgets: action.payload.budgets,
         goals: action.payload.goals,
-        recurring: action.payload.recurring,
         settings: action.payload.settings,
         isLoading: false,
         error: null,
@@ -59,8 +57,6 @@ function reducer(state, action) {
       return { ...state, budgets: action.payload }
     case 'SET_GOALS':
       return { ...state, goals: action.payload }
-    case 'SET_RECURRING':
-      return { ...state, recurring: action.payload }
     case 'SET_SETTINGS':
       return { ...state, settings: action.payload }
     case 'SET_TOAST':
@@ -96,13 +92,12 @@ export function TransactionProvider({ children }) {
       // Local Mode: Fallback provider for isolated offline testing
       try {
         localProvider.migrateStorage()
-        const [accs, txns, cats, bdgs, gls, recs] = await Promise.all([
+        const [accs, txns, cats, bdgs, gls] = await Promise.all([
           localProvider.getAccounts(),
           localProvider.getTransactions(),
           localProvider.getCategories(),
           localProvider.getBudgets(),
           localProvider.getGoals(),
-          localProvider.getRecurring(),
         ])
         const stgs = await localProvider.getSettings()
         const customCats = cats.filter((c) => c.isCustom)
@@ -116,7 +111,6 @@ export function TransactionProvider({ children }) {
             customCategories: customCats,
             budgets: bdgs,
             goals: gls,
-            recurring: recs,
             settings: stgs,
           },
         })
@@ -127,13 +121,12 @@ export function TransactionProvider({ children }) {
     } else {
       // API Mode: Fetch authoritative state from REST API
       try {
-        const [accs, txns, cats, bdgs, gls, recs] = await Promise.all([
+        const [accs, txns, cats, bdgs, gls] = await Promise.all([
           dataProvider.getAccounts(),
           dataProvider.getTransactions(),
           dataProvider.getCategories(),
           dataProvider.getBudgets(),
           dataProvider.getGoals(),
-          dataProvider.getRecurring(),
         ])
         const stgs = await dataProvider.getSettings()
         const customCats = cats.filter((c) => c.isCustom)
@@ -147,7 +140,6 @@ export function TransactionProvider({ children }) {
             customCategories: customCats,
             budgets: bdgs,
             goals: gls,
-            recurring: recs,
             settings: stgs,
           },
         })
@@ -172,7 +164,6 @@ export function TransactionProvider({ children }) {
           customCategories: [],
           budgets: [],
           goals: [],
-          recurring: [],
           settings: getSettings(),
         },
       })
@@ -893,101 +884,6 @@ export function TransactionProvider({ children }) {
     [state.accounts, depositToGoal, withdrawFromGoal]
   )
 
-  // ── Recurring actions ──────────────────────────────────────────────────────
-
-  const addRecurring = useCallback(
-    async (data) => {
-      const defaultAccountId = state.accounts[0]?.id || ''
-      if (!isApiMode()) {
-        const rule = {
-          id: `rec-${uuidv4().slice(0, 8)}`,
-          type: data.type || 'expense',
-          description: String(data.description).trim(),
-          amount: Number(data.amount),
-          categoryId: data.categoryId || 'other',
-          accountId: data.accountId || defaultAccountId,
-          frequency: data.frequency || 'monthly',
-          startDate: data.startDate,
-          nextOccurrence: data.nextOccurrence || data.startDate,
-          endDate: data.endDate || null,
-          active: data.active !== undefined ? data.active : true,
-          lastGeneratedDate: null,
-          createdAt: new Date().toISOString(),
-        }
-        const updated = await localProvider.createRecurring(rule)
-        dispatch({ type: 'SET_RECURRING', payload: updated })
-        showToast('Recurring transaction schedule saved!', 'success')
-        return rule
-      } else {
-        try {
-          const created = await dataProvider.createRecurring({
-            ...data,
-            accountId: data.accountId || defaultAccountId,
-            categoryId: data.categoryId || data.category || 'other',
-          })
-          dispatch({ type: 'SET_RECURRING', payload: [...state.recurring, created] })
-          showToast('Recurring transaction schedule saved!', 'success')
-          return created
-        } catch (err) {
-          showToast(err.message, 'error')
-          throw err
-        }
-      }
-    },
-    [state.accounts, state.recurring, showToast]
-  )
-
-  const updateRecurring = useCallback(
-    async (id, data) => {
-      if (!isApiMode()) {
-        const updated = await localProvider.updateRecurring(id, {
-          ...data,
-          amount: Number(data.amount),
-          description: String(data.description).trim(),
-        })
-        dispatch({ type: 'SET_RECURRING', payload: updated })
-        showToast('Recurring schedule updated!', 'success')
-      } else {
-        try {
-          const updated = await dataProvider.updateRecurring(id, data)
-          dispatch({
-            type: 'SET_RECURRING',
-            payload: state.recurring.map((r) => (r.id === id ? updated : r)),
-          })
-          showToast('Recurring schedule updated!', 'success')
-          return updated
-        } catch (err) {
-          showToast(err.message, 'error')
-          throw err
-        }
-      }
-    },
-    [state.recurring, showToast]
-  )
-
-  const deleteRecurring = useCallback(
-    async (id) => {
-      if (!isApiMode()) {
-        const updated = await localProvider.deleteRecurring(id)
-        dispatch({ type: 'SET_RECURRING', payload: updated })
-        showToast('Recurring schedule deleted.', 'info')
-      } else {
-        try {
-          await dataProvider.deleteRecurring(id)
-          dispatch({
-            type: 'SET_RECURRING',
-            payload: state.recurring.filter((r) => r.id !== id),
-          })
-          showToast('Recurring schedule deleted.', 'info')
-        } catch (err) {
-          showToast(err.message, 'error')
-          throw err
-        }
-      }
-    },
-    [state.recurring, showToast]
-  )
-
   // ── Settings actions ───────────────────────────────────────────────────────
 
   const updateSettings = useCallback(
@@ -1050,7 +946,6 @@ export function TransactionProvider({ children }) {
           budgets: state.budgets,
           accounts: state.accounts,
           goals: state.goals,
-          recurringTransactions: state.recurring,
           settings: state.settings,
         },
         null,
@@ -1074,7 +969,6 @@ export function TransactionProvider({ children }) {
     state.customCategories,
     state.budgets,
     state.goals,
-    state.recurring,
     state.settings,
     showToast,
   ])
@@ -1085,7 +979,6 @@ export function TransactionProvider({ children }) {
     transactions: state.transactions,
     budgets: state.budgets,
     accounts: state.accounts,
-    recurring: state.recurring,
     goals: state.goals,
     customCategories: state.customCategories,
   })
@@ -1100,7 +993,6 @@ export function TransactionProvider({ children }) {
     customCategories: state.customCategories,
     budgets: state.budgets,
     goals: state.goals,
-    recurring: state.recurring,
     settings: state.settings,
     warnings,
     toast: state.toast,
@@ -1138,11 +1030,6 @@ export function TransactionProvider({ children }) {
     contributeGoal,
     depositToGoal,
     withdrawFromGoal,
-
-    // Recurring Actions
-    addRecurring,
-    updateRecurring,
-    deleteRecurring,
 
     // Settings Actions
     updateSettings,

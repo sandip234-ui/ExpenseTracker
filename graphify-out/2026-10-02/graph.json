@@ -3020,7 +3020,7 @@
       "file_type": "code",
       "norm_label": "importtransactions()",
       "source_file": "frontend/src/services/storage.js",
-      "source_location": "L220"
+      "source_location": "L214"
     },
     {
       "id": "frontend_src_services_storage_savesettings",
@@ -10721,7 +10721,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/storage.js",
-      "source_location": "L174",
+      "source_location": "L168",
       "weight": 1.0
     },
     {
@@ -10733,7 +10733,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/storage.js",
-      "source_location": "L178",
+      "source_location": "L172",
       "weight": 1.0
     },
     {
@@ -10745,7 +10745,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/storage.js",
-      "source_location": "L181",
+      "source_location": "L175",
       "weight": 1.0
     },
     {
@@ -10757,7 +10757,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/storage.js",
-      "source_location": "L186",
+      "source_location": "L180",
       "weight": 1.0
     },
     {
@@ -10769,7 +10769,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/storage.js",
-      "source_location": "L189",
+      "source_location": "L183",
       "weight": 1.0
     },
     {
@@ -10781,7 +10781,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/storage.js",
-      "source_location": "L194",
+      "source_location": "L188",
       "weight": 1.0
     },
     {
@@ -10793,7 +10793,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/storage.js",
-      "source_location": "L197",
+      "source_location": "L191",
       "weight": 1.0
     },
     {
@@ -10805,7 +10805,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/storage.js",
-      "source_location": "L202",
+      "source_location": "L196",
       "weight": 1.0
     },
     {
@@ -10817,7 +10817,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/storage.js",
-      "source_location": "L205",
+      "source_location": "L199",
       "weight": 1.0
     },
     {
@@ -10829,7 +10829,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/storage.js",
-      "source_location": "L210",
+      "source_location": "L204",
       "weight": 1.0
     },
     {
@@ -10841,7 +10841,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/storage.js",
-      "source_location": "L221",
+      "source_location": "L215",
       "weight": 1.0
     },
     {
@@ -25555,7 +25555,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/storage.js",
-      "source_location": "L220",
+      "source_location": "L214",
       "weight": 1.0
     },
     {

@@ -92,12 +92,6 @@ export class BudgetNotFoundError extends DomainError {
   }
 }
 
-export class RecurringNotFoundError extends DomainError {
-  constructor(message = 'Recurring transaction rule not found.', details = null) {
-    super(message, 'RECURRING_NOT_FOUND', 404, details)
-  }
-}
-
 export class ValidationError extends DomainError {
   constructor(message = 'Validation failed.', details = null) {
     super(message, 'VALIDATION_ERROR', 400, details)

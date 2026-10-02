@@ -11,7 +11,6 @@ export const ENTITY_TYPES = [
   'transactions',
   'goals',
   'budgets',
-  'recurringTransactions',
   'settings',
 ]
 
@@ -40,13 +39,6 @@ export const VALID_CATEGORY_TYPES = [
   'income',
   'transfer',
   'both',
-]
-
-export const VALID_RECURRING_FREQUENCIES = [
-  'daily',
-  'weekly',
-  'monthly',
-  'yearly',
 ]
 
 export const DEFAULT_CATEGORY_IDS = [

@@ -38,7 +38,7 @@
 
 ## Overview
 
-**FinTrack** is a client-side personal finance tracker designed for speed, clarity, and absolute privacy. It provides comprehensive financial tracking — including multi-account balances, categorized income and expenses, monthly budgets, recurring transactions, and savings goals — without sending your personal data to any external server.
+**FinTrack** is a client-side personal finance tracker designed for speed, clarity, and absolute privacy. It provides comprehensive financial tracking — including multi-account balances, categorized income and expenses, monthly budgets, and savings goals — without sending your personal data to any external server.
 
 FinTrack enforces strict **single-source-of-truth accounting**: account balances are never manually altered via arbitrary counters; instead, every balance is mathematically derived from your immutable opening balances and ledger transactions.
 
@@ -51,10 +51,9 @@ FinTrack enforces strict **single-source-of-truth accounting**: account balances
 - **Income & Expense Tracking**: Strict categorization, date selection, payment method metadata filtering, and rich search/filter capabilities across descriptions, notes, accounts, and categories.
 - **Atomic Savings Goals**: Create targets with target dates, visual progress bars, and execute secure deposit and withdrawal transfers between accounts and goals without creating artificial income or expenses.
 - **Monthly Category Budgets**: Set spending limits per category per month with real-time budget burn rate indicators and automated overspending warnings.
-- **Automated Recurring Transactions**: Schedule daily, weekly, monthly, or yearly transactions with automatic generation upon app launch.
 - **Financial Calendar**: Interactive monthly calendar with daily income, expense, and net cashflow heatmaps and day-level transaction inspection.
 - **Advanced Analytics & Charts**: Interactive Recharts visualizations featuring monthly cash flow bar charts, category spending distributions, 3/6/12-month trends, and expense-to-income ratios.
-- **Smart Financial Insights**: Proactive system alerts detecting high burn rates, negative account balances, overdue goals, and upcoming recurring commitments.
+- **Smart Financial Insights**: Proactive system alerts detecting high burn rates, negative account balances, and overdue goals.
 - **Full Data Backup & Restore**: One-click JSON export/import with schema validation and CSV transaction export for spreadsheet analysis.
 - **Curated Multi-Currency & Theming**: Built-in support for INR (`₹`), USD (`$`), EUR (`€`), GBP (`£`), and JPY (`¥`), alongside Light, Dark, and System theme modes.
 
@@ -110,7 +109,6 @@ graph TD
         AccService["accountService (calculateAccountBalance, getTotalNetWorth)"]
         GoalService["goalService (depositToGoal, withdrawFromGoal)"]
         BdgService["budgetService (calculateOverallBudget)"]
-        RecService["recurringService (checkAndGenerateRecurring)"]
         InsService["insightService (generateSmartWarnings)"]
         ValUtils["validation.js (validateTransaction, validateImportData)"]
         CalcUtils["calculations.js (getTotalIncome, getTotalExpenses)"]
@@ -127,7 +125,6 @@ graph TD
     TxnContext --> AccService
     TxnContext --> GoalService
     TxnContext --> BdgService
-    TxnContext --> RecService
     TxnContext --> InsService
     AccService --> StorageService
     GoalService --> StorageService
@@ -217,7 +214,6 @@ ExpenseTracker/
 │       │   ├── Goals.jsx            # Savings goals with deposit/withdraw transfers
 │       │   ├── Budgets.jsx          # Monthly category budgeting
 │       │   ├── Calendar.jsx         # Daily cashflow heatmap & calendar view
-│       │   ├── Recurring.jsx        # Recurring transaction scheduler
 │       │   ├── Analytics.jsx        # Detailed charts, trends, and breakdowns
 │       │   ├── Settings.jsx         # Currency, theme, and full JSON backup/restore
 │       │   └── Landing.jsx          # Introductory feature showcase
@@ -227,7 +223,6 @@ ExpenseTracker/
 │       │   ├── categoryService.js   # Category lookups and custom category management
 │       │   ├── goalService.js       # Atomic goal deposits, withdrawals, and progress metrics
 │       │   ├── insightService.js    # Smart financial warning generator
-│       │   ├── recurringService.js  # Recurring schedule evaluation and generation
 │       │   ├── storageService.js    # LocalStorage safe reader/writer and schema migration
 │       │   └── storage.js           # High-level storage facade and backup exporters
 │       └── utils/
@@ -335,7 +330,7 @@ node test_transaction_rules.js
 
 Because FinTrack is local-first, it provides built-in tools in **Settings** to protect and move your financial history:
 
-- **Full JSON Backup**: Exports transactions, accounts, custom categories, monthly budgets, savings goals, recurring rules, and preferences in a structured JSON file.
+- **Full JSON Backup**: Exports transactions, accounts, custom categories, monthly budgets, savings goals, and preferences in a structured JSON file.
 - **Full JSON Restore**: Imports previously exported backups with strict schema validation and duplicate ID protection.
 - **CSV Export**: Downloads a formatted CSV file of all (or filtered) transactions compatible with Excel, Google Sheets, or Numbers.
 

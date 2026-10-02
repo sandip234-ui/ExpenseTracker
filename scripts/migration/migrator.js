@@ -170,35 +170,7 @@ export async function runMigration(input, options = {}) {
         })
       }
 
-      // 7e. Insert Recurring Transactions (Preserve original IDs)
-      for (const r of data.recurringTransactions) {
-        const catId = r.categoryId || r.category
-        const validCategory =
-          catId && (existingDbData.categoryIds.has(catId) || newCustomCatIds.has(catId)) ? catId : null
-
-        await tx.recurringTransaction.create({
-          data: {
-            id: r.id,
-            userId: r.userId || targetUserId,
-            description: r.description,
-            amount: Number(r.amount),
-            type: String(r.type || 'expense').toLowerCase(),
-            frequency: String(r.frequency || 'monthly').toLowerCase(),
-            startDate: new Date(r.startDate),
-            endDate: r.endDate ? new Date(r.endDate) : null,
-            nextOccurrence: r.nextOccurrence ? new Date(r.nextOccurrence) : new Date(r.startDate),
-            lastGeneratedDate: r.lastGeneratedDate ? new Date(r.lastGeneratedDate) : null,
-            paymentMethod: r.paymentMethod || 'Recurring',
-            notes: r.notes || null,
-            active: r.active !== undefined ? Boolean(r.active) : true,
-            accountId: r.accountId,
-            categoryId: validCategory,
-            createdAt: r.createdAt ? new Date(r.createdAt) : new Date(),
-          },
-        })
-      }
-
-      // 7f. Insert Transactions (Preserve original IDs)
+      // 7e. Insert Transactions (Preserve original IDs)
       for (const t of data.transactions) {
         const catId = t.categoryId || t.category
         const validCategory =
@@ -219,13 +191,12 @@ export async function runMigration(input, options = {}) {
             accountId: t.accountId,
             categoryId: validCategory,
             goalId: t.goalId || null,
-            recurringId: t.recurringId || null,
             createdAt: t.createdAt ? new Date(t.createdAt) : new Date(),
           },
         })
       }
 
-      // 7g. Insert / Upsert Settings
+      // 7f. Insert / Upsert Settings
       for (const [key, value] of Object.entries(data.settings || {})) {
         await tx.setting.upsert({
           where: {
@@ -274,7 +245,6 @@ export async function runMigration(input, options = {}) {
       transactions: data.transactions.length,
       goals: data.goals.length,
       budgets: data.budgets.length,
-      recurring: data.recurringTransactions.length,
       settings: Object.keys(data.settings || {}).length,
     },
     message: comparison.matches

@@ -12,7 +12,7 @@
 /**
  * Calculates complete financial metrics for a source payload in-memory.
  *
- * @param {object} data - Normalized migration data { accounts, categories, transactions, goals, budgets, recurringTransactions, settings }
+ * @param {object} data - Normalized migration data { accounts, categories, transactions, goals, budgets, settings }
  * @returns {object} Full financial summary
  */
 export function calculateSourceFinancialSummary(data = {}) {
@@ -20,7 +20,6 @@ export function calculateSourceFinancialSummary(data = {}) {
   const transactions = data.transactions || []
   const goals = data.goals || []
   const budgets = data.budgets || []
-  const recurring = data.recurringTransactions || []
   const settings = data.settings || {}
 
   // 1. Transaction-level aggregations
@@ -99,7 +98,6 @@ export function calculateSourceFinancialSummary(data = {}) {
       transactions: transactions.length,
       goals: goals.length,
       budgets: budgets.length,
-      recurring: recurring.length,
       settings: Object.keys(settings).length,
     },
     totalOpeningBalance: roundToTwo(totalOpeningBalance),
@@ -144,7 +142,6 @@ export async function calculateDbFinancialSummary(prismaClient, accountIds = [],
     goals,
     categories: [],
     budgets: [],
-    recurringTransactions: [],
     settings: {},
   }
 

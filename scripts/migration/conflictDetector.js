@@ -18,7 +18,6 @@ export async function detectDatabaseConflicts(prismaClient, data = {}) {
     transactions: [],
     goals: [],
     budgets: [],
-    recurring: [],
     categories: [],
   }
   const details = []
@@ -100,22 +99,7 @@ export async function detectDatabaseConflicts(prismaClient, data = {}) {
     }
   }
 
-  // 5. Recurring Transactions ID collisions
-  const recurringIds = (data.recurringTransactions || []).map((r) => r.id).filter(Boolean)
-  if (recurringIds.length > 0) {
-    const existingRec = await prismaClient.recurringTransaction.findMany({
-      where: { id: { in: recurringIds } },
-      select: { id: true, description: true, amount: true },
-    })
-    if (existingRec.length > 0) {
-      conflicts.recurring = existingRec
-      for (const r of existingRec) {
-        details.push(`Recurring Transaction ID conflict: "${r.id}" ("${r.description}") already exists in PostgreSQL.`)
-      }
-    }
-  }
-
-  // 6. Custom Category ID collisions
+  // 5. Custom Category ID collisions
   const customCatIds = (data.categories || [])
     .filter((c) => c.isCustom)
     .map((c) => c.id)

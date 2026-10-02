@@ -12,7 +12,6 @@
  *    - Balances & Net Worth (authoritative derived values)
  *    - Savings Goals (Deposits & Withdrawals)
  *    - Budgets (including duplicate constraint enforcement)
- *    - Recurring transactions
  *    - Categories (custom creation & system protection)
  *    - Export data serialization
  * 4. Financial Integrity Invariants:
@@ -117,11 +116,6 @@ async function runPhase7Verification() {
     if (!Array.isArray(budgets)) throw new Error('Expected budgets array')
   })
 
-  await assertStep('Read recurring transactions from PostgreSQL via API', async () => {
-    const recurring = await dataProvider.getRecurring()
-    if (!Array.isArray(recurring)) throw new Error('Expected recurring array')
-  })
-
   await assertStep('Read authoritative Net Worth from PostgreSQL via API', async () => {
     const netWorth = await dataProvider.getNetWorth()
     if (typeof netWorth !== 'number' || isNaN(netWorth)) {
@@ -136,7 +130,6 @@ async function runPhase7Verification() {
   let testGoal = null
   let testCategory = null
   let testBudget = null
-  let testRecurring = null
   let testTxnIncome = null
   let testTxnExpense = null
   let testTxnDeposit = null
@@ -356,22 +349,6 @@ async function runPhase7Verification() {
     }
   })
 
-  await assertStep('Feature: Recurring transaction rule creation', async () => {
-    testRecurring = await dataProvider.createRecurring({
-      description: `${TEST_RUN_ID}-SaaS-Sub`,
-      amount: 1499,
-      type: 'expense',
-      frequency: 'monthly',
-      startDate: '2026-01-01',
-      nextOccurrence: '2026-11-01',
-      accountId: testAccount.id,
-      categoryId: 'bills',
-    })
-    if (!testRecurring || testRecurring.amount !== 1499) {
-      throw new Error('Recurring rule creation failed')
-    }
-  })
-
   await assertStep('Security: System default categories are protected against deletion', async () => {
     try {
       await dataProvider.deleteCategory('food')
@@ -436,7 +413,6 @@ async function runPhase7Verification() {
     if (testTxnDeposit?.id) await dataProvider.deleteTransaction(testTxnDeposit.id)
     if (testTxnIncome?.id) await dataProvider.deleteTransaction(testTxnIncome.id)
     if (testBudget?.id) await dataProvider.deleteBudget(testBudget.id)
-    if (testRecurring?.id) await dataProvider.deleteRecurring(testRecurring.id)
     if (testGoal?.id) await dataProvider.deleteGoal(testGoal.id)
     if (testAccount?.id) await dataProvider.deleteAccount(testAccount.id)
     if (testCategory?.id) await dataProvider.deleteCategory(testCategory.id)

@@ -2,7 +2,6 @@ import { accountApi } from '../api/accountApi.js'
 import { transactionApi } from '../api/transactionApi.js'
 import { goalApi } from '../api/goalApi.js'
 import { budgetApi } from '../api/budgetApi.js'
-import { recurringApi } from '../api/recurringApi.js'
 import { categoryApi } from '../api/categoryApi.js'
 import * as storage from '../storage.js'
 
@@ -41,12 +40,6 @@ export const apiProvider = {
   createBudget: async (data) => budgetApi.createBudget(data),
   updateBudget: async (id, data) => budgetApi.updateBudget(id, data),
   deleteBudget: async (id) => budgetApi.deleteBudget(id),
-
-  // Recurring
-  getRecurring: async (filters) => recurringApi.getRecurring(filters),
-  createRecurring: async (data) => recurringApi.createRecurring(data),
-  updateRecurring: async (id, data) => recurringApi.updateRecurring(id, data),
-  deleteRecurring: async (id) => recurringApi.deleteRecurring(id),
 
   // Categories
   getCategories: async (type) => categoryApi.getCategories(type),

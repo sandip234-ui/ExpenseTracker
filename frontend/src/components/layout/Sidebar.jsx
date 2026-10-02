@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import {
   LayoutDashboard, ArrowLeftRight, PiggyBank, Calendar,
-  Repeat, Target, Wallet, BarChart3, Settings, TrendingUp,
+  Target, Wallet, BarChart3, Settings, TrendingUp,
   LogOut, User
 } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
@@ -12,7 +12,6 @@ const NAV_ITEMS = [
   { to: '/transactions', icon: ArrowLeftRight, label: 'Transactions' },
   { to: '/budgets', icon: PiggyBank, label: 'Budgets' },
   { to: '/calendar', icon: Calendar, label: 'Calendar' },
-  { to: '/recurring', icon: Repeat, label: 'Recurring' },
   { to: '/goals', icon: Target, label: 'Savings Goals' },
   { to: '/accounts', icon: Wallet, label: 'Accounts & Wallets' },
   { to: '/analytics', icon: BarChart3, label: 'Analytics' },

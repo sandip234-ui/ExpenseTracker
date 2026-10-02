@@ -1,24 +1,23 @@
 /**
  * FinTrack Phase 5: Frontend API Adapter & Integration Test Suite
- * Verifies all 18 integration requirements specified in Phase 5:
+ * Verifies all 17 integration requirements specified in Phase 5:
  * 1. Reach backend health endpoint
  * 2. Accounts load
  * 3. Transactions load
  * 4. Goals load
  * 5. Budgets load
- * 6. Recurring transactions load
- * 7. Categories load
- * 8. Account balance matches backend
- * 9. Net worth matches backend
- * 10. Creating income works
- * 11. Creating expense works
- * 12. Overspending is rejected with INSUFFICIENT_BALANCE
- * 13. Goal deposit works with atomic physical transfer
- * 14. Goal withdrawal works with atomic physical transfer
- * 15. Transaction edit works with backend reversal semantics
- * 16. Transaction deletion works with ledger reversal
- * 17. Budget duplicate is rejected with DUPLICATE_BUDGET
- * 18. System category deletion is protected
+ * 6. Categories load
+ * 7. Account balance matches backend
+ * 8. Net worth matches backend
+ * 9. Creating income works
+ * 10. Creating expense works
+ * 11. Overspending is rejected with INSUFFICIENT_BALANCE
+ * 12. Goal deposit works with atomic physical transfer
+ * 13. Goal withdrawal works with atomic physical transfer
+ * 14. Transaction edit works with backend reversal semantics
+ * 15. Transaction deletion works with ledger reversal
+ * 16. Budget duplicate is rejected with DUPLICATE_BUDGET
+ * 17. System category deletion is protected
  */
 
 import assert from 'node:assert'
@@ -94,22 +93,14 @@ async function runApiIntegrationTests() {
     logPass(5, `Loaded ${initialBudgets.length} budgets`)
 
     // -----------------------------------------------------------------
-    // 6. Recurring transactions load
+    // 6. Categories load
     // -----------------------------------------------------------------
-    console.log('6. Loading recurring transaction rules via dataProvider...')
-    const initialRecurring = await dataProvider.getRecurring()
-    assert(Array.isArray(initialRecurring), 'Recurring should be an array')
-    logPass(6, `Loaded ${initialRecurring.length} recurring rules`)
-
-    // -----------------------------------------------------------------
-    // 7. Categories load
-    // -----------------------------------------------------------------
-    console.log('7. Loading categories via dataProvider...')
+    console.log('6. Loading categories via dataProvider...')
     const initialCategories = await dataProvider.getCategories()
     assert(Array.isArray(initialCategories), 'Categories should be an array')
     assert(initialCategories.some((c) => c.id === 'food'), 'Should include food category')
     assert(initialCategories.some((c) => c.label === 'Food' || c.name === 'Food'), 'Should normalize label/name')
-    logPass(7, `Loaded ${initialCategories.length} categories with label/name normalization`)
+    logPass(6, `Loaded ${initialCategories.length} categories with label/name normalization`)
 
     // -----------------------------------------------------------------
     // Setup test fixtures: create a dedicated test account
@@ -127,26 +118,26 @@ async function runApiIntegrationTests() {
     console.log(`Created test account "${testAccount.name}" (ID: ${testAccount.id}, Opening: ₹10,000)`)
 
     // -----------------------------------------------------------------
-    // 8. Account balance displayed by API mode matches backend
+    // 7. Account balance displayed by API mode matches backend
     // -----------------------------------------------------------------
-    console.log('\n8. Verifying account balance calculation contract...')
+    console.log('\n7. Verifying account balance calculation contract...')
     const accountCheck = (await dataProvider.getAccounts()).find((a) => a.id === createdAccountId)
     assert.strictEqual(accountCheck.balance, 10000)
     assert.strictEqual(accountCheck.availableBalance, 10000)
-    logPass(8, 'Account balance displayed matches authoritative backend derived value (₹10,000.00)')
+    logPass(7, 'Account balance displayed matches authoritative backend derived value (₹10,000.00)')
 
     // -----------------------------------------------------------------
-    // 9. Net worth matches backend
+    // 8. Net worth matches backend
     // -----------------------------------------------------------------
-    console.log('9. Verifying net worth calculation...')
+    console.log('8. Verifying net worth calculation...')
     const netWorth = await dataProvider.getNetWorth()
     assert(typeof netWorth === 'number' && !isNaN(netWorth), 'Net worth must be a valid number')
-    logPass(9, `Net worth endpoint returned authoritative value: ₹${netWorth.toLocaleString('en-IN')}`)
+    logPass(8, `Net worth endpoint returned authoritative value: ₹${netWorth.toLocaleString('en-IN')}`)
 
     // -----------------------------------------------------------------
-    // 10. Creating an income works
+    // 9. Creating an income works
     // -----------------------------------------------------------------
-    console.log('10. Creating an income transaction...')
+    console.log('9. Creating an income transaction...')
     const incomeTxn = await dataProvider.createTransaction({
       type: 'income',
       amount: 5000,
@@ -163,12 +154,12 @@ async function runApiIntegrationTests() {
 
     const accAfterIncome = (await dataProvider.getAccounts()).find((a) => a.id === createdAccountId)
     assert.strictEqual(accAfterIncome.balance, 15000, 'Balance must be 15000 after 5000 income')
-    logPass(10, 'Created income of ₹5,000. Account balance increased from ₹10,000 to ₹15,000')
+    logPass(9, 'Created income of ₹5,000. Account balance increased from ₹10,000 to ₹15,000')
 
     // -----------------------------------------------------------------
-    // 11. Creating an expense works
+    // 10. Creating an expense works
     // -----------------------------------------------------------------
-    console.log('11. Creating an expense transaction...')
+    console.log('10. Creating an expense transaction...')
     const expenseTxn = await dataProvider.createTransaction({
       type: 'expense',
       amount: 3000,
@@ -183,12 +174,12 @@ async function runApiIntegrationTests() {
 
     const accAfterExpense = (await dataProvider.getAccounts()).find((a) => a.id === createdAccountId)
     assert.strictEqual(accAfterExpense.balance, 12000, 'Balance must be 12000 after 3000 expense')
-    logPass(11, 'Created expense of ₹3,000. Account balance decreased from ₹15,000 to ₹12,000')
+    logPass(10, 'Created expense of ₹3,000. Account balance decreased from ₹15,000 to ₹12,000')
 
     // -----------------------------------------------------------------
-    // 12. Overspending is rejected
+    // 11. Overspending is rejected
     // -----------------------------------------------------------------
-    console.log('12. Testing overspending rejection (Available: ₹12,000, Attempt: ₹15,000)...')
+    console.log('11. Testing overspending rejection (Available: ₹12,000, Attempt: ₹15,000)...')
     let overspendError = null
     try {
       await dataProvider.createTransaction({
@@ -205,12 +196,12 @@ async function runApiIntegrationTests() {
     assert(overspendError instanceof ApiError, 'Expected ApiError')
     assert.strictEqual(overspendError.code, 'INSUFFICIENT_BALANCE', 'Code must be INSUFFICIENT_BALANCE')
     assert.match(overspendError.message, /Insufficient balance/, 'Message must mention insufficient balance')
-    logPass(12, `Overspending rejected with code "${overspendError.code}" and message: "${overspendError.message}"`)
+    logPass(11, `Overspending rejected with code "${overspendError.code}" and message: "${overspendError.message}"`)
 
     // -----------------------------------------------------------------
-    // 13. Goal deposit works
+    // 12. Goal deposit works
     // -----------------------------------------------------------------
-    console.log('13. Creating savings goal & testing physical deposit...')
+    console.log('12. Creating savings goal & testing physical deposit...')
     const testGoal = await dataProvider.createGoal({
       name: `${testTag}-Emergency`,
       targetAmount: 50000,
@@ -230,12 +221,12 @@ async function runApiIntegrationTests() {
 
     const accAfterDeposit = (await dataProvider.getAccounts()).find((a) => a.id === createdAccountId)
     assert.strictEqual(accAfterDeposit.balance, 8000, 'Account balance should be 12000 - 4000 = 8000')
-    logPass(13, 'Deposited ₹4,000 to goal. Goal currentAmount = ₹4,000, Account balance = ₹8,000')
+    logPass(12, 'Deposited ₹4,000 to goal. Goal currentAmount = ₹4,000, Account balance = ₹8,000')
 
     // -----------------------------------------------------------------
-    // 14. Goal withdrawal works
+    // 13. Goal withdrawal works
     // -----------------------------------------------------------------
-    console.log('14. Testing physical withdrawal from savings goal...')
+    console.log('13. Testing physical withdrawal from savings goal...')
     const withdrawResult = await dataProvider.withdrawFromGoal({
       goalId: testGoal.id,
       amount: 1500,
@@ -248,12 +239,12 @@ async function runApiIntegrationTests() {
 
     const accAfterWithdraw = (await dataProvider.getAccounts()).find((a) => a.id === createdAccountId)
     assert.strictEqual(accAfterWithdraw.balance, 9500, 'Account balance should be 8000 + 1500 = 9500')
-    logPass(14, 'Withdrew ₹1,500 from goal. Goal currentAmount = ₹2,500, Account balance = ₹9,500')
+    logPass(13, 'Withdrew ₹1,500 from goal. Goal currentAmount = ₹2,500, Account balance = ₹9,500')
 
     // -----------------------------------------------------------------
-    // 15. Transaction edit works (with backend reversal semantics)
+    // 14. Transaction edit works (with backend reversal semantics)
     // -----------------------------------------------------------------
-    console.log('15. Testing transaction edit with reversal...')
+    console.log('14. Testing transaction edit with reversal...')
     // Edit income from 5000 to 7000 (adds 2000 to account)
     const updatedIncome = await dataProvider.updateTransaction(incomeTxn.id, {
       amount: 7000,
@@ -266,24 +257,24 @@ async function runApiIntegrationTests() {
 
     const accAfterEdit = (await dataProvider.getAccounts()).find((a) => a.id === createdAccountId)
     assert.strictEqual(accAfterEdit.balance, 11500, 'Account balance should be 9500 + 2000 = 11500')
-    logPass(15, 'Edited income from ₹5,000 to ₹7,000. Balance correctly adjusted to ₹11,500 via reversal')
+    logPass(14, 'Edited income from ₹5,000 to ₹7,000. Balance correctly adjusted to ₹11,500 via reversal')
 
     // -----------------------------------------------------------------
-    // 16. Transaction deletion works
+    // 15. Transaction deletion works
     // -----------------------------------------------------------------
-    console.log('16. Testing transaction deletion and ledger adjustment...')
+    console.log('15. Testing transaction deletion and ledger adjustment...')
     // Delete expense of 3000 (restores 3000 to account)
     await dataProvider.deleteTransaction(expenseTxn.id)
     createdTxnIds = createdTxnIds.filter((id) => id !== expenseTxn.id)
 
     const accAfterDelete = (await dataProvider.getAccounts()).find((a) => a.id === createdAccountId)
     assert.strictEqual(accAfterDelete.balance, 14500, 'Account balance should be 11500 + 3000 = 14500')
-    logPass(16, 'Deleted expense of ₹3,000. Balance restored to ₹14,500')
+    logPass(15, 'Deleted expense of ₹3,000. Balance restored to ₹14,500')
 
     // -----------------------------------------------------------------
-    // 17. Budget duplicate is rejected
+    // 16. Budget duplicate is rejected
     // -----------------------------------------------------------------
-    console.log('17. Testing budget creation & duplicate constraint...')
+    console.log('16. Testing budget creation & duplicate constraint...')
     const budgetMonth = '2026-11'
     const budget1 = await dataProvider.createBudget({
       categoryId: 'food',
@@ -306,12 +297,12 @@ async function runApiIntegrationTests() {
     assert(budgetDupError instanceof ApiError, 'Expected ApiError for duplicate budget')
     assert.strictEqual(budgetDupError.code, 'DUPLICATE_BUDGET', 'Error code should be DUPLICATE_BUDGET')
     assert.strictEqual(budgetDupError.status, 409, 'Status should be 409 Conflict')
-    logPass(17, `Duplicate budget rejected with code "${budgetDupError.code}" (HTTP 409 Conflict)`)
+    logPass(16, `Duplicate budget rejected with code "${budgetDupError.code}" (HTTP 409 Conflict)`)
 
     // -----------------------------------------------------------------
-    // 18. System category protection works
+    // 17. System category protection works
     // -----------------------------------------------------------------
-    console.log('18. Testing system category deletion protection...')
+    console.log('17. Testing system category deletion protection...')
     let categoryDeleteError = null
     try {
       await dataProvider.deleteCategory('food')
@@ -321,7 +312,7 @@ async function runApiIntegrationTests() {
     assert(categoryDeleteError instanceof ApiError, 'Expected ApiError when deleting system category')
     assert.strictEqual(categoryDeleteError.status, 400, 'Status should be 400')
     assert.match(categoryDeleteError.message, /System default categories cannot be deleted/, 'Should state system category protection')
-    logPass(18, `System category deletion protected with HTTP 400: "${categoryDeleteError.message}"`)
+    logPass(17, `System category deletion protected with HTTP 400: "${categoryDeleteError.message}"`)
 
     // Also test custom category creation and deletion
     const customCat = await dataProvider.createCategory({
@@ -337,7 +328,7 @@ async function runApiIntegrationTests() {
     console.log('  ✓ Custom category created and deleted successfully.')
 
     console.log('\n=================================================================')
-    console.log('🎉 ALL 18/18 API INTEGRATION REQUIREMENTS VERIFIED & PASSED!')
+    console.log('🎉 ALL 17/17 API INTEGRATION REQUIREMENTS VERIFIED & PASSED!')
     console.log('=================================================================\n')
   } finally {
     // Clean up test fixtures

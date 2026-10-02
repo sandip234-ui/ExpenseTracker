@@ -10,7 +10,6 @@ const PAGE_TITLES = {
   '/transactions/new': 'Add Transaction',
   '/budgets': 'Budget Management',
   '/calendar': 'Calendar View',
-  '/recurring': 'Recurring Transactions',
   '/goals': 'Savings Goals',
   '/accounts': 'Accounts & Wallets',
   '/analytics': 'Analytics',

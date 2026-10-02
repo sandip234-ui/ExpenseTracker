@@ -36,12 +36,6 @@ export const dataProvider = {
   updateBudget: (id, data) => (isApiMode() ? apiProvider.updateBudget(id, data) : localProvider.updateBudget(id, data)),
   deleteBudget: (id) => (isApiMode() ? apiProvider.deleteBudget(id) : localProvider.deleteBudget(id)),
 
-  // Recurring
-  getRecurring: (filters) => (isApiMode() ? apiProvider.getRecurring(filters) : localProvider.getRecurring(filters)),
-  createRecurring: (data) => (isApiMode() ? apiProvider.createRecurring(data) : localProvider.createRecurring(data)),
-  updateRecurring: (id, data) => (isApiMode() ? apiProvider.updateRecurring(id, data) : localProvider.updateRecurring(id, data)),
-  deleteRecurring: (id) => (isApiMode() ? apiProvider.deleteRecurring(id) : localProvider.deleteRecurring(id)),
-
   // Categories
   getCategories: (type) => (isApiMode() ? apiProvider.getCategories(type) : localProvider.getCategories(type)),
   createCategory: (data) => (isApiMode() ? apiProvider.createCategory(data) : localProvider.createCategory(data)),

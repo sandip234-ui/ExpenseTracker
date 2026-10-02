@@ -192,9 +192,9 @@
     "semantic_hash": "6b2a8f252ac50e8af7b92d1f5c2c858a"
   },
   "frontend/src/pages/Settings.jsx": {
-    "mtime": 1790945482.1990788,
-    "seen": 1790945584.402369,
-    "ast_hash": "26317aa1952d4a787de4f80704b1110b",
+    "mtime": 1790943847.8801732,
+    "seen": 1790944454.109,
+    "ast_hash": "e445ed598d6aecffefd74297f64445b7",
     "semantic_hash": ""
   },
   "frontend/src/pages/Transactions.jsx": {
@@ -234,15 +234,15 @@
     "semantic_hash": ""
   },
   "frontend/src/services/storage.js": {
-    "mtime": 1790945544.723157,
-    "seen": 1790945584.402795,
-    "ast_hash": "5f45cc7f4f20535d314d94822dea5037",
+    "mtime": 1790943847.8620512,
+    "seen": 1790944454.10931,
+    "ast_hash": "9fd94de5a7233fbd297492c6174feaaa",
     "semantic_hash": ""
   },
   "frontend/src/services/storageService.js": {
-    "mtime": 1790945544.7174788,
-    "seen": 1790945584.402796,
-    "ast_hash": "a784015edbf082a3680865027ef21f57",
+    "mtime": 1790943847.8694391,
+    "seen": 1790944454.10931,
+    "ast_hash": "0e41fe0cfac95e4acaef6798ceaa21b2",
     "semantic_hash": ""
   },
   "frontend/src/utils/calculations.js": {
@@ -672,8 +672,8 @@
     "semantic_hash": ""
   },
   "scripts/migration/test_migration.js": {
-    "mtime": 1790945455.814538,
-    "seen": 1790945584.403081,
+    "mtime": 1790944158.4271433,
+    "seen": 1790944454.109401,
     "ast_hash": "33c327fe622d62272e57a32d5cd9c0a0",
     "semantic_hash": ""
   },

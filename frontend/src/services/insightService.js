@@ -101,7 +101,6 @@ export function generateSmartWarnings({
   transactions = [],
   budgets = [],
   accounts = [],
-  recurring = [],
   goals = [],
   customCategories = [],
 }) {
@@ -151,28 +150,7 @@ export function generateSmartWarnings({
     }
   })
 
-  // 3. Upcoming Recurring Transactions (Due in next 3 days)
-  const todayMs = new Date().setHours(0, 0, 0, 0)
-  recurring.filter((r) => r.active).forEach((r) => {
-    if (r.nextOccurrence) {
-      const nextDate = new Date(r.nextOccurrence).setHours(0, 0, 0, 0)
-      const daysUntil = Math.ceil((nextDate - todayMs) / (1000 * 60 * 60 * 24))
-      
-      if (daysUntil >= 0 && daysUntil <= 3) {
-        const timeText = daysUntil === 0 ? 'today' : daysUntil === 1 ? 'tomorrow' : `in ${daysUntil} days`
-        warnings.push({
-          id: `rec-due-${r.id}`,
-          severity: 'info',
-          title: 'Recurring Transaction Due',
-          message: `🔔 "${r.description}" (₹${Number(r.amount).toLocaleString('en-IN')}) is due ${timeText}.`,
-          link: '/recurring',
-          createdAt: new Date().toISOString(),
-        })
-      }
-    }
-  })
-
-  // 4. Savings Goals Milestones (≥ 75% or 100% complete)
+  // 3. Savings Goals Milestones (≥ 75% or 100% complete)
   goals.forEach((g) => {
     const metrics = calculateGoalMetrics(g)
     if (metrics.isCompleted) {

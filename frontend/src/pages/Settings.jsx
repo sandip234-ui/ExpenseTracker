@@ -39,7 +39,7 @@ function Section({ title, description, icon: Icon, children }) {
     <Card>
       <div className="flex items-center gap-3 mb-4 pb-4 border-b" style={{ borderColor: 'var(--border-subtle, #F1F5F9)' }}>
         <div
-          className="flex items-center justify-center w-9 h-9 rounded-xl flex-shrink-0"
+          className="flex items-center justify-center w-9 h-9 rounded-xl shrink-0"
           style={{ background: 'var(--color-accent-bg, #EEF2FF)' }}
         >
           <Icon size={17} color="#6366F1" />
@@ -306,7 +306,7 @@ export default function Settings() {
             <div>
               <p className="text-sm font-semibold" style={{ color: 'var(--text-primary, #0F172A)' }}>Full JSON Backup</p>
               <p className="text-xs mt-0.5" style={{ color: 'var(--text-secondary, #64748B)' }}>
-                Complete backup including accounts, budgets, goals, recurring, and transactions
+                Complete backup including accounts, budgets, goals, and transactions
               </p>
             </div>
             <Button size="sm" onClick={exportJSON}>

@@ -7,7 +7,7 @@
  * 4. Financial Rules (A to L) with authoritative derived balances
  * 5. Savings Goals & Atomic Physical Transfers (Edge Cases 7, 8, 10, 11)
  * 6. Financial Edge Cases (1 to 6, 9)
- * 7. Budgets, Recurring Transactions & Category Protections
+ * 7. Budgets & Category Protections
  */
 
 import request from 'supertest'
@@ -621,9 +621,9 @@ async function runApiTests() {
     console.log('  ✓ Pass Edge Case 9: Independent balances maintained per account\n')
 
     // ---------------------------------------------------------------
-    // 6. BUDGETS, RECURRING & CATEGORIES APIS
+    // 6. BUDGETS & CATEGORIES APIS
     // ---------------------------------------------------------------
-    console.log('6. Testing Budgets, Recurring & Categories APIs...')
+    console.log('6. Testing Budgets & Categories APIs...')
 
     // Budget: Create & Duplicate protection
     const bCat = await prisma.category.findFirst({ where: { name: 'Food' } })
@@ -662,23 +662,12 @@ async function runApiTests() {
     assert.strictEqual(bResB.status, 201, 'User B can create their own budget for same category/month')
     console.log('  ✓ Pass: Multi-tenant budget independence verified')
 
-    // Recurring: Create & List
-    const recRes = await request(app)
-      .post('/api/recurring')
+    // Removed recurring endpoint is no longer mounted.
+    const removedRecurringRes = await request(app)
+      .get('/api/recurring')
       .set('Authorization', `Bearer ${authToken}`)
-      .send({
-        description: 'Gym Subscription',
-        amount: 2500,
-        type: 'expense',
-        frequency: 'monthly',
-        startDate: '2026-10-01',
-        accountId: acc1Id,
-        categoryId: bCat.id,
-        paymentMethod: 'debit_card',
-      })
-    assert.strictEqual(recRes.status, 201)
-    const recId = recRes.body.data.id
-    console.log('  ✓ Pass: POST /api/recurring created rule')
+    assert.strictEqual(removedRecurringRes.status, 404)
+    console.log('  ✓ Pass: Removed recurring endpoint returns HTTP 404')
 
     // Category: Custom creation & System protection
     const customCatRes = await request(app)
@@ -729,9 +718,6 @@ async function runApiTests() {
     })
     await prisma.budget.deleteMany({
       where: { OR: [{ id: bId }, { id: bResB.body.data.id }] },
-    })
-    await prisma.recurringTransaction.deleteMany({
-      where: { id: recId },
     })
     await prisma.savingsGoal.deleteMany({
       where: { id: goalId },

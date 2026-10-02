@@ -152,7 +152,6 @@ async function main() {
     console.log(`   - Transactions inserted : ${result.insertedCounts.transactions}`)
     console.log(`   - Goals inserted        : ${result.insertedCounts.goals}`)
     console.log(`   - Budgets inserted      : ${result.insertedCounts.budgets}`)
-    console.log(`   - Recurring inserted    : ${result.insertedCounts.recurring}`)
     console.log(`   - Settings updated      : ${result.insertedCounts.settings}`)
     console.log(`   - Original IDs preserved: 100%`)
     console.log(`   - Database verification : ${result.comparison.matches ? 'PERFECT MATCH' : 'MISMATCH'}`)

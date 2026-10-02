@@ -28,7 +28,6 @@ export async function getTransactions(filter = {}, client = prisma) {
   if (filter.type) where.type = filter.type
   if (filter.categoryId) where.categoryId = filter.categoryId
   if (filter.goalId) where.goalId = filter.goalId
-  if (filter.recurringId) where.recurringId = filter.recurringId
   if (filter.startDate || filter.endDate) {
     where.date = {}
     if (filter.startDate) where.date.gte = new Date(filter.startDate)
@@ -155,7 +154,6 @@ export async function createTransaction(data, client = prisma) {
         accountId: account.id,
         categoryId: category ? category.id : null,
         goalId: data.goalId || null,
-        recurringId: data.recurringId || null,
       },
       include: {
         account: true,

@@ -25,7 +25,6 @@ export const createTransactionSchema = {
     paymentMethod: z.string().nullable().optional(),
     transferType: z.enum(['goal_deposit', 'goal_withdrawal']).nullable().optional(),
     goalId: z.string().nullable().optional(),
-    recurringId: z.string().nullable().optional(),
   }),
 }
 
@@ -44,7 +43,6 @@ export const updateTransactionSchema = {
     paymentMethod: z.string().nullable().optional(),
     transferType: z.enum(['goal_deposit', 'goal_withdrawal']).nullable().optional(),
     goalId: z.string().nullable().optional(),
-    recurringId: z.string().nullable().optional(),
   }),
 }
 

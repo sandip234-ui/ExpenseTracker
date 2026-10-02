@@ -41,7 +41,7 @@ export function formatCleanAccountName(name) {
  * Requirements:
  * - Preserves account IDs
  * - Preserves all transactions (ledger records)
- * - Preserves savings goals, recurring rules, opening balances, and financial history
+ * - Preserves savings goals, opening balances, and financial history
  * - Renames ONLY duplicate display names using stable createdAt + id ordering
  * - Format: "HDFC Bank", "HDFC Bank (2)", "HDFC Bank (3)"
  * - Idempotent: repeated runs result in 0 modifications

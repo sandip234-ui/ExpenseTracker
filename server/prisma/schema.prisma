@@ -23,7 +23,6 @@ model User {
   transactions          Transaction[]
   savingsGoals          SavingsGoal[]
   budgets               Budget[]
-  recurringTransactions RecurringTransaction[]
   categories            Category[]
   settings              Setting[]
   notificationStates    NotificationState[]
@@ -50,7 +49,6 @@ model Account {
 
   user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
   transactions          Transaction[]
-  recurringTransactions RecurringTransaction[]
 
   @@unique([userId, normalizedName], name: "unique_user_account_normalized_name")
   @@index([userId])
@@ -74,7 +72,6 @@ model Category {
   user                  User?                  @relation(fields: [userId], references: [id], onDelete: Cascade)
   transactions          Transaction[]
   budgets               Budget[]
-  recurringTransactions RecurringTransaction[]
 
   @@index([userId])
   @@map("categories")
@@ -128,9 +125,6 @@ model Transaction {
   goalId        String?
   goal          SavingsGoal?          @relation(fields: [goalId], references: [id], onDelete: SetNull)
 
-  recurringId   String?
-  recurringRule RecurringTransaction? @relation(fields: [recurringId], references: [id], onDelete: SetNull)
-
   user          User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   createdAt     DateTime              @default(now())
@@ -161,42 +155,6 @@ model Budget {
   @@unique([userId, categoryId, month])
   @@index([userId, month])
   @@map("budgets")
-}
-
-// ─── Recurring Transaction Model ──────────────────────────────────────────────
-// Rules for automated recurring income/expenses.
-model RecurringTransaction {
-  id                String        @id
-  userId            String        @default("user_default_primary")
-  description       String
-  amount            Float
-  type              String        // 'income' | 'expense'
-  frequency         String        // 'daily' | 'weekly' | 'monthly' | 'yearly'
-  startDate         DateTime
-  endDate           DateTime?
-  nextOccurrence    DateTime
-  lastGeneratedDate DateTime?
-  paymentMethod     String?       @default("Recurring")
-  notes             String?
-  active            Boolean       @default(true)
-
-  accountId         String
-  account           Account       @relation(fields: [accountId], references: [id], onDelete: Cascade)
-
-  categoryId        String?
-  category          Category?     @relation(fields: [categoryId], references: [id], onDelete: SetNull)
-
-  user              User          @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  generatedTransactions Transaction[]
-
-  createdAt         DateTime      @default(now())
-  updatedAt         DateTime      @updatedAt
-
-  @@index([userId])
-  @@index([accountId])
-  @@index([active])
-  @@map("recurring_transactions")
 }
 
 // ─── Setting Model ────────────────────────────────────────────────────────────

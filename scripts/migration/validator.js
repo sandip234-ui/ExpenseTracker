@@ -8,7 +8,6 @@ import {
   VALID_TRANSACTION_TYPES,
   VALID_TRANSFER_TYPES,
   VALID_CATEGORY_TYPES,
-  VALID_RECURRING_FREQUENCIES,
   DEFAULT_CATEGORY_IDS,
 } from './constants.js'
 
@@ -33,7 +32,6 @@ export function validateMigrationPayload(data, existingDbData = {}) {
   const payloadGoalIds = new Set()
   const payloadTxnIds = new Set()
   const payloadBudgetIds = new Set()
-  const payloadRecurringIds = new Set()
   const budgetCategoryMonthPairs = new Set()
 
   // ─── 1. Accounts Validation ────────────────────────────────────────────────
@@ -191,69 +189,7 @@ export function validateMigrationPayload(data, existingDbData = {}) {
     }
   }
 
-  // ─── 5. Recurring Transactions Validation ──────────────────────────────────
-  for (const [idx, r] of (data.recurringTransactions || []).entries()) {
-    const prefix = `RecurringTransaction[${idx}]`
-    if (!r || typeof r !== 'object') {
-      errors.push(`${prefix}: Must be a valid object.`)
-      continue
-    }
-
-    if (!r.id || typeof r.id !== 'string' || !r.id.trim()) {
-      errors.push(`${prefix}: Missing or invalid 'id'.`)
-    } else {
-      if (payloadRecurringIds.has(r.id)) {
-        errors.push(`${prefix}: Duplicate recurring ID "${r.id}" within payload.`)
-      }
-      payloadRecurringIds.add(r.id)
-    }
-
-    if (!r.description || typeof r.description !== 'string' || !r.description.trim()) {
-      errors.push(`${prefix} (${r.id}): Missing or invalid 'description'.`)
-    }
-
-    const amount = Number(r.amount)
-    if (isNaN(amount) || !Number.isFinite(amount) || amount <= 0) {
-      errors.push(`${prefix} (${r.id}): Invalid amount "${r.amount}". Must be a positive number > 0.`)
-    }
-
-    const type = String(r.type || '').toLowerCase()
-    if (!['income', 'expense'].includes(type)) {
-      errors.push(`${prefix} (${r.id}): Invalid type "${r.type}". Must be 'income' or 'expense'.`)
-    }
-
-    const freq = String(r.frequency || '').toLowerCase()
-    if (!VALID_RECURRING_FREQUENCIES.includes(freq)) {
-      errors.push(`${prefix} (${r.id}): Invalid frequency "${r.frequency}". Allowed: ${VALID_RECURRING_FREQUENCIES.join(', ')}.`)
-    }
-
-    if (!r.accountId || !availableAccountIds.has(r.accountId)) {
-      errors.push(`${prefix} (${r.id}): Broken reference. accountId "${r.accountId}" not found in accounts.`)
-    }
-
-    const catId = r.categoryId || r.category
-    if (catId && !availableCategoryIds.has(catId)) {
-      warnings.push(`${prefix} (${r.id}): Category "${catId}" not found in category taxonomy; will default to null.`)
-    }
-
-    if (r.startDate) {
-      const sd = new Date(r.startDate)
-      if (isNaN(sd.getTime())) {
-        errors.push(`${prefix} (${r.id}): Invalid startDate "${r.startDate}".`)
-      }
-    } else {
-      errors.push(`${prefix} (${r.id}): Missing required startDate.`)
-    }
-
-    if (r.nextOccurrence) {
-      const no = new Date(r.nextOccurrence)
-      if (isNaN(no.getTime())) {
-        errors.push(`${prefix} (${r.id}): Invalid nextOccurrence "${r.nextOccurrence}".`)
-      }
-    }
-  }
-
-  // ─── 6. Transactions Validation ────────────────────────────────────────────
+  // ─── 5. Transactions Validation ────────────────────────────────────────────
   for (const [idx, t] of (data.transactions || []).entries()) {
     const prefix = `Transaction[${idx}]`
     if (!t || typeof t !== 'object') {
@@ -320,7 +256,7 @@ export function validateMigrationPayload(data, existingDbData = {}) {
     }
   }
 
-  // ─── 7. Settings Validation ────────────────────────────────────────────────
+  // ─── 6. Settings Validation ────────────────────────────────────────────────
   if (data.settings && typeof data.settings !== 'object') {
     errors.push('Settings must be an object of key-value pairs.')
   }

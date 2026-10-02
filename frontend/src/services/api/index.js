@@ -9,7 +9,6 @@ export { accountApi, normalizeAccount } from './accountApi.js'
 export { transactionApi, normalizeTransaction } from './transactionApi.js'
 export { goalApi, normalizeGoal } from './goalApi.js'
 export { budgetApi, normalizeBudget } from './budgetApi.js'
-export { recurringApi, normalizeRecurring } from './recurringApi.js'
 export { categoryApi, normalizeCategory } from './categoryApi.js'
 export { notificationApi } from './notificationApi.js'
 
@@ -19,7 +18,6 @@ import accountApi from './accountApi.js'
 import transactionApi from './transactionApi.js'
 import goalApi from './goalApi.js'
 import budgetApi from './budgetApi.js'
-import recurringApi from './recurringApi.js'
 import categoryApi from './categoryApi.js'
 import notificationApi from './notificationApi.js'
 
@@ -30,7 +28,6 @@ export const api = {
   transactions: transactionApi,
   goals: goalApi,
   budgets: budgetApi,
-  recurring: recurringApi,
   categories: categoryApi,
   notifications: notificationApi,
 }

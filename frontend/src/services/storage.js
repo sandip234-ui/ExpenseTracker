@@ -11,7 +11,6 @@ import { getAccounts, saveAccounts } from './accountService.js'
 import { getCustomCategories, saveCustomCategories, findCategory } from './categoryService.js'
 import { getBudgets, saveBudgets } from './budgetService.js'
 import { getGoals, saveGoals } from './goalService.js'
-import { getRecurringTransactions, saveRecurringTransactions } from './recurringService.js'
 
 // ─── Transactions ─────────────────────────────────────────────────────────────
 
@@ -116,7 +115,6 @@ export function exportFullBackup() {
       budgets: getBudgets(),
       accounts: getAccounts(),
       goals: getGoals(),
-      recurringTransactions: getRecurringTransactions(),
       settings: getSettings(),
     },
     null,
@@ -165,7 +163,13 @@ export function importBackupData(jsonString) {
   // Deduplicate and merge transactions
   const existingTxns = getTransactions()
   const existingIds = new Set(existingTxns.map((t) => t.id))
-  const newTxns = rawTxns.filter((t) => !existingIds.has(t.id))
+  const newTxns = rawTxns
+    .filter((t) => !existingIds.has(t.id))
+    .map((t) => {
+      const transaction = { ...t }
+      delete transaction.recurringId
+      return transaction
+    })
   const mergedTxns = [...newTxns, ...existingTxns]
   safeWrite(STORAGE_KEYS.TRANSACTIONS, mergedTxns)
 
@@ -199,14 +203,6 @@ export function importBackupData(jsonString) {
     const gIds = new Set(existingGoals.map((g) => g.id))
     const newGoals = parsed.goals.filter((g) => !gIds.has(g.id) && g.id && g.name)
     saveGoals([...existingGoals, ...newGoals])
-  }
-
-  // Merge Recurring Transactions if present
-  if (Array.isArray(parsed?.recurringTransactions)) {
-    const existingRec = getRecurringTransactions()
-    const rIds = new Set(existingRec.map((r) => r.id))
-    const newRec = parsed.recurringTransactions.filter((r) => !rIds.has(r.id) && r.id && r.description)
-    saveRecurringTransactions([...existingRec, ...newRec])
   }
 
   // Merge Settings if present

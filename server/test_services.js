@@ -4,7 +4,6 @@ import * as accountService from './src/services/accountService.js'
 import * as transactionService from './src/services/transactionService.js'
 import * as goalService from './src/services/goalService.js'
 import * as budgetService from './src/services/budgetService.js'
-import * as recurringService from './src/services/recurringService.js'
 import * as categoryService from './src/services/categoryService.js'
 import {
   InsufficientBalanceError,
@@ -562,8 +561,8 @@ async function runDomainServiceTests() {
 
     console.log('\n--- SECTION 2 PASSED: ALL 11 FINANCIAL EDGE CASES VERIFIED ---')
 
-    // ─── SECTION 3: ATOMICITY, ROLLBACK, BUDGETS & RECURRING ─────────────────────
-    console.log('\n--- Section 3: Atomicity, Rollback, Budgets & Recurring ---')
+    // ─── SECTION 3: ATOMICITY, ROLLBACK, BUDGETS & CATEGORIES ──────────────────
+    console.log('\n--- Section 3: Atomicity, Rollback, Budgets & Categories ---')
 
     // 1. Transaction Rollback on Failure
     console.log('1. Verifying database transaction rollback on failure...')
@@ -620,23 +619,8 @@ async function runDomainServiceTests() {
     assert.strictEqual(bStatus.budgetAmount, 5000)
     console.log(`  ✓ Pass: Budget status calculated. Spent: ₹${bStatus.spent}, Remaining: ₹${bStatus.remaining}`)
 
-    // 3. Recurring Service: Creation and next date calculation
-    console.log('3. Verifying Recurring Service...')
-    const recRule = await recurringService.createRecurring({
-      description: 'Internet Bill',
-      amount: 1500,
-      type: 'expense',
-      frequency: 'monthly',
-      startDate: '2026-09-01',
-      accountId: bankAccId,
-      categoryId: 'bills',
-    })
-    assert.strictEqual(recRule.amount, 1500)
-    assert.strictEqual(recRule.frequency, 'monthly')
-    console.log('  ✓ Pass: Recurring rule created with account and category link')
-
-    // 4. Category Service: Custom category creation and protection
-    console.log('4. Verifying Category Service...')
+    // 3. Category Service: Custom category creation and protection
+    console.log('3. Verifying Category Service...')
     const customCat = await categoryService.createCategory({
       name: 'Pet Care',
       type: 'expense',
@@ -656,7 +640,7 @@ async function runDomainServiceTests() {
     }
     assert.strictEqual(sysCatProtected, true)
 
-    console.log('\n--- SECTION 3 PASSED: ATOMICITY, BUDGETS, RECURRING & CATEGORIES VERIFIED ---')
+    console.log('\n--- SECTION 3 PASSED: ATOMICITY, BUDGETS & CATEGORIES VERIFIED ---')
 
     // ─── CLEANUP TEST FIXTURES ──────────────────────────────────────────────────
     console.log('\n--- Cleaning Up Test Fixtures ---')
@@ -670,9 +654,6 @@ async function runDomainServiceTests() {
     })
     await prisma.budget.deleteMany({
       where: { id: budget1.id },
-    })
-    await prisma.recurringTransaction.deleteMany({
-      where: { id: recRule.id },
     })
     await prisma.category.deleteMany({
       where: { id: customCat.id },

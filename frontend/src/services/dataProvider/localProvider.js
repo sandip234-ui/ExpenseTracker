@@ -2,7 +2,6 @@ import * as accountService from '../accountService.js'
 import * as storage from '../storage.js'
 import * as goalService from '../goalService.js'
 import * as budgetService from '../budgetService.js'
-import * as recurringService from '../recurringService.js'
 import * as categoryService from '../categoryService.js'
 
 /**
@@ -61,18 +60,6 @@ export const localProvider = {
   createBudget: async (data) => budgetService.addBudget(data),
   updateBudget: async (id, data) => budgetService.updateBudget(id, data),
   deleteBudget: async (id) => budgetService.deleteBudget(id),
-
-  // Recurring
-  getRecurring: async (filters = {}) => {
-    const list = recurringService.getRecurringTransactions()
-    if (filters.active !== undefined) {
-      return list.filter((r) => r.active === filters.active)
-    }
-    return list
-  },
-  createRecurring: async (data) => recurringService.addRecurringTransaction(data),
-  updateRecurring: async (id, data) => recurringService.updateRecurringTransaction(id, data),
-  deleteRecurring: async (id) => recurringService.deleteRecurringTransaction(id),
 
   // Categories
   getCategories: async (type = 'all') => {

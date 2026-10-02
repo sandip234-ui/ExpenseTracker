@@ -29,7 +29,6 @@ function generateTestPrefix() {
 async function cleanupPrefix(prefix) {
   try {
     await prisma.transaction.deleteMany({ where: { id: { startsWith: prefix } } })
-    await prisma.recurringTransaction.deleteMany({ where: { id: { startsWith: prefix } } })
     await prisma.budget.deleteMany({ where: { id: { startsWith: prefix } } })
     await prisma.savingsGoal.deleteMany({ where: { id: { startsWith: prefix } } })
     await prisma.account.deleteMany({ where: { id: { startsWith: prefix } } })
@@ -46,7 +45,6 @@ function makeValidPayload(prefix) {
   const catId = `${prefix}-cat-consulting`
   const goalId = `${prefix}-goal-emergency`
   const budgetId = `${prefix}-b-food`
-  const recId = `${prefix}-rec-cloud`
   const t1Id = `${prefix}-txn-salary`
   const t2Id = `${prefix}-txn-food`
   const t3Id = `${prefix}-txn-deposit`
@@ -59,7 +57,6 @@ function makeValidPayload(prefix) {
     catId,
     goalId,
     budgetId,
-    recId,
     t1Id,
     t2Id,
     t3Id,
@@ -106,19 +103,6 @@ function makeValidPayload(prefix) {
           amount: 3000,
         },
       ],
-      recurringTransactions: [
-        {
-          id: recId,
-          description: 'Cloud Server',
-          amount: 600,
-          type: 'expense',
-          frequency: 'monthly',
-          startDate: '2026-01-01',
-          nextOccurrence: '2026-11-01',
-          accountId: acc1Id,
-          categoryId: 'bills',
-        },
-      ],
       transactions: [
         {
           id: t1Id,
@@ -137,6 +121,7 @@ function makeValidPayload(prefix) {
           date: '2026-10-02',
           accountId: acc1Id,
           categoryId: 'food',
+          recurringId: `${prefix}-removed-rule`,
         },
         {
           id: t3Id,
@@ -204,11 +189,14 @@ async function runAllTests() {
     if (res.insertedCounts.transactions !== 4) throw new Error('Expected 4 transactions inserted')
     if (res.insertedCounts.goals !== 1) throw new Error('Expected 1 goal inserted')
     if (res.insertedCounts.budgets !== 1) throw new Error('Expected 1 budget inserted')
-    if (res.insertedCounts.recurring !== 1) throw new Error('Expected 1 recurring inserted')
 
     // Verify presence in DB
     const dbAcc = await prisma.account.findUnique({ where: { id: d1.acc1Id } })
     if (!dbAcc) throw new Error('Account 1 not found in DB after execute')
+    const legacyGeneratedTxn = await prisma.transaction.findUnique({ where: { id: d1.t2Id } })
+    if (!legacyGeneratedTxn || legacyGeneratedTxn.amount !== 400) {
+      throw new Error('Legacy generated transaction was not preserved as an ordinary transaction')
+    }
   })
 
   // ─────────────────────────────────────────────────────────────────────────────
@@ -225,9 +213,6 @@ async function runAllTests() {
       ],
       budgets: [
         { id: `${badPrefix}-b`, categoryId: 'food', month: '2026/10', amount: -100 },
-      ],
-      recurringTransactions: [
-        { id: `${badPrefix}-r`, description: '', amount: 0, frequency: 'hourly', startDate: 'none', accountId: `${badPrefix}-acc` },
       ],
     })
 
@@ -398,9 +383,6 @@ async function runAllTests() {
 
     const budget = await prisma.budget.findUnique({ where: { id: d1.budgetId } })
     if (!budget || budget.id !== d1.budgetId) throw new Error('Budget ID was not preserved')
-
-    const rec = await prisma.recurringTransaction.findUnique({ where: { id: d1.recId } })
-    if (!rec || rec.id !== d1.recId) throw new Error('Recurring ID was not preserved')
 
     const t1 = await prisma.transaction.findUnique({ where: { id: d1.t1Id } })
     if (!t1 || t1.id !== d1.t1Id) throw new Error('Transaction 1 ID was not preserved')

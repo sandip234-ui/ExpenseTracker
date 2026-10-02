@@ -9,8 +9,8 @@ import { SCHEMA_VERSION, SOURCE_IDENTIFIER } from './constants.js'
  *
  * Supported formats:
  * 1. Versioned envelope: { schemaVersion: 1, source: 'fintrack-localStorage', exportedAt, data: { ... } }
- * 2. FinTrack V2 export: { version: 2, exportedAt, transactions, categories, budgets, accounts, goals, recurringTransactions, settings }
- * 3. Raw data object: { accounts, categories, transactions, goals, budgets, recurringTransactions, settings }
+ * 2. FinTrack V2 export: { version: 2, exportedAt, transactions, categories, budgets, accounts, goals, settings }
+ * 3. Raw data object: { accounts, categories, transactions, goals, budgets, settings }
  * 4. JSON string of any of the above
  *
  * @param {string | object} input
@@ -48,7 +48,6 @@ export function parseMigrationPayload(input) {
       transactions: Array.isArray(parsed.transactions) ? parsed.transactions : [],
       goals: Array.isArray(parsed.goals) ? parsed.goals : [],
       budgets: Array.isArray(parsed.budgets) ? parsed.budgets : [],
-      recurringTransactions: Array.isArray(parsed.recurringTransactions) ? parsed.recurringTransactions : [],
       settings: parsed.settings && typeof parsed.settings === 'object' ? parsed.settings : {},
     }
 
@@ -79,11 +78,6 @@ function normalizeDataSection(data = {}) {
     transactions: Array.isArray(data.transactions) ? data.transactions : [],
     goals: Array.isArray(data.goals) ? data.goals : [],
     budgets: Array.isArray(data.budgets) ? data.budgets : [],
-    recurringTransactions: Array.isArray(data.recurringTransactions)
-      ? data.recurringTransactions
-      : Array.isArray(data.recurring)
-      ? data.recurring
-      : [],
     settings: data.settings && typeof data.settings === 'object' ? data.settings : {},
   }
 }

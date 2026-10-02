@@ -80,21 +80,6 @@
         "amount": 2500
       }
     ],
-    "recurringTransactions": [
-      {
-        "id": "demo-rec-broadband",
-        "description": "Fiber Broadband",
-        "amount": 1199,
-        "type": "expense",
-        "frequency": "monthly",
-        "startDate": "2026-01-01T00:00:00.000Z",
-        "nextOccurrence": "2026-11-01T00:00:00.000Z",
-        "paymentMethod": "UPI",
-        "accountId": "demo-acc-gpay",
-        "categoryId": "bills",
-        "active": true
-      }
-    ],
     "transactions": [
       {
         "id": "demo-txn-salary-1",

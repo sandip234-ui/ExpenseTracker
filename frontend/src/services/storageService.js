@@ -8,7 +8,6 @@ export const STORAGE_KEYS = {
   CATEGORIES: 'fintrack_categories',
   BUDGETS: 'fintrack_budgets',
   GOALS: 'fintrack_goals',
-  RECURRING: 'fintrack_recurring',
   SETTINGS: 'fintrack_settings',
 }
 
@@ -100,14 +99,21 @@ export function migrateStorage() {
   const rawTxns = safeRead(STORAGE_KEYS.TRANSACTIONS, [])
   if (Array.isArray(rawTxns) && rawTxns.length > 0) {
     let migratedCount = 0
+    let removedRecurringMetadataCount = 0
     const defaultAccountId = accounts[0]?.id || 'account-cash'
     
     const migratedTxns = rawTxns.map((t) => {
-      let accountId = t.accountId
+      const transaction = { ...t }
+      if (Object.prototype.hasOwnProperty.call(transaction, 'recurringId')) {
+        delete transaction.recurringId
+        removedRecurringMetadataCount++
+      }
+
+      let accountId = transaction.accountId
       if (!accountId) {
         migratedCount++
         // Map paymentMethod if possible
-        const method = (t.paymentMethod || '').toLowerCase()
+        const method = (transaction.paymentMethod || '').toLowerCase()
         if (method.includes('upi') || method.includes('wallet')) {
           const upiAcc = accounts.find((a) => a.type === 'upi')
           accountId = upiAcc ? upiAcc.id : defaultAccountId
@@ -119,16 +125,18 @@ export function migrateStorage() {
         }
       }
       return {
-        ...t,
+        ...transaction,
         accountId,
-        paymentMethod: t.paymentMethod || 'Other',
-        notes: t.notes || '',
+        paymentMethod: transaction.paymentMethod || 'Other',
+        notes: transaction.notes || '',
       }
     })
 
-    if (migratedCount > 0) {
+    if (migratedCount > 0 || removedRecurringMetadataCount > 0) {
       safeWrite(STORAGE_KEYS.TRANSACTIONS, migratedTxns)
-      console.log(`[migrateStorage] Migrated ${migratedCount} transactions with default accounts.`)
+      if (migratedCount > 0) {
+        console.log(`[migrateStorage] Migrated ${migratedCount} transactions with default accounts.`)
+      }
     }
   } else if (!Array.isArray(rawTxns)) {
     safeWrite(STORAGE_KEYS.TRANSACTIONS, [])
@@ -152,9 +160,5 @@ export function migrateStorage() {
     safeWrite(STORAGE_KEYS.GOALS, [])
   }
 
-  // 7. Recurring Transactions
-  const recurring = safeRead(STORAGE_KEYS.RECURRING, null)
-  if (!Array.isArray(recurring)) {
-    safeWrite(STORAGE_KEYS.RECURRING, [])
-  }
+  localStorage.removeItem('fintrack_recurring')
 }
